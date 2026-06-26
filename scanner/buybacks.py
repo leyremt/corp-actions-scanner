@@ -19,7 +19,9 @@ import xml.etree.ElementTree as ET
 
 import requests
 
-UA = "Mozilla/5.0 (corp-actions-scanner; corp-actions-scanner@users.noreply.github.com)"
+import os
+
+UA = f"Mozilla/5.0 (corp-actions-scanner; {os.environ.get('SEC_CONTACT', 'corp-actions-scanner@users.noreply.github.com')})"
 KEYWORDS = [
     "Aktienrückkaufangebot",
     "Erwerbsangebot eigener Aktien",

@@ -15,7 +15,9 @@ import yfinance as yf
 
 logging.getLogger("yfinance").setLevel(logging.CRITICAL)
 
-UA = "corp-actions-scanner corp-actions-scanner@users.noreply.github.com"
+import os
+
+UA = f"corp-actions-scanner {os.environ.get('SEC_CONTACT', 'corp-actions-scanner@users.noreply.github.com')}"
 _session = requests.Session()
 _session.headers.update({"User-Agent": UA})
 

@@ -15,7 +15,12 @@ from typing import Iterable
 
 import requests
 
-UA = "corp-actions-scanner corp-actions-scanner@users.noreply.github.com"
+import os
+
+# SEC asks for a contact email in the User-Agent. Injected via the SEC_CONTACT
+# env var (a GitHub Actions secret in the cloud) so it stays out of the code.
+CONTACT = os.environ.get("SEC_CONTACT", "corp-actions-scanner@users.noreply.github.com")
+UA = f"corp-actions-scanner {CONTACT}"
 EFTS = "https://efts.sec.gov/LATEST/search-index"
 TICKERS_URL = "https://www.sec.gov/files/company_tickers.json"
 

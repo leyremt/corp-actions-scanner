@@ -26,6 +26,8 @@ jobs:
       - run: pip install -r requirements.txt
 
       - name: Run scanner
+        env:
+          SEC_CONTACT: ${{ secrets.SEC_CONTACT }}
         run: python -m scanner.build 30 365   # SEC window 30d, BaFin window 365d
 
       - name: Commit results

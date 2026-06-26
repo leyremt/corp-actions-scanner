@@ -1,0 +1,5 @@
+# Netlify serves the pre-built static dashboard. No build step: the scraper
+# runs in GitHub Actions and commits docs/data.json; Netlify just publishes it.
+[build]
+  publish = "docs"
+  command = ""

@@ -26,7 +26,9 @@ import time
 import pypdf
 import requests
 
-UA = "Mozilla/5.0 (corp-actions-scanner; corp-actions-scanner@users.noreply.github.com)"
+import os
+
+UA = f"Mozilla/5.0 (corp-actions-scanner; {os.environ.get('SEC_CONTACT', 'corp-actions-scanner@users.noreply.github.com')})"
 BASE = "https://www.bafin.de/DE/die-bafin/publikationen-daten/datenbanken-uebersichten/WPUeG"
 ANNOUNCE_URL = f"{BASE}/angebotsankuendigung/li-angebotsankuendigung-wpueg_node.html"
 DOCS_URL = f"{BASE}/angebotsunterlagen/angebotsunterlagen_node.html"

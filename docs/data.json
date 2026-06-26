@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-06-26T21:23:22+00:00",
+  "generated_at": "2026-06-26T21:45:47+00:00",
   "window_days": {
     "SEC": 30,
     "BaFin": 365
   },
-  "count": 209,
+  "count": 214,
   "sources": [
     "SEC EDGAR",
     "BaFin",
@@ -112,10 +112,10 @@
       "form": "Share buyback offer",
       "event_type": "Buyback offer",
       "category": "tender",
-      "announce_date": "2026-06-05",
+      "announce_date": "2026-06-22",
       "exec_date": null,
       "offer_price": 17.8,
-      "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxQaUJsV3lxc2hNUkdDSmhmRExtRmwzWGljM1A2azhZbUZ2QV96LTdVRklTUEp0RmFrTjlaSzVmRGNpTVdCM1dweXlxRmxtUXNJZjUyMThfbl9ZZ2RONlljNHFCVlhyZF9TaFYzUzBiVG1salNRVHRFdDRENFZRcFNyUVBYd3FBTHZQZS1CUkRqM1BxUHBQS2JESlMtNG9YbHhLVUJzR0sybTh1VGVZb1NaQzVqU2RNLTNpaEY3RkVHdTRfa2w3SjhPeGtXWXFhX1dHQ1luN0xibEZ6Z9IB3wFBVV95cUxOS2ZIdGdIQ3V4RmtiQ1IyclpEdWtXSkpwdXpUSXB5WWtEVHVJWTRDUjlRbVpKdkZMZzVGdC1SdGJwbFViaE16ek40YnI0MUtkVWwxcHIxUHhVcEFDX2IyVTZnTFF3ZkNURUJDQ3NXenJ5WGhfMTV4dldzMkRDRldlSlNIc1lOeXRucmpyenk2MXVfalJJbUM5WVozbDBPNlJXQjhBdXMwMkJBaFNfRkZ2V1NqdU9OXzBSOUN4MWE4eEQ0VnB2QWJjWkl2a0ZHZXI1VHI2TUE3aG1NX3FnYUNZ?oc=5",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOS0p3cDBKcDhzY0VJR0psSHBBendzTUd1dUtQcVpKdnhnN1FYb1dsd3JuZFZ2dFVMbGdhSGxFa093RUNYaDRJdHA1MFJoaEk1QUZrVnRhSmEwQmQtcldoZ3BrcFROdVU1VmZuczNFaTNqaUtzenlxaE5sQVlxQkp0SExLTlNWaElPSzJvblI4bFdvRkFfVWlYNjUyZmF5bC1IWHpQOE91SEhCM19fcFR3YUpVVQ?oc=5",
       "current_price": 15.699999809265137,
       "spread_pct": 13.38
     },
@@ -3756,6 +3756,24 @@
       "spread_pct": null
     },
     {
+      "id": "buyback:HRPK.DE",
+      "source": "DE-Buyback",
+      "issuer": "7C Solarparken",
+      "bidder": null,
+      "cik": null,
+      "ticker": "HRPK.DE",
+      "isin": null,
+      "form": "Share buyback offer",
+      "event_type": "Buyback offer",
+      "category": "tender",
+      "announce_date": "2026-04-28",
+      "exec_date": null,
+      "offer_price": null,
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQWTd2V2tDSk85UGdCZ1RfQVliYWQ0ME9hUzdteXc3M2hwSklDaEZWaGRqc0VjM0JjQWNSUjZZd2FiWWhXWnAyN21xZjJqbVlkTm5xV3dVaGszNXA3eWQ2VVozeW1adlRPam1VR2stQ1VnX3VvVlFYQ0wyUE9jZTBVc0ZjV1BHYmhNU21FdWcwOHlyR01mRUJsbVVkYWhXb2c1NGlyb1IxUWR5ekNId1hFNA?oc=5",
+      "current_price": 1.6299999952316284,
+      "spread_pct": null
+    },
+    {
       "id": "bafin:DE000CBK1001:2026-03-16",
       "source": "BaFin",
       "issuer": "COMMERZBANK Aktiengesellschaft, Frankfurt am Main",
@@ -3825,6 +3843,24 @@
       "offer_price": 1.3,
       "url": "https://www.bafin.de/SharedDocs/Downloads/DE/Angebotsunterlage/readcrest_capital.pdf?__blob=publicationFile&v=1",
       "current_price": null,
+      "spread_pct": null
+    },
+    {
+      "id": "buyback:B4A1.F",
+      "source": "DE-Buyback",
+      "issuer": "Meier Tobler",
+      "bidder": null,
+      "cik": null,
+      "ticker": "B4A1.F",
+      "isin": null,
+      "form": "Share buyback offer",
+      "event_type": "Buyback offer",
+      "category": "tender",
+      "announce_date": "2025-03-06",
+      "exec_date": null,
+      "offer_price": null,
+      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPbDEzTnNULVZaU3NoV0ZkQWp4SmZiOUo2NWtOZzhYWm82RkdiczBZVGpSTm45Zm9ieXo4d3VZMFM2eEh4OHBmN25Bd1g0RXd6b1pNcUdGX1ctYlFBNFJMWWI5OWo2aC1lTDJqTVl6TVBQSHhUNUUtRWNZZHloZWJBMkgyT1hWakY3aFhqWXlzcUY5XzgwTjRGU3AzMnhZbmFUcTJzSzRvbEM1cFV6U2c?oc=5",
+      "current_price": 32.79999923706055,
       "spread_pct": null
     }
   ]

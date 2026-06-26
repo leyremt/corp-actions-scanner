@@ -93,19 +93,22 @@ def collect(days: int = 30) -> list[dict]:
                 "id": hit.get("_id"),
                 "source": "SEC",
                 "issuer": name,
+                "bidder": None,
                 "cik": cik,
                 "ticker": tickers.get(cik) if cik else None,
+                "isin": None,
                 "form": src.get("form", form),
                 "event_type": label,
                 "category": category,
-                "filed": src.get("file_date"),
+                "announce_date": src.get("file_date"),  # SEC filing = announcement
+                "exec_date": None,  # tender expiration not parsed yet (SEC)
                 "url": url,
             }
             prev = events.get(key)
-            if prev is None or (ev["filed"] or "") >= (prev["filed"] or ""):
+            if prev is None or (ev["announce_date"] or "") >= (prev["announce_date"] or ""):
                 events[key] = ev
 
-    return sorted(events.values(), key=lambda e: e["filed"] or "", reverse=True)
+    return sorted(events.values(), key=lambda e: e["announce_date"] or "", reverse=True)
 
 
 if __name__ == "__main__":

@@ -26,19 +26,30 @@ python -m scanner.build 30        # window in days
 open docs/index.html              # data.json is served alongside
 ```
 
-## Known limits (MVP)
+## Sources
 
-- **Offer-price extraction is heuristic.** It regexes `$X per share` out of the
-  filing text. Large spreads (>25%) are usually parsing errors, not real edge —
-  always confirm against the linked filing. This is the first thing to harden.
-- **Coverage is SEC-only.** German names (Bundesanzeiger / BaFin squeeze-outs &
-  delistings — CLIQ/Aumann territory) are Phase 2.
-- Closed-end funds / BDCs file many routine repurchase tenders; they have no
-  ticker mapping and sink to the bottom (no spread).
+- **SEC EDGAR** — SC TO-I / SC TO-T / SC 13E3 / 25-NSE. Announce date = filing
+  date. Offer price = heuristic regex over the filing text.
+- **BaFin (WpÜG)** — German takeover / mandatory / delisting offers from the
+  Angebotsankündigung + Angebotsunterlagen databases. Announce date is
+  structured; offer price and acceptance-period end (`exec_date`) are parsed
+  off the standardized offer-PDF cover page. ISIN → ticker via OpenFIGI.
+
+Each event carries **two dates**: `announce_date` (made public) and `exec_date`
+(tender expiration / Annahmefrist Ende — the arbitrage deadline).
+
+## Known limits
+
+- **SEC offer-price extraction is heuristic.** Large spreads (>25%) are usually
+  parsing errors — always confirm against the linked filing.
+- **BaFin is high-signal but sparse** (~12 offers/year), so it uses a 365-day
+  window. Freshly announced offers have no document yet → price/exec pending.
+- **Squeeze-outs proper** (aktien-/verschmelzungsrechtlich) are not in BaFin —
+  they run through the Bundesanzeiger (Phase 3).
 
 ## Roadmap
 
-- [ ] Harden offer-price extraction (per-form parsers, confidence flag)
-- [ ] BaFin collector (WpÜG offers, delisting-Erwerbsangebote)
+- [x] BaFin collector (WpÜG offers, delisting-Erwerbsangebote)
+- [ ] Harden SEC offer-price extraction (per-form parsers, confidence flag)
 - [ ] Bundesanzeiger collector (squeeze-outs, HV convocations)
 - [ ] Email/Telegram digest of new wide-spread events

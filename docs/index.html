@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Corporate Actions Scanner</title>
+<style>
+  :root{
+    --bg:#0d1117; --panel:#161b22; --border:#30363d; --text:#e6edf3;
+    --muted:#8b949e; --green:#3fb950; --red:#f85149; --accent:#58a6ff;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font:14px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+       background:var(--bg);color:var(--text)}
+  header{padding:20px 24px;border-bottom:1px solid var(--border)}
+  h1{margin:0;font-size:18px;font-weight:600}
+  .meta{color:var(--muted);font-size:12px;margin-top:4px}
+  .controls{display:flex;flex-wrap:wrap;gap:8px;padding:14px 24px;align-items:center}
+  .controls input,.controls select{background:var(--panel);border:1px solid var(--border);
+       color:var(--text);border-radius:6px;padding:6px 10px;font-size:13px}
+  .controls input{flex:1;min-width:160px}
+  .pill{color:var(--muted);font-size:12px;margin-left:auto}
+  .wrap{overflow-x:auto;padding:0 24px 40px}
+  table{border-collapse:collapse;width:100%;min-width:760px}
+  th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--border);white-space:nowrap}
+  th{color:var(--muted);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.04em;
+     cursor:pointer;user-select:none;position:sticky;top:0;background:var(--bg)}
+  th:hover{color:var(--text)}
+  td.issuer{white-space:normal;max-width:320px}
+  .tk{font-weight:600}
+  .num{text-align:right;font-variant-numeric:tabular-nums}
+  .pos{color:var(--green)} .neg{color:var(--red)} .dim{color:var(--muted)}
+  .tag{display:inline-block;padding:2px 8px;border-radius:999px;font-size:11px;border:1px solid var(--border)}
+  a{color:var(--accent);text-decoration:none} a:hover{text-decoration:underline}
+  .empty{padding:40px 24px;color:var(--muted)}
+</style>
+</head>
+<body>
+<header>
+  <h1>📡 Corporate Actions Scanner</h1>
+  <div class="meta" id="meta">cargando…</div>
+</header>
+
+<div class="controls">
+  <input id="q" placeholder="Buscar emisor o ticker…">
+  <select id="cat">
+    <option value="">Todas las categorías</option>
+    <option value="tender">Tender offers</option>
+    <option value="going_private">Going-private</option>
+    <option value="delisting">Delistings</option>
+  </select>
+  <label class="dim" style="font-size:13px"><input type="checkbox" id="onlyspread"> solo con spread</label>
+  <span class="pill" id="count"></span>
+</div>
+
+<div class="wrap">
+  <table>
+    <thead><tr>
+      <th data-k="spread_pct" class="num">Spread %</th>
+      <th data-k="ticker">Ticker</th>
+      <th data-k="issuer">Emisor</th>
+      <th data-k="event_type">Evento</th>
+      <th data-k="offer_price" class="num">Oferta</th>
+      <th data-k="current_price" class="num">Actual</th>
+      <th data-k="filed">Fecha</th>
+      <th>Filing</th>
+    </tr></thead>
+    <tbody id="rows"></tbody>
+  </table>
+  <div class="empty" id="empty" hidden>Sin resultados.</div>
+</div>
+
+<script>
+let DATA = [], sortK = "spread_pct", sortDir = -1;
+const $ = s => document.querySelector(s);
+const fmt = (v, d=2) => v == null ? "—" : Number(v).toFixed(d);
+
+const TAGS = {tender:"#3fb95033", going_private:"#d2992233", delisting:"#f8514933"};
+
+function render(){
+  const q = $("#q").value.trim().toLowerCase();
+  const cat = $("#cat").value;
+  const onlyspread = $("#onlyspread").checked;
+  let rows = DATA.filter(e =>
+    (!cat || e.category === cat) &&
+    (!onlyspread || e.spread_pct != null) &&
+    (!q || (e.issuer||"").toLowerCase().includes(q) || (e.ticker||"").toLowerCase().includes(q))
+  );
+  rows.sort((a,b)=>{
+    let x=a[sortK], y=b[sortK];
+    if(x==null) x = sortDir<0 ? -Infinity : Infinity;
+    if(y==null) y = sortDir<0 ? -Infinity : Infinity;
+    if(typeof x==="string") return sortDir*x.localeCompare(y);
+    return sortDir*(x-y);
+  });
+  $("#count").textContent = rows.length + " eventos";
+  $("#empty").hidden = rows.length>0;
+  $("#rows").innerHTML = rows.map(e=>{
+    const s = e.spread_pct;
+    const scls = s==null?"dim":(s>=0?"pos":"neg");
+    const sval = s==null?"—":(s>0?"+":"")+fmt(s)+"%";
+    return `<tr>
+      <td class="num ${scls}">${sval}</td>
+      <td class="tk">${e.ticker||"<span class=dim>—</span>"}</td>
+      <td class="issuer">${esc(e.issuer)}</td>
+      <td><span class="tag" style="background:${TAGS[e.category]||''}">${esc(e.event_type)}</span></td>
+      <td class="num">${e.offer_price==null?'<span class=dim>—</span>':'$'+fmt(e.offer_price)}</td>
+      <td class="num">${e.current_price==null?'<span class=dim>—</span>':'$'+fmt(e.current_price)}</td>
+      <td class="dim">${e.filed||"—"}</td>
+      <td><a href="${e.url}" target="_blank" rel="noopener">ver ↗</a></td>
+    </tr>`;
+  }).join("");
+}
+function esc(s){return (s||"").replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));}
+
+document.querySelectorAll("th[data-k]").forEach(th=>{
+  th.onclick=()=>{const k=th.dataset.k; sortDir = (k===sortK)?-sortDir:-1; sortK=k; render();};
+});
+["q","cat","onlyspread"].forEach(id=>$("#"+id).addEventListener("input",render));
+
+fetch("data.json?_="+Date.now()).then(r=>r.json()).then(d=>{
+  DATA = d.events||[];
+  const dt = new Date(d.generated_at);
+  $("#meta").textContent =
+    `${d.count} eventos · fuentes: ${(d.sources||[]).join(", ")} · ventana ${d.window_days}d · actualizado ${dt.toLocaleString("es-ES")}`;
+  render();
+}).catch(e=>{$("#meta").textContent="No se pudo cargar data.json — "+e;});
+</script>
+</body>
+</html>

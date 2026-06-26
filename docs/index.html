@@ -35,6 +35,7 @@
   .tag{display:inline-block;padding:2px 8px;border-radius:999px;font-size:11px;border:1px solid var(--border)}
   .src{display:inline-block;padding:1px 7px;border-radius:4px;font-size:11px;font-weight:600}
   .src.SEC{background:#1f6feb33;color:#79c0ff} .src.BaFin{background:#bb800933;color:#e3b341}
+  .src.Buyback{background:#8957e533;color:#d2a8ff}
   a{color:var(--accent);text-decoration:none} a:hover{text-decoration:underline}
   .empty{padding:40px 24px;color:var(--muted)}
 </style>
@@ -51,6 +52,7 @@
     <option value="">Todas las fuentes</option>
     <option value="SEC">SEC (US)</option>
     <option value="BaFin">BaFin (DE)</option>
+    <option value="DE-Buyback">Recompras (DE)</option>
   </select>
   <select id="cat">
     <option value="">Todas las categorías</option>
@@ -85,7 +87,8 @@
 let DATA = [], sortK = "spread_pct", sortDir = -1;
 const $ = s => document.querySelector(s);
 const fmt = (v, d=2) => v == null ? "—" : Number(v).toFixed(d);
-const cur = e => e.source === "BaFin" ? "€" : "$";
+const cur = e => e.source === "SEC" ? "$" : "€";
+const srcClass = e => e.source === "SEC" ? "SEC" : (e.source === "BaFin" ? "BaFin" : "Buyback");
 const TAGS = {tender:"#3fb95033", going_private:"#d2992233", delisting:"#f8514933"};
 
 function render(){
@@ -116,7 +119,7 @@ function render(){
       : (e.isin ? `<span class="isin">${esc(e.isin)}</span>` : "<span class=dim>—</span>");
     const bidder = e.bidder ? `<div class="bidder">↳ ${esc(e.bidder)}</div>` : "";
     return `<tr>
-      <td><span class="src ${e.source==='BaFin'?'BaFin':'SEC'}">${esc(e.source)}</span></td>
+      <td><span class="src ${srcClass(e)}">${esc(e.source)}</span></td>
       <td class="num ${scls}">${sval}</td>
       <td>${idcell}</td>
       <td class="issuer">${esc(e.issuer)}${bidder}</td>

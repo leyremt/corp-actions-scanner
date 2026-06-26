@@ -7,7 +7,8 @@
   "count": 209,
   "sources": [
     "SEC EDGAR",
-    "BaFin"
+    "BaFin",
+    "DE-Buyback"
   ],
   "events": [
     {
@@ -99,6 +100,24 @@
       "offer_price": 11.5,
       "current_price": 9.520000457763672,
       "spread_pct": 20.8
+    },
+    {
+      "id": "buyback:AAG.DE",
+      "source": "DE-Buyback",
+      "issuer": "Aumann",
+      "bidder": null,
+      "cik": null,
+      "ticker": "AAG.DE",
+      "isin": null,
+      "form": "Share buyback offer",
+      "event_type": "Buyback offer",
+      "category": "tender",
+      "announce_date": "2026-06-05",
+      "exec_date": null,
+      "offer_price": 17.8,
+      "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxQaUJsV3lxc2hNUkdDSmhmRExtRmwzWGljM1A2azhZbUZ2QV96LTdVRklTUEp0RmFrTjlaSzVmRGNpTVdCM1dweXlxRmxtUXNJZjUyMThfbl9ZZ2RONlljNHFCVlhyZF9TaFYzUzBiVG1salNRVHRFdDRENFZRcFNyUVBYd3FBTHZQZS1CUkRqM1BxUHBQS2JESlMtNG9YbHhLVUJzR0sybTh1VGVZb1NaQzVqU2RNLTNpaEY3RkVHdTRfa2w3SjhPeGtXWXFhX1dHQ1luN0xibEZ6Z9IB3wFBVV95cUxOS2ZIdGdIQ3V4RmtiQ1IyclpEdWtXSkpwdXpUSXB5WWtEVHVJWTRDUjlRbVpKdkZMZzVGdC1SdGJwbFViaE16ek40YnI0MUtkVWwxcHIxUHhVcEFDX2IyVTZnTFF3ZkNURUJDQ3NXenJ5WGhfMTV4dldzMkRDRldlSlNIc1lOeXRucmpyenk2MXVfalJJbUM5WVozbDBPNlJXQjhBdXMwMkJBaFNfRkZ2V1NqdU9OXzBSOUN4MWE4eEQ0VnB2QWJjWkl2a0ZHZXI1VHI2TUE3aG1NX3FnYUNZ?oc=5",
+      "current_price": 15.699999809265137,
+      "spread_pct": 13.38
     },
     {
       "id": "0001140361-26-025134:ny20072853x8_sctota.htm",
@@ -225,6 +244,24 @@
       "offer_price": 9.25,
       "current_price": 9.789999961853027,
       "spread_pct": -5.52
+    },
+    {
+      "id": "buyback:DMP.F",
+      "source": "DE-Buyback",
+      "issuer": "Dermapharm",
+      "bidder": null,
+      "cik": null,
+      "ticker": "DMP.F",
+      "isin": null,
+      "form": "Share buyback offer",
+      "event_type": "Buyback offer",
+      "category": "tender",
+      "announce_date": "2026-03-10",
+      "exec_date": null,
+      "offer_price": 42.0,
+      "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxNVG1CTVBBamQ0U0VLTFp1c3FJOUVrSHNsTE0yRVJFamxTb1kyUG1FcFhaVUxaRk90VURIZFhTOGY0eURRdnFBMTIzdWhBZzVtZC1COHBjNjBDRTFWYk5hU1U3Tm94ajZZU2dCNVVsdVJ6am11cjNSbmxVTHJTdjhySWc1RjNFZW5RV2pDSjEyenpvYjA3STFqOGpHNUtYV2tzQUl0ZUdhb3lBRW1fNGZGazBWYTBIVWhhSTlzTG1nUDNJcl9fR1U0dUZGSGZGV0pXdWFISFhuUVpqOUtVQmRrUjl6U3nSAeoBQVVfeXFMTk43Rm5sblM3ZDNaTGUyZlZ3VWs4djZKV0lQX1VOcjYySGdadVVmcnVMZUhfd0VlMFBsQk10NmNaazJEczYwSWFMT3lKaEV0VEY2NWNuVjZKQnUxdFZyRG1yYlZWU1hGajVFcXQ5STBQTnVLcUY2OHJkMXoxMk5DeVVBMDMwS1VUcUljV2tQM3lGbV95UW1XZ1p0VlpMT29TUUdxZ2dKZ3F0VVRzRnVmUkhQdl82SDg0WHFHczJuZFdzX01yQldmUGtXTzJMeWlsZ0VHT21ncnhuMEs4dTRtc1ZmSDNxRW9ZNlJR?oc=5",
+      "current_price": 46.25,
+      "spread_pct": -9.19
     },
     {
       "id": "bafin:DE000KC01000:2026-06-03",
@@ -1718,6 +1755,24 @@
       "offer_price": null,
       "url": "https://www.bafin.de/DE/die-bafin/publikationen-daten/datenbanken-uebersichten/WPUeG/angebotsunterlagen/angebotsunterlagen_node.html",
       "current_price": 7.0,
+      "spread_pct": null
+    },
+    {
+      "id": "buyback:6YD.F",
+      "source": "DE-Buyback",
+      "issuer": "Redcentric",
+      "bidder": null,
+      "cik": null,
+      "ticker": "6YD.F",
+      "isin": null,
+      "form": "Share buyback offer",
+      "event_type": "Buyback offer",
+      "category": "tender",
+      "announce_date": "2026-06-19",
+      "exec_date": null,
+      "offer_price": null,
+      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOQk5LSHF0TElIUDY5Y2ZjS284anlKX3R2eEhMQV9nT2d2OUxTZExTZ2szd0V4LXZMa3J2MFFac1dqVWVoUkotdDk4WHJOSzlrQVF1Vk1OQ3NmQ2Qzb0pyVksteW1VWXJVUW9WcGtBYnRIY1FLRVJGMGVLNWtrX2xlaVJ3b2NJbDNQa0VXcjJRa1ZYTTdvbTFTM1Q0WExtbU5xamJyV3UyX1h6UGJzYWhqYjBnWkU1eWhIenREV2ZGMzduUQ?oc=5",
+      "current_price": 1.3899999856948853,
       "spread_pct": null
     },
     {

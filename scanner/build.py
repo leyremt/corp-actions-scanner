@@ -6,7 +6,7 @@ import json
 import pathlib
 import sys
 
-from scanner import bafin
+from scanner import bafin, buybacks
 from scanner.edgar import collect as collect_sec
 from scanner.enrich import enrich
 
@@ -22,6 +22,12 @@ def main(sec_days: int = 30, bafin_days: int = 365) -> None:
         events += de
     except Exception as exc:  # never let one source kill the run
         print(f"BaFin collector failed: {exc}", file=sys.stderr)
+    try:
+        bb = buybacks.collect()
+        print(f"DE-Buyback: {len(bb)} events", file=sys.stderr)
+        events += bb
+    except Exception as exc:
+        print(f"Buyback collector failed: {exc}", file=sys.stderr)
 
     print(f"enriching {len(events)} events…", file=sys.stderr)
     for i, ev in enumerate(events, 1):
@@ -40,7 +46,7 @@ def main(sec_days: int = 30, bafin_days: int = 365) -> None:
         "generated_at": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"),
         "window_days": {"SEC": sec_days, "BaFin": bafin_days},
         "count": len(events),
-        "sources": ["SEC EDGAR", "BaFin"],
+        "sources": ["SEC EDGAR", "BaFin", "DE-Buyback"],
         "events": events,
     }
     OUT.parent.mkdir(parents=True, exist_ok=True)

@@ -34,6 +34,11 @@ open docs/index.html              # data.json is served alongside
   Angebotsankündigung + Angebotsunterlagen databases. Announce date is
   structured; offer price and acceptance-period end (`exec_date`) are parsed
   off the standardized offer-PDF cover page. ISIN → ticker via OpenFIGI.
+- **DE-Buyback** — German issuer share-buyback / self-tender offers
+  (Aktienrückkaufangebote, e.g. Aumann). These are NOT WpÜG offers and have no
+  central registry, so they are sourced from Google News RSS filtered on the
+  standard German terms; company name → Yahoo symbol for a live price. Lower
+  precision (news-derived); the row links the source article.
 
 Each event carries **two dates**: `announce_date` (made public) and `exec_date`
 (tender expiration / Annahmefrist Ende — the arbitrage deadline).

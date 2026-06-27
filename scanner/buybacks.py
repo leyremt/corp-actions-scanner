@@ -12,6 +12,7 @@ News-derived → lower precision than SEC/BaFin. Labelled source "DE-Buyback".
 """
 from __future__ import annotations
 
+import datetime as dt
 import re
 import time
 import urllib.parse
@@ -68,15 +69,25 @@ def _price(title: str) -> float | None:
     return best
 
 
+# Query two news RSS feeds and merge: Google News is blocked from datacenter
+# IPs (returns empty in GitHub Actions), Bing News works there — using both
+# makes the source robust whether it runs locally or in the cloud.
+_FEEDS = [
+    "https://news.google.com/rss/search?q={q}&hl=de&gl=DE&ceid=DE:de",
+    "https://www.bing.com/news/search?q={q}&format=rss&setlang=de&cc=DE",
+]
+
+
 def _rss(keyword: str) -> list[dict]:
     q = urllib.parse.quote(f'"{keyword}"')
-    url = f"https://news.google.com/rss/search?q={q}&hl=de&gl=DE&ceid=DE:de"
-    try:
-        r = _session.get(url, timeout=30)
-        time.sleep(0.2)
-        items = ET.fromstring(r.content).findall(".//item")
-    except (requests.RequestException, ET.ParseError):
-        return []
+    items = []
+    for tmpl in _FEEDS:
+        try:
+            r = _session.get(tmpl.format(q=q), timeout=30)
+            time.sleep(0.2)
+            items += ET.fromstring(r.content).findall(".//item")
+        except (requests.RequestException, ET.ParseError):
+            continue
     out = []
     for it in items:
         title = (it.findtext("title") or "").strip()
@@ -121,7 +132,11 @@ def resolve_symbol(name: str) -> str | None:
     return quotes[0]["symbol"]
 
 
-def collect() -> list[dict]:
+def collect(days: int = 90) -> list[dict]:
+    # A buyback acceptance period runs a few weeks; without the offer document we
+    # can't read its end date, so we treat anything announced longer than `days`
+    # ago as closed and drop it (also filters stale/recurring old news items).
+    cutoff = (dt.date.today() - dt.timedelta(days=days)).isoformat()
     raw = [it for kw in KEYWORDS for it in _rss(kw)]
 
     # Resolve each article to a ticker (cached), then merge by ticker so that
@@ -130,6 +145,9 @@ def collect() -> list[dict]:
     sym_cache: dict[str, str | None] = {}
     merged: dict[str, dict] = {}
     for it in raw:
+        iso = _iso(it["pubdate"])
+        if not iso or iso < cutoff:        # skip undated / stale (likely closed) offers
+            continue
         name = _company(it["title"])
         if len(name) < 2:
             continue
@@ -137,7 +155,7 @@ def collect() -> list[dict]:
             sym_cache[name.lower()] = resolve_symbol(name)
         symbol = sym_cache[name.lower()]
         key = symbol or name.lower()
-        iso, price = _iso(it["pubdate"]), _price(it["title"])
+        price = _price(it["title"])
         rec = merged.get(key)
         if rec is None:
             merged[key] = {"name": name, "ticker": symbol, "announce_date": iso,

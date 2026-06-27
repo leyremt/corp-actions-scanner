@@ -39,5 +39,15 @@ jobs:
             echo "No changes."
           else
             git commit -m "scan: update data.json ($(date -u +%FT%TZ))"
-            git push
+            # The remote may have advanced during the run (another push). Rebase
+            # our data.json commit on top and retry; -X theirs keeps our freshly
+            # generated file if it ever conflicts.
+            for attempt in 1 2 3 4 5; do
+              if git push; then
+                echo "pushed"; break
+              fi
+              echo "push rejected, rebasing and retrying ($attempt)…"
+              git fetch origin main && git rebase -X theirs origin/main
+              sleep 3
+            done
           fi

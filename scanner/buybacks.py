@@ -13,7 +13,6 @@ News-derived → lower precision than SEC/BaFin. Labelled source "DE-Buyback".
 from __future__ import annotations
 
 import datetime as dt
-import html
 import re
 import time
 import urllib.parse
@@ -51,65 +50,6 @@ def _de_num(s: str) -> float | None:
         return float(s.replace(".", "").replace(",", "."))
     except (ValueError, AttributeError):
         return None
-
-
-_DE_MONTHS = {"januar": 1, "februar": 2, "märz": 3, "april": 4, "mai": 5, "juni": 6,
-              "juli": 7, "august": 8, "september": 9, "oktober": 10, "november": 11, "dezember": 12}
-_DE_DATE = r"(\d{1,2})\.\s*(Januar|Februar|März|April|Mai|Juni|Juli|August|September|Oktober|November|Dezember)\s*(\d{4})"
-_PERIOD_RE = re.compile(r"(?:Annahmefrist|Erwerbsfrist|Angebotsfrist)", re.IGNORECASE)
-_BIS_RE = re.compile(rf"bis\s+(?:zum\s+)?{_DE_DATE}", re.IGNORECASE)
-
-
-def _de_date_iso(day: str, month: str, year: str) -> str | None:
-    mo = _DE_MONTHS.get(month.lower())
-    return f"{int(year):04d}-{mo:02d}-{int(day):02d}" if mo else None
-
-
-def _period_from_article(link: str, after: str | None) -> str | None:
-    try:
-        html_txt = _session.get(link, timeout=25).text
-        time.sleep(0.15)
-    except requests.RequestException:
-        return None
-    text = re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", " ", html_txt)))
-    for km in _PERIOD_RE.finditer(text):
-        bm = _BIS_RE.search(text[km.start():km.start() + 220])
-        if bm:
-            iso = _de_date_iso(*bm.groups())
-            if iso and (not after or iso >= after):
-                return iso
-    return None
-
-
-def _bing_links(query: str) -> list[str]:
-    try:
-        r = _session.get(
-            f"https://www.bing.com/news/search?q={urllib.parse.quote(query)}&format=rss&setlang=de&cc=DE",
-            timeout=30)
-        time.sleep(0.2)
-        return [it.findtext("link") for it in ET.fromstring(r.content).findall(".//item")]
-    except (requests.RequestException, ET.ParseError):
-        return []
-
-
-def _acceptance_end(links: list[str], name: str, after: str | None) -> str | None:
-    """Best-effort acceptance-period end date (Annahmefrist ... bis X). First
-    reuse the already-gathered article links; if none yield a date, run one
-    targeted news search for this company. Only Bing 'apiclick' links resolve
-    via HTTP (Google News links are JS redirects)."""
-    candidates = [l for l in links if l and "bing.com/news/apiclick" in l]
-    candidates += _bing_links(f'"{name}" Rückkaufangebot Annahmefrist')
-    seen: set[str] = set()
-    for link in candidates:
-        if not link or "apiclick" not in link or link in seen:
-            continue
-        seen.add(link)
-        if len(seen) > 6:
-            break
-        iso = _period_from_article(link, after)
-        if iso:
-            return iso
-    return None
 
 
 def _company(title: str) -> str:
@@ -219,9 +159,8 @@ def collect(days: int = 90) -> list[dict]:
         rec = merged.get(key)
         if rec is None:
             merged[key] = {"name": name, "ticker": symbol, "announce_date": iso,
-                           "offer_price": price, "link": it["link"], "links": [it["link"]]}
+                           "offer_price": price, "link": it["link"]}
         else:
-            rec["links"].append(it["link"])
             if len(name) < len(rec["name"]):           # prefer the shorter, cleaner name
                 rec["name"] = name
             if iso and (rec["announce_date"] is None or iso < rec["announce_date"]):
@@ -241,8 +180,9 @@ def collect(days: int = 90) -> list[dict]:
         "event_type": "Buyback offer",
         "category": "tender",
         "announce_date": rec["announce_date"],
-        # Best-effort acceptance-period end date scraped from news articles.
-        "exec_date": _acceptance_end(rec.get("links", []), rec["name"], rec["announce_date"]),
+        # Acceptance-period end date is only in the per-company offer document
+        # (no central registry, news-scraping proved unreliable) — left blank.
+        "exec_date": None,
         "offer_price": rec["offer_price"],
         "url": rec["link"],
     } for key, rec in merged.items()]

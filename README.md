@@ -52,9 +52,21 @@ Each event carries **two dates**: `announce_date` (made public) and `exec_date`
 - **Squeeze-outs proper** (aktien-/verschmelzungsrechtlich) are not in BaFin —
   they run through the Bundesanzeiger (Phase 3).
 
+## Execution date
+
+- **SEC tenders (SC TO-I / SC TO-T):** the expiration is parsed from the
+  Offer-to-Purchase exhibit ((a)(1)(A)); for amendments we fall back to the
+  original filing. Kept only if it lands within ~180 days of the announcement.
+- **SEC mergers (SC 13E3):** no fixed expiration (they close on vote/conditions)
+  → left blank by design.
+- **BaFin:** acceptance-period end (Annahmefrist).
+- **DE-Buyback:** not yet — the acceptance period is in the offer document on the
+  company's IR site, not in the news headline.
+
 ## Roadmap
 
 - [x] BaFin collector (WpÜG offers, delisting-Erwerbsangebote)
-- [ ] Harden SEC offer-price extraction (per-form parsers, confidence flag)
+- [x] SEC tender expiration-date extraction
+- [ ] DE-Buyback acceptance-period dates (parse the IR offer document)
 - [ ] Bundesanzeiger collector (squeeze-outs, HV convocations)
 - [ ] Email/Telegram digest of new wide-spread events

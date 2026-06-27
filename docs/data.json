@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-06-26T21:45:47+00:00",
+  "generated_at": "2026-06-27T12:28:52+00:00",
   "window_days": {
     "SEC": 30,
     "BaFin": 365
   },
-  "count": 214,
+  "count": 215,
   "sources": [
     "SEC EDGAR",
     "BaFin",
@@ -26,7 +26,7 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/1561032/000114036126025965/ny20076539x1_sctoia.htm",
       "offer_price": 22.5,
-      "current_price": 14.90999984741211,
+      "current_price": 14.91,
       "spread_pct": 50.91
     },
     {
@@ -44,7 +44,7 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/1702780/000121390026070625/ea0292029-02.htm",
       "offer_price": 2.5,
-      "current_price": 1.659999966621399,
+      "current_price": 1.66,
       "spread_pct": 50.6
     },
     {
@@ -59,11 +59,11 @@
       "event_type": "Third-party tender offer",
       "category": "tender",
       "announce_date": "2026-06-23",
-      "exec_date": null,
+      "exec_date": "2026-07-24",
       "url": "https://www.sec.gov/Archives/edgar/data/813298/000149315226029708/formsctota.htm",
       "offer_price": 0.84,
-      "current_price": 0.6628000140190125,
-      "spread_pct": 26.74
+      "current_price": 0.663,
+      "spread_pct": 26.7
     },
     {
       "id": "bafin:DE0007257503:2025-07-30",
@@ -82,6 +82,24 @@
       "url": "https://www.bafin.de/SharedDocs/Downloads/DE/Angebotsunterlage/CECONOMY.pdf?__blob=publicationFile&v=1",
       "current_price": 3.700000047683716,
       "spread_pct": 24.32
+    },
+    {
+      "id": "0001193805-26-000788:e665568_sctoia-hyperscale.htm",
+      "source": "SEC",
+      "issuer": "Hyperscale Data, Inc.",
+      "bidder": null,
+      "cik": 896493,
+      "ticker": "GPUS",
+      "isin": null,
+      "form": "SC TO-I/A",
+      "event_type": "Issuer tender offer",
+      "category": "tender",
+      "announce_date": "2026-06-10",
+      "exec_date": null,
+      "url": "https://www.sec.gov/Archives/edgar/data/896493/000119380526000788/e665568_sctoia-hyperscale.htm",
+      "offer_price": 0.21,
+      "current_price": 0.17,
+      "spread_pct": 23.53
     },
     {
       "id": "0001143313-26-000030:primary_doc.xml",
@@ -133,9 +151,9 @@
       "announce_date": "2026-06-15",
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/1422183/000114036126025134/ny20072853x8_sctota.htm",
-      "offer_price": 11.0,
-      "current_price": 10.399999618530273,
-      "spread_pct": 5.77
+      "offer_price": 10.76,
+      "current_price": 10.4,
+      "spread_pct": 3.46
     },
     {
       "id": "bafin:DE000A1PHFF7:2026-06-10",
@@ -167,10 +185,10 @@
       "event_type": "Third-party tender offer",
       "category": "tender",
       "announce_date": "2026-06-24",
-      "exec_date": null,
+      "exec_date": "2026-07-14",
       "url": "https://www.sec.gov/Archives/edgar/data/1861560/000119312526280246/d90297dsctot.htm",
       "offer_price": 124.0,
-      "current_price": 123.5199966430664,
+      "current_price": 123.52,
       "spread_pct": 0.39
     },
     {
@@ -188,7 +206,7 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/1274173/000110465926075462/tm2618274d1_sc13e3a.htm",
       "offer_price": 52.0,
-      "current_price": 51.93000030517578,
+      "current_price": 51.93,
       "spread_pct": 0.13
     },
     {
@@ -228,6 +246,24 @@
       "spread_pct": -0.18
     },
     {
+      "id": "0001104659-26-075894:tm2612953d48_sctota.htm",
+      "source": "SEC",
+      "issuer": "GENCO SHIPPING & TRADING LTD",
+      "bidder": null,
+      "cik": 1326200,
+      "ticker": "GNK",
+      "isin": null,
+      "form": "SC TO-T/A",
+      "event_type": "Third-party tender offer",
+      "category": "tender",
+      "announce_date": "2026-06-22",
+      "exec_date": "2026-07-06",
+      "url": "https://www.sec.gov/Archives/edgar/data/1326200/000110465926075894/tm2612953d48_sctota.htm",
+      "offer_price": 23.5,
+      "current_price": 23.57,
+      "spread_pct": -0.3
+    },
+    {
       "id": "0001140361-26-025092:ny20068726x7_sc13e3a.htm",
       "source": "SEC",
       "issuer": "KORE Group Holdings, Inc.",
@@ -242,7 +278,7 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/1855457/000114036126025092/ny20068726x7_sc13e3a.htm",
       "offer_price": 9.25,
-      "current_price": 9.789999961853027,
+      "current_price": 9.79,
       "spread_pct": -5.52
     },
     {
@@ -296,8 +332,26 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/1476840/000147684026000063/expensifyinc-scheduletoxia.htm",
       "offer_price": 1.2,
-      "current_price": 1.6200000047683716,
+      "current_price": 1.62,
       "spread_pct": -25.93
+    },
+    {
+      "id": "0001193125-26-254638:rgnx-20260603.htm",
+      "source": "SEC",
+      "issuer": "REGENXBIO Inc.",
+      "bidder": null,
+      "cik": 1590877,
+      "ticker": "RGNX",
+      "isin": null,
+      "form": "SC TO-I",
+      "event_type": "Issuer tender offer",
+      "category": "tender",
+      "announce_date": "2026-06-03",
+      "exec_date": "2026-07-01",
+      "url": "https://www.sec.gov/Archives/edgar/data/1590877/000119312526254638/rgnx-20260603.htm",
+      "offer_price": 6.52,
+      "current_price": 10.48,
+      "spread_pct": -37.79
     },
     {
       "id": "bafin:DE000FPH9000:2025-07-18",
@@ -314,8 +368,26 @@
       "exec_date": null,
       "offer_price": 2.8,
       "url": "https://www.bafin.de/SharedDocs/Downloads/DE/Angebotsunterlage/Francotyp_Saltarax.pdf?__blob=publicationFile&v=1",
-      "current_price": 5.460000038146973,
+      "current_price": 5.46,
       "spread_pct": -48.72
+    },
+    {
+      "id": "0001140361-26-024731:ny20068687x1_sctot.htm",
+      "source": "SEC",
+      "issuer": "LISATA THERAPEUTICS, INC.",
+      "bidder": null,
+      "cik": 320017,
+      "ticker": "LSTA",
+      "isin": null,
+      "form": "SC TO-T",
+      "event_type": "Third-party tender offer",
+      "category": "tender",
+      "announce_date": "2026-06-10",
+      "exec_date": "2026-07-10",
+      "url": "https://www.sec.gov/Archives/edgar/data/320017/000114036126024731/ny20068687x1_sctot.htm",
+      "offer_price": 1.25,
+      "current_price": 3.36,
+      "spread_pct": -62.8
     },
     {
       "id": "0001554625-26-000011:a20260618-prisxscheduletoxi.htm",
@@ -566,7 +638,7 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/1876183/000110465926077872/tm2611054-3_sc13e3a.htm",
       "offer_price": null,
-      "current_price": 8.239999771118164,
+      "current_price": 8.24,
       "spread_pct": null
     },
     {
@@ -620,7 +692,7 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/1865631/000135445726000624/primary_doc.xml",
       "offer_price": null,
-      "current_price": 17.209999084472656,
+      "current_price": 17.21,
       "spread_pct": null
     },
     {
@@ -638,7 +710,7 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/1782941/000135445726000623/primary_doc.xml",
       "offer_price": null,
-      "current_price": 0.0005,
+      "current_price": 0.0005000000237487257,
       "spread_pct": null
     },
     {
@@ -656,7 +728,7 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/1119639/000087666126000576/primary_doc.xml",
       "offer_price": null,
-      "current_price": 16.290000915527344,
+      "current_price": 16.29,
       "spread_pct": null
     },
     {
@@ -800,7 +872,7 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/1854275/000121390026071900/ea0295875-sctoia8_zoom.htm",
       "offer_price": null,
-      "current_price": 0.1850000023841858,
+      "current_price": 0.172,
       "spread_pct": null
     },
     {
@@ -872,7 +944,7 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/1692705/000110465926077528/tm2618847d1_sctoia.htm",
       "offer_price": null,
-      "current_price": 2.509999990463257,
+      "current_price": 2.51,
       "spread_pct": null
     },
     {
@@ -1124,7 +1196,7 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/1306830/000087666126000556/primary_doc.xml",
       "offer_price": null,
-      "current_price": 49.41999816894531,
+      "current_price": 49.42,
       "spread_pct": null
     },
     {
@@ -1304,7 +1376,7 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/1946399/000121390026071392/ea0295626-sc13e3a8_lake.htm",
       "offer_price": null,
-      "current_price": 0.067,
+      "current_price": 0.06700000166893005,
       "spread_pct": null
     },
     {
@@ -1466,7 +1538,7 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/1113423/000149315226029667/formsc13e-3a.htm",
       "offer_price": null,
-      "current_price": 2.05,
+      "current_price": 2.13,
       "spread_pct": null
     },
     {
@@ -1484,7 +1556,7 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/1802457/000135445726000608/primary_doc.xml",
       "offer_price": null,
-      "current_price": 0.8669999837875366,
+      "current_price": 0.867,
       "spread_pct": null
     },
     {
@@ -1502,7 +1574,7 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/1659323/000135445726000607/primary_doc.xml",
       "offer_price": null,
-      "current_price": 0.056,
+      "current_price": 0.05,
       "spread_pct": null
     },
     {
@@ -1556,7 +1628,7 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/2102155/000087666126000550/primary_doc.xml",
       "offer_price": null,
-      "current_price": 9.949999809265137,
+      "current_price": 9.95,
       "spread_pct": null
     },
     {
@@ -1614,24 +1686,6 @@
       "spread_pct": null
     },
     {
-      "id": "0001104659-26-075894:tm2612953d48_sctota.htm",
-      "source": "SEC",
-      "issuer": "GENCO SHIPPING & TRADING LTD",
-      "bidder": null,
-      "cik": 1326200,
-      "ticker": "GNK",
-      "isin": null,
-      "form": "SC TO-T/A",
-      "event_type": "Third-party tender offer",
-      "category": "tender",
-      "announce_date": "2026-06-22",
-      "exec_date": null,
-      "url": "https://www.sec.gov/Archives/edgar/data/1326200/000110465926075894/tm2612953d48_sctota.htm",
-      "offer_price": null,
-      "current_price": 23.56999969482422,
-      "spread_pct": null
-    },
-    {
       "id": "0001354457-26-000605:primary_doc.xml",
       "source": "SEC",
       "issuer": "Live Oak Acquisition Corp. V",
@@ -1664,7 +1718,7 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/1803901/000135445726000603/primary_doc.xml",
       "offer_price": null,
-      "current_price": 5.21999979019165,
+      "current_price": 5.22,
       "spread_pct": null
     },
     {
@@ -1934,7 +1988,7 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/1849221/000114331326000033/primary_doc.xml",
       "offer_price": null,
-      "current_price": 0.12999999523162842,
+      "current_price": 0.13,
       "spread_pct": null
     },
     {
@@ -2024,7 +2078,7 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/1823878/000135445726000587/primary_doc.xml",
       "offer_price": null,
-      "current_price": 0.46230000257492065,
+      "current_price": 0.462,
       "spread_pct": null
     },
     {
@@ -2043,6 +2097,24 @@
       "offer_price": null,
       "url": "https://www.bafin.de/DE/die-bafin/publikationen-daten/datenbanken-uebersichten/WPUeG/angebotsunterlagen/angebotsunterlagen_node.html",
       "current_price": 25.200000762939453,
+      "spread_pct": null
+    },
+    {
+      "id": "buyback:M7P.F",
+      "source": "DE-Buyback",
+      "issuer": "Intred",
+      "bidder": null,
+      "cik": null,
+      "ticker": "M7P.F",
+      "isin": null,
+      "form": "Share buyback offer",
+      "event_type": "Buyback offer",
+      "category": "tender",
+      "announce_date": "2026-06-17",
+      "exec_date": null,
+      "offer_price": null,
+      "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNUEdnZ2lON0V5TUVMNlRNWXpjRE9wYkhCSnFXcXVqMlVNTHRfYTFrQlQ1T2ljeFZqSUJQOVRKY3ZjWlhhNWp0cWRJTTg2VnBQQ094VGNlQXZWUGhxUUpidUk3UDFjYWhDaE5FRE5JR2RKU3FDUjVhLXJqanlJNFlnTFZkSkdObFdENmJHUFRQeS1uTWhhUW1nX3hucm9jN2RseHNwNS0ydU5uS3NBeGl2UkhOLVpMZUhJcFkwZkNpUDdPMGpWa0tWeDU4eE1WMlU?oc=5",
+      "current_price": 8.699999809265137,
       "spread_pct": null
     },
     {
@@ -2114,7 +2186,7 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/1852551/000135445726000580/primary_doc.xml",
       "offer_price": null,
-      "current_price": 4.619999885559082,
+      "current_price": 4.62,
       "spread_pct": null
     },
     {
@@ -2168,7 +2240,7 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/1984014/000135445726000573/primary_doc.xml",
       "offer_price": null,
-      "current_price": 0.0007,
+      "current_price": 0.000699999975040555,
       "spread_pct": null
     },
     {
@@ -2186,7 +2258,7 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/844150/000087666126000533/primary_doc.xml",
       "offer_price": null,
-      "current_price": 17.219999313354492,
+      "current_price": 17.22,
       "spread_pct": null
     },
     {
@@ -2204,7 +2276,7 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/1403161/000087666126000531/primary_doc.xml",
       "offer_price": null,
-      "current_price": 336.2300109863281,
+      "current_price": 336.23,
       "spread_pct": null
     },
     {
@@ -2222,7 +2294,7 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/898174/000087666126000529/primary_doc.xml",
       "offer_price": null,
-      "current_price": 215.27999877929688,
+      "current_price": 215.28,
       "spread_pct": null
     },
     {
@@ -2276,7 +2348,7 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/1590364/000135445726000572/primary_doc.xml",
       "offer_price": null,
-      "current_price": 260.0799865722656,
+      "current_price": 260.08,
       "spread_pct": null
     },
     {
@@ -2352,24 +2424,6 @@
       "spread_pct": null
     },
     {
-      "id": "0001193805-26-000788:e665568_sctoia-hyperscale.htm",
-      "source": "SEC",
-      "issuer": "Hyperscale Data, Inc.",
-      "bidder": null,
-      "cik": 896493,
-      "ticker": "GPUS",
-      "isin": null,
-      "form": "SC TO-I/A",
-      "event_type": "Issuer tender offer",
-      "category": "tender",
-      "announce_date": "2026-06-10",
-      "exec_date": null,
-      "url": "https://www.sec.gov/Archives/edgar/data/896493/000119380526000788/e665568_sctoia-hyperscale.htm",
-      "offer_price": null,
-      "current_price": 0.17000000178813934,
-      "spread_pct": null
-    },
-    {
       "id": "0001193125-26-264813:d111441dsctoia.htm",
       "source": "SEC",
       "issuer": "Banco Santander, S.A.",
@@ -2384,25 +2438,7 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/891478/000119312526264813/d111441dsctoia.htm",
       "offer_price": null,
-      "current_price": 13.390000343322754,
-      "spread_pct": null
-    },
-    {
-      "id": "0001140361-26-024731:ny20068687x1_sctot.htm",
-      "source": "SEC",
-      "issuer": "LISATA THERAPEUTICS, INC.",
-      "bidder": null,
-      "cik": 320017,
-      "ticker": "LSTA",
-      "isin": null,
-      "form": "SC TO-T",
-      "event_type": "Third-party tender offer",
-      "category": "tender",
-      "announce_date": "2026-06-10",
-      "exec_date": null,
-      "url": "https://www.sec.gov/Archives/edgar/data/320017/000114036126024731/ny20068687x1_sctot.htm",
-      "offer_price": null,
-      "current_price": 3.359999895095825,
+      "current_price": 13.39,
       "spread_pct": null
     },
     {
@@ -2420,7 +2456,7 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/2095443/000135445726000561/primary_doc.xml",
       "offer_price": null,
-      "current_price": 9.920000076293945,
+      "current_price": 9.92,
       "spread_pct": null
     },
     {
@@ -2438,7 +2474,7 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/1816431/000135445726000560/primary_doc.xml",
       "offer_price": null,
-      "current_price": 0.8547999858856201,
+      "current_price": 0.8548,
       "spread_pct": null
     },
     {
@@ -2510,7 +2546,7 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/1439124/000087666126000521/primary_doc.xml",
       "offer_price": null,
-      "current_price": 10.819999694824219,
+      "current_price": 10.82,
       "spread_pct": null
     },
     {
@@ -2582,7 +2618,7 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/1785424/000135445726000544/primary_doc.xml",
       "offer_price": null,
-      "current_price": 6.860000133514404,
+      "current_price": 6.86,
       "spread_pct": null
     },
     {
@@ -2600,7 +2636,7 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/1865494/000135445726000541/primary_doc.xml",
       "offer_price": null,
-      "current_price": 0.005100000184029341,
+      "current_price": 0.005,
       "spread_pct": null
     },
     {
@@ -2618,7 +2654,7 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/1355096/000135445726000540/primary_doc.xml",
       "offer_price": null,
-      "current_price": 0.09000000357627869,
+      "current_price": 0.09,
       "spread_pct": null
     },
     {
@@ -2636,7 +2672,7 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/1994624/000135445726000539/primary_doc.xml",
       "offer_price": null,
-      "current_price": 0.14000000059604645,
+      "current_price": 0.14,
       "spread_pct": null
     },
     {
@@ -2798,7 +2834,7 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/2049662/000135445726000536/primary_doc.xml",
       "offer_price": null,
-      "current_price": 11.414999961853027,
+      "current_price": 11.415,
       "spread_pct": null
     },
     {
@@ -2816,7 +2852,7 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/1231346/000087666126000507/primary_doc.xml",
       "offer_price": null,
-      "current_price": 26.149999618530273,
+      "current_price": 26.15,
       "spread_pct": null
     },
     {
@@ -2942,7 +2978,7 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/2011954/000135445726000530/primary_doc.xml",
       "offer_price": null,
-      "current_price": 0.04729999974370003,
+      "current_price": 0.048,
       "spread_pct": null
     },
     {
@@ -2960,7 +2996,7 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/10795/000087666126000501/primary_doc.xml",
       "offer_price": null,
-      "current_price": 155.9199981689453,
+      "current_price": 155.92,
       "spread_pct": null
     },
     {
@@ -2997,24 +3033,6 @@
       "url": "https://www.sec.gov/Archives/edgar/data/1899610/000139834426010284/fp0099291-1_sctoia.htm",
       "offer_price": null,
       "current_price": null,
-      "spread_pct": null
-    },
-    {
-      "id": "0001193125-26-254638:rgnx-20260603.htm",
-      "source": "SEC",
-      "issuer": "REGENXBIO Inc.",
-      "bidder": null,
-      "cik": 1590877,
-      "ticker": "RGNX",
-      "isin": null,
-      "form": "SC TO-I",
-      "event_type": "Issuer tender offer",
-      "category": "tender",
-      "announce_date": "2026-06-03",
-      "exec_date": null,
-      "url": "https://www.sec.gov/Archives/edgar/data/1590877/000119312526254638/rgnx-20260603.htm",
-      "offer_price": null,
-      "current_price": 10.479999542236328,
       "spread_pct": null
     },
     {
@@ -3068,7 +3086,7 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/1804583/000149315226026782/formsc13e3.htm",
       "offer_price": null,
-      "current_price": 2.05,
+      "current_price": 2.059999942779541,
       "spread_pct": null
     },
     {
@@ -3086,7 +3104,7 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/1058307/000135445726000517/primary_doc.xml",
       "offer_price": null,
-      "current_price": 6.150000095367432,
+      "current_price": 6.15,
       "spread_pct": null
     },
     {
@@ -3122,7 +3140,7 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/59478/000087666126000494/primary_doc.xml",
       "offer_price": null,
-      "current_price": 1208.1199951171875,
+      "current_price": 1208.12,
       "spread_pct": null
     },
     {
@@ -3284,7 +3302,7 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/859796/000114036126023437/ny20074859x2_sctoi.htm",
       "offer_price": null,
-      "current_price": 11.470000267028809,
+      "current_price": 11.47,
       "spread_pct": null
     },
     {
@@ -3320,7 +3338,7 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/1070732/000113322826008642/evsit-efp25010_sctoia.htm",
       "offer_price": null,
-      "current_price": 4.980000019073486,
+      "current_price": 4.98,
       "spread_pct": null
     },
     {
@@ -3356,7 +3374,7 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/1222922/000113322826008638/evldif-efp25008_sctoia.htm",
       "offer_price": null,
-      "current_price": 9.260000228881836,
+      "current_price": 9.26,
       "spread_pct": null
     },
     {
@@ -3479,7 +3497,7 @@
       "event_type": "Issuer tender offer",
       "category": "tender",
       "announce_date": "2026-05-29",
-      "exec_date": null,
+      "exec_date": "2026-05-29",
       "url": "https://www.sec.gov/Archives/edgar/data/1817825/000121390026062385/ea0291523-01.htm",
       "offer_price": null,
       "current_price": null,
@@ -3497,7 +3515,7 @@
       "event_type": "Issuer tender offer",
       "category": "tender",
       "announce_date": "2026-05-29",
-      "exec_date": null,
+      "exec_date": "2026-05-29",
       "url": "https://www.sec.gov/Archives/edgar/data/1634452/000119312526248899/d101678dsctoi.htm",
       "offer_price": null,
       "current_price": null,
@@ -3518,7 +3536,7 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/1495222/000135445726000512/primary_doc.xml",
       "offer_price": null,
-      "current_price": 8.760000228881836,
+      "current_price": 8.76,
       "spread_pct": null
     },
     {
@@ -3626,7 +3644,7 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/901832/000087666126000484/primary_doc.xml",
       "offer_price": null,
-      "current_price": 188.41000366210938,
+      "current_price": 188.41,
       "spread_pct": null
     },
     {
@@ -3815,7 +3833,7 @@
       "issuer": "Turbon AG, Hattingen",
       "bidder": "S77 Holdings GmbH, Leverkusen",
       "cik": null,
-      "ticker": "TUR.F",
+      "ticker": "TUR.DE",
       "isin": "DE0007504508",
       "form": "Mandatory offer",
       "event_type": "Mandatory offer",
@@ -3824,7 +3842,7 @@
       "exec_date": "2025-11-18",
       "offer_price": null,
       "url": "https://www.bafin.de/SharedDocs/Downloads/DE/Angebotsunterlage/turbon.pdf?__blob=publicationFile&v=1",
-      "current_price": 2.5399999618530273,
+      "current_price": 50.47999954223633,
       "spread_pct": null
     },
     {

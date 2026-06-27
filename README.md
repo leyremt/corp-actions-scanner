@@ -60,13 +60,16 @@ Each event carries **two dates**: `announce_date` (made public) and `exec_date`
 - **SEC mergers (SC 13E3):** no fixed expiration (they close on vote/conditions)
   → left blank by design.
 - **BaFin:** acceptance-period end (Annahmefrist).
-- **DE-Buyback:** not yet — the acceptance period is in the offer document on the
-  company's IR site, not in the news headline.
+- **DE-Buyback:** left blank by design. The acceptance period lives only in each
+  company's IR offer document (no central registry); news-scraping for it proved
+  unreliable (datacenter IPs throttled/blocked, inconsistent article content).
+  The offer is linked for a manual one-click check.
 
 ## Roadmap
 
 - [x] BaFin collector (WpÜG offers, delisting-Erwerbsangebote)
 - [x] SEC tender expiration-date extraction
-- [ ] DE-Buyback acceptance-period dates (parse the IR offer document)
+- [ ] DE-Buyback acceptance-period dates — only reliable via per-company IR
+      offer-document parsing (news-scraping rejected as too fragile)
 - [ ] Bundesanzeiger collector (squeeze-outs, HV convocations)
 - [ ] Email/Telegram digest of new wide-spread events

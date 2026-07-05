@@ -149,9 +149,12 @@ def _expiration(text: str) -> str | None:
     return _iso_date(m.group(0)) if m else None
 
 
-def _sane_exec(exec_date: str | None, announce_date: str | None, max_days: int = 180) -> str | None:
-    """Keep an expiration only if it falls within ~6 months after the
-    announcement — drops stale dates from old filings and runaway false matches."""
+def _sane_exec(exec_date: str | None, announce_date: str | None,
+               max_days: int = 180, back_days: int = 150) -> str | None:
+    """Keep an expiration only if it falls within a plausible window around the
+    announcement — drops stale/garbage dates. The lower bound allows the
+    expiration to precede our announce_date, since that is the LATEST filing and
+    amendments are often filed after a tender has already expired."""
     if not exec_date or not announce_date:
         return exec_date
     try:
@@ -159,7 +162,7 @@ def _sane_exec(exec_date: str | None, announce_date: str | None, max_days: int =
         a = dt.date.fromisoformat(announce_date)
     except ValueError:
         return exec_date
-    return exec_date if a < e <= a + dt.timedelta(days=max_days) else None
+    return exec_date if a - dt.timedelta(days=back_days) <= e <= a + dt.timedelta(days=max_days) else None
 
 
 def sec_offer_details(event: dict) -> tuple[float | None, str | None]:

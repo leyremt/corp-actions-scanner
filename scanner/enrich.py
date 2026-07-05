@@ -66,15 +66,21 @@ _MONTHS = {m: i for i, m in enumerate(
      "August", "September", "October", "November", "December"], 1)}
 _DATE = (r"(January|February|March|April|May|June|July|August|September|October|"
          r"November|December)\s+(\d{1,2})(?:\s*(?:st|nd|rd|th))?\s*,?\s+(20\d{2})")
-_A1A_RE = re.compile(r"a1a\.htm$", re.IGNORECASE)
+# Offer-to-Purchase exhibit: (a)(1)(A) for third-party tenders (…a1a.htm) and
+# (a)(1)(i) for issuer tenders (…a1i.htm). Match a1 + a short letter/roman tail.
+_OTP_RE = re.compile(r"a1[a-z]{1,3}\.htm$", re.IGNORECASE)
+_OTP_PREF = ("a1a.htm", "a1i.htm")  # the actual offer document (vs letter of transmittal etc.)
 _PAR_RE = re.compile(r"par value", re.IGNORECASE)
-_EXP_RE = re.compile(rf'Expiration Date["”\s]*(?:means|is|shall mean)\s+{_DATE}', re.IGNORECASE)
-# "...will expire at 5:00 p.m., New York City time, on June 30, 2026" /
-# "...EXPIRE AT 5:00 PM ... AT THE END OF JULY 24th, 2026". Anchoring on the
-# time + "on"/"at the end of" avoids grabbing unrelated dates (e.g. an
-# agreement "dated June 13, 2024") that a looser pattern would catch.
+_WD = r"(?:\w+day,?\s+)?"  # optional weekday, e.g. "Monday, June 8, 2026"
+# Defined term: 'Expiration Date/Time" means July 14, 2026'.
+_EXP_RE = re.compile(rf'Expiration\s+(?:Date|Time)["”\s]*(?:means|is|shall mean|will be)\s+{_WD}{_DATE}', re.IGNORECASE)
+# "...will expire at one minute past 11:59 p.m., New York City time, on July 27,
+# 2026" / "...EXPIRE AT 5:00 PM ... AT THE END OF JULY 24th, 2026". Anchoring on
+# a time/expire cue + "on"/"end of" avoids unrelated dates (an agreement "dated
+# June 13, 2024"). `.` spans the periods in "p.m." (text is whitespace-collapsed).
 _EXP_RE2 = re.compile(
-    rf"expir\w+\s+at\s+[\d:]+\s*[apAP]\.?\s?[mM]\.?[^.]{{0,90}}?(?:\bon\b|at the end of)\s+{_DATE}",
+    rf"(?:expires?|will\s+expire|Expiration\s+(?:Date|Time)|11:59\s*[apAP]\.?\s?[mM]\.?|one\s+minute\s+(?:after|past))"
+    rf".{{0,180}}?\b(?:on|at the end of)\s+{_WD}{_DATE}",
     re.IGNORECASE)
 _OTP_PRICE_RE = re.compile(
     r"\$\s*([0-9]{1,4}(?:\.[0-9]{2})?)\s*(?:net[^$]{0,40}?)?per\s+[Ss]hare", re.IGNORECASE)
@@ -99,16 +105,49 @@ def _iso_date(text: str) -> str | None:
     return f"{int(m.group(3)):04d}-{_MONTHS[m.group(1).title()]:02d}-{int(m.group(2)):02d}"
 
 
-def _otp_url(folder: str) -> str | None:
-    """Find the Offer-to-Purchase exhibit (a1a) in a filing folder."""
+# Filenames that are never the Offer to Purchase (cover, fee tables, ancillary
+# letters (a)(1)(B..)/(ii..), press releases, financing (b), XBRL viewers).
+_OTP_SKIP = re.compile(
+    r"sctoi|sctot|filingfee|_fee|ex-?fee|ex107|ex99b|"
+    r"a1(?:b|c|d|e|f|ii|iii|iv|v|vi)|transmit|guarantee|brokers|clients|"
+    r"pressrelease|^r\d+\.htm", re.IGNORECASE)
+
+
+def _otp_score(name: str) -> int:
+    """Lower = more likely the Offer to Purchase. 9 = skip."""
+    n = name.lower()
+    if _OTP_SKIP.search(n):
+        return 9
+    if "offertopurchase" in n or re.search(r"a1a(?![a-z])", n):
+        return 0
+    if re.search(r"a1i(?![a-z])", n):
+        return 1
+    if re.search(r"a1(?![0-9a-z])", n):
+        return 2
+    return 4  # generic exhibit name (e.g. f45598d1.htm) — rank by size
+
+
+def _otp_candidates(folder: str) -> list[str]:
+    """Prioritized list of candidate Offer-to-Purchase docs in a filing folder."""
     try:
         r = _session.get(f"{folder}/index.json", timeout=30)
         time.sleep(0.1)
         items = r.json()["directory"]["item"]
     except (requests.RequestException, ValueError, KeyError):
-        return None
-    cands = [i["name"] for i in items if _A1A_RE.search(i["name"])]
-    return f"{folder}/{cands[0]}" if cands else None
+        return []
+    scored = []
+    for i in items:
+        if not i["name"].endswith(".htm"):
+            continue
+        s = _otp_score(i["name"])
+        if s < 9:
+            try:
+                size = int(i.get("size") or 0)
+            except ValueError:
+                size = 0
+            scored.append((s, -size, i["name"]))
+    scored.sort()
+    return [f"{folder}/{name}" for _, _, name in scored[:4]]
 
 
 def _original_folder(cik: int, form: str) -> str | None:
@@ -146,15 +185,21 @@ def _otp_price(text: str) -> float | None:
 
 def _expiration(text: str) -> str | None:
     m = _EXP_RE.search(text) or _EXP_RE2.search(text)
-    return _iso_date(m.group(0)) if m else None
+    if not m:
+        return None
+    month, day, year = m.groups()[-3:]  # the date captured right after "on"/"means"
+    if month.title() not in _MONTHS:
+        return None
+    return f"{int(year):04d}-{_MONTHS[month.title()]:02d}-{int(day):02d}"
 
 
 def _sane_exec(exec_date: str | None, announce_date: str | None,
-               max_days: int = 180, back_days: int = 150) -> str | None:
+               max_days: int = 180, back_days: int = 14) -> str | None:
     """Keep an expiration only if it falls within a plausible window around the
-    announcement — drops stale/garbage dates. The lower bound allows the
-    expiration to precede our announce_date, since that is the LATEST filing and
-    amendments are often filed after a tender has already expired."""
+    announcement — drops stale/garbage dates. A small lower bound allows the
+    expiration to sit just before our announce_date (the LATEST filing), which
+    happens when a final amendment reports a tender's closure. A much earlier
+    date means the offer was extended (still open) — untrusted, dropped."""
     if not exec_date or not announce_date:
         return exec_date
     try:
@@ -166,17 +211,24 @@ def _sane_exec(exec_date: str | None, announce_date: str | None,
 
 
 def sec_offer_details(event: dict) -> tuple[float | None, str | None]:
-    """Return (offer_price, expiration_date) for a SEC tender, from the
-    Offer-to-Purchase exhibit (current filing, else the original)."""
+    """Return (offer_price, expiration_date) for a SEC tender. Scans candidate
+    Offer-to-Purchase docs (current filing, then the original for amendments)
+    and keeps the first one that yields an expiration date."""
     folder = event["url"].rsplit("/", 1)[0]
-    otp = _otp_url(folder) or (
-        _otp_url(of) if (of := _original_folder(event.get("cik"), event.get("form", ""))) else None)
-    if not otp:
-        return offer_price(event["url"]), None  # fall back to cover for the price
-    text = _get_text(otp)
-    if not text:
-        return offer_price(event["url"]), None
-    return (_otp_price(text) or offer_price(event["url"]), _expiration(text))
+    cands = _otp_candidates(folder)
+    if of := _original_folder(event.get("cik"), event.get("form", "")):
+        cands += _otp_candidates(of)
+
+    price = None
+    for otp in cands[:4]:
+        text = _get_text(otp)
+        if not text:
+            continue
+        price = price or _otp_price(text)
+        exp = _expiration(text)
+        if exp:
+            return price or offer_price(event["url"]), exp
+    return price or offer_price(event["url"]), None
 
 
 def _price_for_symbol(symbol: str) -> float | None:

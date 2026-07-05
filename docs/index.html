@@ -92,7 +92,19 @@ const cur = e => e.source === "SEC" ? "$" : "€";
 const srcClass = e => e.source === "SEC" ? "SEC" : (e.source === "BaFin" ? "BaFin" : "Buyback");
 const TAGS = {tender:"#3fb95033", going_private:"#d2992233", delisting:"#f8514933"};
 const TODAY = new Date().toISOString().slice(0,10);
-const isExpired = e => e.exec_date && e.exec_date < TODAY;  // execution deadline already passed
+const BUYBACK_WINDOW = 28;  // days: typical German buyback acceptance window (estimate)
+function addDays(iso, n){ const d = new Date(iso+"T00:00:00Z"); d.setUTCDate(d.getUTCDate()+n); return d.toISOString().slice(0,10); }
+// When exec_date is known, use it. For buybacks (no reliable end date) estimate
+// the close ~4 weeks after announcement so closed ones stop cluttering the view.
+function expiry(e){
+  if(e.exec_date) return {label:e.exec_date, expired:e.exec_date < TODAY, est:false};
+  if(e.source === "DE-Buyback" && e.announce_date){
+    const est = addDays(e.announce_date, BUYBACK_WINDOW);
+    return {label:null, expired: est < TODAY, est:true};
+  }
+  return {label:null, expired:false, est:false};
+}
+const isExpired = e => expiry(e).expired;
 
 function render(){
   const q = $("#q").value.trim().toLowerCase();
@@ -117,6 +129,7 @@ function render(){
   $("#empty").hidden = rows.length>0;
   $("#rows").innerHTML = rows.map(e=>{
     const s = e.spread_pct;
+    const x = expiry(e);
     const scls = s==null?"dim":(s>=0?"pos":"neg");
     const sval = s==null?"—":(s>0?"+":"")+fmt(s)+"%";
     const idcell = e.ticker
@@ -132,7 +145,7 @@ function render(){
       <td class="num">${e.offer_price==null?'<span class=dim>—</span>':cur(e)+fmt(e.offer_price)}</td>
       <td class="num">${e.current_price==null?'<span class=dim>—</span>':cur(e)+fmt(e.current_price)}</td>
       <td class="dim">${e.announce_date||"—"}</td>
-      <td class="${isExpired(e)?'neg':'dim'}">${e.exec_date||"—"}${isExpired(e)?' · vencida':''}</td>
+      <td class="${x.expired?'neg':'dim'}">${x.label ? x.label+(x.expired?' · vencida':'') : (x.expired?'~cerrada':'—')}</td>
       <td><a href="${e.url}" target="_blank" rel="noopener">ver ↗</a></td>
     </tr>`;
   }).join("");

@@ -61,6 +61,7 @@
     <option value="delisting">Delistings</option>
   </select>
   <label class="dim" style="font-size:13px"><input type="checkbox" id="onlyspread"> solo con spread</label>
+  <label class="dim" style="font-size:13px"><input type="checkbox" id="hideexpired" checked> ocultar vencidas</label>
   <span class="pill" id="count"></span>
 </div>
 
@@ -90,15 +91,19 @@ const fmt = (v, d=2) => v == null ? "—" : Number(v).toFixed(d);
 const cur = e => e.source === "SEC" ? "$" : "€";
 const srcClass = e => e.source === "SEC" ? "SEC" : (e.source === "BaFin" ? "BaFin" : "Buyback");
 const TAGS = {tender:"#3fb95033", going_private:"#d2992233", delisting:"#f8514933"};
+const TODAY = new Date().toISOString().slice(0,10);
+const isExpired = e => e.exec_date && e.exec_date < TODAY;  // execution deadline already passed
 
 function render(){
   const q = $("#q").value.trim().toLowerCase();
   const cat = $("#cat").value, src = $("#src").value;
   const onlyspread = $("#onlyspread").checked;
+  const hideExpired = $("#hideexpired").checked;
   let rows = DATA.filter(e =>
     (!cat || e.category === cat) &&
     (!src || e.source === src) &&
     (!onlyspread || e.spread_pct != null) &&
+    (!hideExpired || !isExpired(e)) &&
     (!q || [e.issuer, e.ticker, e.isin, e.bidder].some(x => (x||"").toLowerCase().includes(q)))
   );
   rows.sort((a,b)=>{
@@ -127,7 +132,7 @@ function render(){
       <td class="num">${e.offer_price==null?'<span class=dim>—</span>':cur(e)+fmt(e.offer_price)}</td>
       <td class="num">${e.current_price==null?'<span class=dim>—</span>':cur(e)+fmt(e.current_price)}</td>
       <td class="dim">${e.announce_date||"—"}</td>
-      <td class="dim">${e.exec_date||"—"}</td>
+      <td class="${isExpired(e)?'neg':'dim'}">${e.exec_date||"—"}${isExpired(e)?' · vencida':''}</td>
       <td><a href="${e.url}" target="_blank" rel="noopener">ver ↗</a></td>
     </tr>`;
   }).join("");
@@ -137,7 +142,7 @@ function esc(s){return (s||"").replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':
 document.querySelectorAll("th[data-k]").forEach(th=>{
   th.onclick=()=>{const k=th.dataset.k; sortDir = (k===sortK)?-sortDir:-1; sortK=k; render();};
 });
-["q","cat","src","onlyspread"].forEach(id=>$("#"+id).addEventListener("input",render));
+["q","cat","src","onlyspread","hideexpired"].forEach(id=>$("#"+id).addEventListener("input",render));
 
 fetch("data.json?_="+Date.now()).then(r=>r.json()).then(d=>{
   DATA = d.events||[];

@@ -69,7 +69,13 @@ _DATE = (r"(January|February|March|April|May|June|July|August|September|October|
 _A1A_RE = re.compile(r"a1a\.htm$", re.IGNORECASE)
 _PAR_RE = re.compile(r"par value", re.IGNORECASE)
 _EXP_RE = re.compile(rf'Expiration Date["”\s]*(?:means|is|shall mean)\s+{_DATE}', re.IGNORECASE)
-_EXP_RE2 = re.compile(rf"expir(?:e|es|ed|ation)\b[^.]{{0,200}}?{_DATE}", re.IGNORECASE)
+# "...will expire at 5:00 p.m., New York City time, on June 30, 2026" /
+# "...EXPIRE AT 5:00 PM ... AT THE END OF JULY 24th, 2026". Anchoring on the
+# time + "on"/"at the end of" avoids grabbing unrelated dates (e.g. an
+# agreement "dated June 13, 2024") that a looser pattern would catch.
+_EXP_RE2 = re.compile(
+    rf"expir\w+\s+at\s+[\d:]+\s*[apAP]\.?\s?[mM]\.?[^.]{{0,90}}?(?:\bon\b|at the end of)\s+{_DATE}",
+    re.IGNORECASE)
 _OTP_PRICE_RE = re.compile(
     r"\$\s*([0-9]{1,4}(?:\.[0-9]{2})?)\s*(?:net[^$]{0,40}?)?per\s+[Ss]hare", re.IGNORECASE)
 

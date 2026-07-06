@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-07-05T11:35:41+00:00",
+  "generated_at": "2026-07-06T10:52:38+00:00",
   "window_days": {
     "SEC": 30,
     "BaFin": 365
   },
-  "count": 200,
+  "count": 192,
   "sources": [
     "SEC EDGAR",
     "BaFin",
@@ -98,8 +98,8 @@
       "exec_date": null,
       "offer_price": 17.8,
       "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE9jMG83Q2dTcXloNmlwMHZHRXRsbHNPU0hNclRBWFlscnVZOFhJZVdsOFJwNWFRWDNma3VpZGs1RS00SVlub0E4YWJzUXJqOTJaZS13cWxDN2FpRWpLVjRtbVVn?oc=5",
-      "current_price": 14.699999809265137,
-      "spread_pct": 21.09
+      "current_price": 14.899999618530273,
+      "spread_pct": 19.46
     },
     {
       "id": "bafin:DE0007257503:2025-07-30",
@@ -116,8 +116,8 @@
       "exec_date": "2025-11-10",
       "offer_price": 4.6,
       "url": "https://www.bafin.de/SharedDocs/Downloads/DE/Angebotsunterlage/CECONOMY.pdf?__blob=publicationFile&v=1",
-      "current_price": 3.9000000953674316,
-      "spread_pct": 17.95
+      "current_price": 3.859999895095825,
+      "spread_pct": 19.17
     },
     {
       "id": "0001104659-26-079410:tm2619439d1_sctota.htm",
@@ -156,6 +156,24 @@
       "spread_pct": 3.16
     },
     {
+      "id": "bafin:AT0000A0E9W5:2026-06-11",
+      "source": "BaFin",
+      "issuer": "Kontron AG, Österreich",
+      "bidder": "ENNOCONN CORPORATION, Taiwan",
+      "cik": null,
+      "ticker": "KTN.DE",
+      "isin": "AT0000A0E9W5",
+      "form": "Mandatory offer",
+      "event_type": "Mandatory offer",
+      "category": "tender",
+      "announce_date": "2026-06-11",
+      "exec_date": "2026-07-27",
+      "offer_price": 23.5,
+      "url": "https://www.bafin.de/SharedDocs/Downloads/DE/Angebotsunterlage/Kontron.pdf?__blob=publicationFile&v=1",
+      "current_price": 23.020000457763672,
+      "spread_pct": 2.09
+    },
+    {
       "id": "0001104659-26-078510:tm2617977d3_sctot.htm",
       "source": "SEC",
       "issuer": "Open Lending Corp",
@@ -172,24 +190,6 @@
       "offer_price": 3.15,
       "current_price": 3.109999895095825,
       "spread_pct": 1.29
-    },
-    {
-      "id": "bafin:AT0000A0E9W5:2026-06-11",
-      "source": "BaFin",
-      "issuer": "Kontron AG, Österreich",
-      "bidder": "ENNOCONN CORPORATION, Taiwan",
-      "cik": null,
-      "ticker": "KTN.DE",
-      "isin": "AT0000A0E9W5",
-      "form": "Mandatory offer",
-      "event_type": "Mandatory offer",
-      "category": "tender",
-      "announce_date": "2026-06-11",
-      "exec_date": "2026-07-27",
-      "offer_price": 23.5,
-      "url": "https://www.bafin.de/SharedDocs/Downloads/DE/Angebotsunterlage/Kontron.pdf?__blob=publicationFile&v=1",
-      "current_price": 23.219999313354492,
-      "spread_pct": 1.21
     },
     {
       "id": "0001104659-26-077872:tm2611054-3_sc13e3a.htm",
@@ -314,8 +314,8 @@
       "exec_date": null,
       "offer_price": 11.0,
       "url": "https://www.bafin.de/SharedDocs/Downloads/DE/Angebotsunterlage/kloeckner-co-se-2.pdf?__blob=publicationFile&v=1",
-      "current_price": 12.319999694824219,
-      "spread_pct": -10.71
+      "current_price": 12.300000190734863,
+      "spread_pct": -10.57
     },
     {
       "id": "0001476840-26-000063:expensifyinc-scheduletoxia.htm",
@@ -388,6 +388,24 @@
       "offer_price": 3.7,
       "current_price": 24.469999313354492,
       "spread_pct": -84.88
+    },
+    {
+      "id": "0001661306-26-000051:hpci_q2_26_to-ia_7.2.26.htm",
+      "source": "SEC",
+      "issuer": "Hancock Park Corporate Income, Inc.",
+      "bidder": null,
+      "cik": 1661306,
+      "ticker": null,
+      "isin": null,
+      "form": "SC TO-I/A",
+      "event_type": "Issuer tender offer",
+      "category": "tender",
+      "announce_date": "2026-07-06",
+      "exec_date": "2026-06-29",
+      "url": "https://www.sec.gov/Archives/edgar/data/1661306/000166130626000051/hpci_q2_26_to-ia_7.2.26.htm",
+      "offer_price": 6.27,
+      "current_price": null,
+      "spread_pct": null
     },
     {
       "id": "0001213900-26-074885:ea0291523-02.htm",
@@ -1412,7 +1430,7 @@
       "exec_date": null,
       "offer_price": null,
       "url": "https://www.bafin.de/DE/die-bafin/publikationen-daten/datenbanken-uebersichten/WPUeG/angebotsunterlagen/angebotsunterlagen_node.html",
-      "current_price": 75.5,
+      "current_price": 75.1500015258789,
       "spread_pct": null
     },
     {
@@ -1535,7 +1553,7 @@
       "event_type": "Issuer tender offer",
       "category": "tender",
       "announce_date": "2026-06-25",
-      "exec_date": null,
+      "exec_date": "2026-06-11",
       "url": "https://www.sec.gov/Archives/edgar/data/1993402/000110465926077774/tm2618925d1_sctoia.htm",
       "offer_price": null,
       "current_price": null,
@@ -1553,7 +1571,7 @@
       "event_type": "Issuer tender offer",
       "category": "tender",
       "announce_date": "2026-06-25",
-      "exec_date": null,
+      "exec_date": "2026-06-11",
       "url": "https://www.sec.gov/Archives/edgar/data/1976336/000110465926077766/tm2618922d1_sctoia.htm",
       "offer_price": null,
       "current_price": null,
@@ -1880,7 +1898,7 @@
       "exec_date": null,
       "offer_price": null,
       "url": "https://www.bafin.de/DE/die-bafin/publikationen-daten/datenbanken-uebersichten/WPUeG/angebotsunterlagen/angebotsunterlagen_node.html",
-      "current_price": 7.449999809265137,
+      "current_price": 7.550000190734863,
       "spread_pct": null
     },
     {
@@ -2438,7 +2456,7 @@
       "exec_date": null,
       "offer_price": null,
       "url": "https://www.bafin.de/DE/die-bafin/publikationen-daten/datenbanken-uebersichten/WPUeG/angebotsunterlagen/angebotsunterlagen_node.html",
-      "current_price": 9.0,
+      "current_price": 10.5,
       "spread_pct": null
     },
     {
@@ -2633,7 +2651,7 @@
       "event_type": "Issuer tender offer",
       "category": "tender",
       "announce_date": "2026-06-17",
-      "exec_date": null,
+      "exec_date": "2026-06-12",
       "url": "https://www.sec.gov/Archives/edgar/data/1872371/000119312526274221/d81138dsctoia.htm",
       "offer_price": null,
       "current_price": null,
@@ -2708,25 +2726,7 @@
       "exec_date": null,
       "offer_price": null,
       "url": "https://www.bafin.de/DE/die-bafin/publikationen-daten/datenbanken-uebersichten/WPUeG/angebotsunterlagen/angebotsunterlagen_node.html",
-      "current_price": 25.600000381469727,
-      "spread_pct": null
-    },
-    {
-      "id": "buyback:M7P.F",
-      "source": "DE-Buyback",
-      "issuer": "Intred",
-      "bidder": null,
-      "cik": null,
-      "ticker": "M7P.F",
-      "isin": null,
-      "form": "Share buyback offer",
-      "event_type": "Buyback offer",
-      "category": "tender",
-      "announce_date": "2026-06-17",
-      "exec_date": null,
-      "offer_price": null,
-      "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNUEdnZ2lON0V5TUVMNlRNWXpjRE9wYkhCSnFXcXVqMlVNTHRfYTFrQlQ1T2ljeFZqSUJQOVRKY3ZjWlhhNWp0cWRJTTg2VnBQQ094VGNlQXZWUGhxUUpidUk3UDFjYWhDaE5FRE5JR2RKU3FDUjVhLXJqanlJNFlnTFZkSkdObFdENmJHUFRQeS1uTWhhUW1nX3hucm9jN2RseHNwNS0ydU5uS3NBeGl2UkhOLVpMZUhJcFkwZkNpUDdPMGpWa0tWeDU4eE1WMlU?oc=5",
-      "current_price": 8.920000076293945,
+      "current_price": 25.6,
       "spread_pct": null
     },
     {
@@ -3378,150 +3378,6 @@
       "spread_pct": null
     },
     {
-      "id": "0001742313-26-000030:mcip-scheduleto_aq22026.htm",
-      "source": "SEC",
-      "issuer": "Monroe Capital Income Plus Corp",
-      "bidder": null,
-      "cik": 1742313,
-      "ticker": null,
-      "isin": null,
-      "form": "SC TO-I/A",
-      "event_type": "Issuer tender offer",
-      "category": "tender",
-      "announce_date": "2026-06-05",
-      "exec_date": "2026-05-29",
-      "url": "https://www.sec.gov/Archives/edgar/data/1742313/000174231326000030/mcip-scheduleto_aq22026.htm",
-      "offer_price": 9.77,
-      "current_price": null,
-      "spread_pct": null
-    },
-    {
-      "id": "0001398344-26-010448:fp0099316-1_sctoia.htm",
-      "source": "SEC",
-      "issuer": "PARTNERS GROUP NEXT GENERATION INFRASTRUCTURE, LLC",
-      "bidder": null,
-      "cik": 1989393,
-      "ticker": null,
-      "isin": null,
-      "form": "SC TO-I/A",
-      "event_type": "Issuer tender offer",
-      "category": "tender",
-      "announce_date": "2026-06-05",
-      "exec_date": "2026-05-26",
-      "url": "https://www.sec.gov/Archives/edgar/data/1989393/000139834426010448/fp0099316-1_sctoia.htm",
-      "offer_price": null,
-      "current_price": null,
-      "spread_pct": null
-    },
-    {
-      "id": "0001398344-26-010439:fp0099315-1_sctoia.htm",
-      "source": "SEC",
-      "issuer": "Partners Group Growth, LLC",
-      "bidder": null,
-      "cik": 1991706,
-      "ticker": null,
-      "isin": null,
-      "form": "SC TO-I/A",
-      "event_type": "Issuer tender offer",
-      "category": "tender",
-      "announce_date": "2026-06-05",
-      "exec_date": "2026-05-26",
-      "url": "https://www.sec.gov/Archives/edgar/data/1991706/000139834426010439/fp0099315-1_sctoia.htm",
-      "offer_price": null,
-      "current_price": null,
-      "spread_pct": null
-    },
-    {
-      "id": "0001193125-26-259464:d15185dsctoia.htm",
-      "source": "SEC",
-      "issuer": "Fidelity Private Credit Fund",
-      "bidder": null,
-      "cik": 1920453,
-      "ticker": null,
-      "isin": null,
-      "form": "SC TO-I/A",
-      "event_type": "Issuer tender offer",
-      "category": "tender",
-      "announce_date": "2026-06-05",
-      "exec_date": null,
-      "url": "https://www.sec.gov/Archives/edgar/data/1920453/000119312526259464/d15185dsctoia.htm",
-      "offer_price": null,
-      "current_price": null,
-      "spread_pct": null
-    },
-    {
-      "id": "0001193125-26-258567:d79886dsctoia.htm",
-      "source": "SEC",
-      "issuer": "First Eagle Private Credit Fund",
-      "bidder": null,
-      "cik": 1890107,
-      "ticker": null,
-      "isin": null,
-      "form": "SC TO-I/A",
-      "event_type": "Issuer tender offer",
-      "category": "tender",
-      "announce_date": "2026-06-05",
-      "exec_date": "2026-05-29",
-      "url": "https://www.sec.gov/Archives/edgar/data/1890107/000119312526258567/d79886dsctoia.htm",
-      "offer_price": null,
-      "current_price": null,
-      "spread_pct": null
-    },
-    {
-      "id": "0001354457-26-000536:primary_doc.xml",
-      "source": "SEC",
-      "issuer": "Factorial Energy Inc.",
-      "bidder": null,
-      "cik": 2049662,
-      "ticker": "FAC",
-      "isin": null,
-      "form": "25-NSE",
-      "event_type": "Delisting notice",
-      "category": "delisting",
-      "announce_date": "2026-06-05",
-      "exec_date": null,
-      "url": "https://www.sec.gov/Archives/edgar/data/2049662/000135445726000536/primary_doc.xml",
-      "offer_price": null,
-      "current_price": 10.234999656677246,
-      "spread_pct": null
-    },
-    {
-      "id": "0000876661-26-000507:primary_doc.xml",
-      "source": "SEC",
-      "issuer": "SEABRIDGE GOLD INC",
-      "bidder": null,
-      "cik": 1231346,
-      "ticker": "SA",
-      "isin": null,
-      "form": "25-NSE",
-      "event_type": "Delisting notice",
-      "category": "delisting",
-      "announce_date": "2026-06-05",
-      "exec_date": null,
-      "url": "https://www.sec.gov/Archives/edgar/data/1231346/000087666126000507/primary_doc.xml",
-      "offer_price": null,
-      "current_price": 27.6200008392334,
-      "spread_pct": null
-    },
-    {
-      "id": "0000876661-26-000504:primary_doc.xml",
-      "source": "SEC",
-      "issuer": "FORD MOTOR CREDIT CO LLC",
-      "bidder": null,
-      "cik": 38009,
-      "ticker": null,
-      "isin": null,
-      "form": "25-NSE",
-      "event_type": "Delisting notice",
-      "category": "delisting",
-      "announce_date": "2026-06-05",
-      "exec_date": null,
-      "url": "https://www.sec.gov/Archives/edgar/data/38009/000087666126000504/primary_doc.xml",
-      "offer_price": null,
-      "current_price": null,
-      "spread_pct": null
-    },
-    {
       "id": "buyback:HRPK.DE",
       "source": "DE-Buyback",
       "issuer": "7C Solarparken",
@@ -3536,7 +3392,7 @@
       "exec_date": null,
       "offer_price": null,
       "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQWTd2V2tDSk85UGdCZ1RfQVliYWQ0ME9hUzdteXc3M2hwSklDaEZWaGRqc0VjM0JjQWNSUjZZd2FiWWhXWnAyN21xZjJqbVlkTm5xV3dVaGszNXA3eWQ2VVozeW1adlRPam1VR2stQ1VnX3VvVlFYQ0wyUE9jZTBVc0ZjV1BHYmhNU21FdWcwOHlyR01mRUJsbVVkYWhXb2c1NGlyb1IxUWR5ekNId1hFNA?oc=5",
-      "current_price": 1.684999942779541,
+      "current_price": 1.690000057220459,
       "spread_pct": null
     },
     {
@@ -3554,7 +3410,7 @@
       "exec_date": null,
       "offer_price": null,
       "url": "https://www.bafin.de/SharedDocs/Downloads/DE/Angebotsunterlage/commerzbank.pdf?__blob=publicationFile&v=1",
-      "current_price": 37.720001220703125,
+      "current_price": 38.0,
       "spread_pct": null
     },
     {
@@ -3572,7 +3428,7 @@
       "exec_date": null,
       "offer_price": null,
       "url": "https://www.bafin.de/SharedDocs/Downloads/DE/Angebotsunterlage/PSI_Software.pdf?__blob=publicationFile&v=1",
-      "current_price": 45.79999923706055,
+      "current_price": 45.099998474121094,
       "spread_pct": null
     },
     {

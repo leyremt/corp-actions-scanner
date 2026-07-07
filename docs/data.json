@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-07-06T10:52:38+00:00",
+  "generated_at": "2026-07-07T09:56:33+00:00",
   "window_days": {
     "SEC": 30,
     "BaFin": 365
   },
-  "count": 192,
+  "count": 196,
   "sources": [
     "SEC EDGAR",
     "BaFin",
@@ -26,26 +26,8 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/1819438/000087666126000595/primary_doc.xml",
       "offer_price": 172.5,
-      "current_price": 0.8629999756813049,
-      "spread_pct": 19888.41
-    },
-    {
-      "id": "0001140361-26-025965:ny20076539x1_sctoia.htm",
-      "source": "SEC",
-      "issuer": "National Healthcare Properties, Inc.",
-      "bidder": null,
-      "cik": 1561032,
-      "ticker": "NHP",
-      "isin": null,
-      "form": "SC TO-I/A",
-      "event_type": "Issuer tender offer",
-      "category": "tender",
-      "announce_date": "2026-06-22",
-      "exec_date": "2026-06-16",
-      "url": "https://www.sec.gov/Archives/edgar/data/1561032/000114036126025965/ny20076539x1_sctoia.htm",
-      "offer_price": 22.5,
-      "current_price": 14.800000190734863,
-      "spread_pct": 52.03
+      "current_price": 0.8799999952316284,
+      "spread_pct": 19502.27
     },
     {
       "id": "0001193805-26-000788:e665568_sctoia-hyperscale.htm",
@@ -66,6 +48,24 @@
       "spread_pct": 50.0
     },
     {
+      "id": "0001140361-26-025965:ny20076539x1_sctoia.htm",
+      "source": "SEC",
+      "issuer": "National Healthcare Properties, Inc.",
+      "bidder": null,
+      "cik": 1561032,
+      "ticker": "NHP",
+      "isin": null,
+      "form": "SC TO-I/A",
+      "event_type": "Issuer tender offer",
+      "category": "tender",
+      "announce_date": "2026-06-22",
+      "exec_date": "2026-06-16",
+      "url": "https://www.sec.gov/Archives/edgar/data/1561032/000114036126025965/ny20076539x1_sctoia.htm",
+      "offer_price": 22.5,
+      "current_price": 15.210000038146973,
+      "spread_pct": 47.93
+    },
+    {
       "id": "0001493152-26-029708:formsctota.htm",
       "source": "SEC",
       "issuer": "DESTINATION XL GROUP, INC.",
@@ -80,8 +80,8 @@
       "exec_date": "2026-07-24",
       "url": "https://www.sec.gov/Archives/edgar/data/813298/000149315226029708/formsctota.htm",
       "offer_price": 0.84,
-      "current_price": 0.6600000262260437,
-      "spread_pct": 27.27
+      "current_price": 0.6299999952316284,
+      "spread_pct": 33.33
     },
     {
       "id": "buyback:AAG.DE",
@@ -98,8 +98,8 @@
       "exec_date": null,
       "offer_price": 17.8,
       "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE9jMG83Q2dTcXloNmlwMHZHRXRsbHNPU0hNclRBWFlscnVZOFhJZVdsOFJwNWFRWDNma3VpZGs1RS00SVlub0E4YWJzUXJqOTJaZS13cWxDN2FpRWpLVjRtbVVn?oc=5",
-      "current_price": 14.899999618530273,
-      "spread_pct": 19.46
+      "current_price": 14.149999618530273,
+      "spread_pct": 25.8
     },
     {
       "id": "bafin:DE0007257503:2025-07-30",
@@ -116,8 +116,8 @@
       "exec_date": "2025-11-10",
       "offer_price": 4.6,
       "url": "https://www.bafin.de/SharedDocs/Downloads/DE/Angebotsunterlage/CECONOMY.pdf?__blob=publicationFile&v=1",
-      "current_price": 3.859999895095825,
-      "spread_pct": 19.17
+      "current_price": 3.815000057220459,
+      "spread_pct": 20.58
     },
     {
       "id": "0001104659-26-079410:tm2619439d1_sctota.htm",
@@ -134,8 +134,8 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/1326200/000110465926079410/tm2619439d1_sctota.htm",
       "offer_price": 27.34,
-      "current_price": 24.5,
-      "spread_pct": 11.59
+      "current_price": 24.979999542236328,
+      "spread_pct": 9.45
     },
     {
       "id": "0001140361-26-025134:ny20072853x8_sctota.htm",
@@ -152,8 +152,8 @@
       "exec_date": "2026-06-09",
       "url": "https://www.sec.gov/Archives/edgar/data/1422183/000114036126025134/ny20072853x8_sctota.htm",
       "offer_price": 10.76,
-      "current_price": 10.430000305175781,
-      "spread_pct": 3.16
+      "current_price": 10.329999923706055,
+      "spread_pct": 4.16
     },
     {
       "id": "bafin:AT0000A0E9W5:2026-06-11",
@@ -170,8 +170,8 @@
       "exec_date": "2026-07-27",
       "offer_price": 23.5,
       "url": "https://www.bafin.de/SharedDocs/Downloads/DE/Angebotsunterlage/Kontron.pdf?__blob=publicationFile&v=1",
-      "current_price": 23.020000457763672,
-      "spread_pct": 2.09
+      "current_price": 23.040000915527344,
+      "spread_pct": 2.0
     },
     {
       "id": "0001104659-26-078510:tm2617977d3_sctot.htm",
@@ -188,26 +188,8 @@
       "exec_date": "2026-07-27",
       "url": "https://www.sec.gov/Archives/edgar/data/1806201/000110465926078510/tm2617977d3_sctot.htm",
       "offer_price": 3.15,
-      "current_price": 3.109999895095825,
-      "spread_pct": 1.29
-    },
-    {
-      "id": "0001104659-26-077872:tm2611054-3_sc13e3a.htm",
-      "source": "SEC",
-      "issuer": "IHS Holding Ltd",
-      "bidder": null,
-      "cik": 1876183,
-      "ticker": "IHS",
-      "isin": null,
-      "form": "SC 13E3/A",
-      "event_type": "Going-private",
-      "category": "going_private",
-      "announce_date": "2026-06-26",
-      "exec_date": null,
-      "url": "https://www.sec.gov/Archives/edgar/data/1876183/000110465926077872/tm2611054-3_sc13e3a.htm",
-      "offer_price": 8.29,
-      "current_price": 8.220000267028809,
-      "spread_pct": 0.85
+      "current_price": 3.130000114440918,
+      "spread_pct": 0.64
     },
     {
       "id": "bafin:DE000A1PHFF7:2026-06-10",
@@ -224,8 +206,26 @@
       "exec_date": "2026-07-27",
       "offer_price": 38.0,
       "url": "https://www.bafin.de/SharedDocs/Downloads/DE/Angebotsunterlage/HUGO_BOSS.pdf?__blob=publicationFile&v=3",
-      "current_price": 37.790000915527344,
-      "spread_pct": 0.56
+      "current_price": 37.84000015258789,
+      "spread_pct": 0.42
+    },
+    {
+      "id": "0001104659-26-077872:tm2611054-3_sc13e3a.htm",
+      "source": "SEC",
+      "issuer": "IHS Holding Ltd",
+      "bidder": null,
+      "cik": 1876183,
+      "ticker": "IHS",
+      "isin": null,
+      "form": "SC 13E3/A",
+      "event_type": "Going-private",
+      "category": "going_private",
+      "announce_date": "2026-06-26",
+      "exec_date": null,
+      "url": "https://www.sec.gov/Archives/edgar/data/1876183/000110465926077872/tm2611054-3_sc13e3a.htm",
+      "offer_price": 8.29,
+      "current_price": 8.260000228881836,
+      "spread_pct": 0.36
     },
     {
       "id": "0001193125-26-280246:d90297dsctot.htm",
@@ -242,8 +242,8 @@
       "exec_date": "2026-07-14",
       "url": "https://www.sec.gov/Archives/edgar/data/1861560/000119312526280246/d90297dsctot.htm",
       "offer_price": 124.0,
-      "current_price": 123.7300033569336,
-      "spread_pct": 0.22
+      "current_price": 123.72000122070312,
+      "spread_pct": 0.23
     },
     {
       "id": "0001140361-26-025092:ny20068726x7_sc13e3a.htm",
@@ -282,22 +282,22 @@
       "spread_pct": 0.1
     },
     {
-      "id": "0001193125-26-282102:d95008dsc13e3a.htm",
+      "id": "0001193125-26-295587:rgnx-to-i-a-2.htm",
       "source": "SEC",
-      "issuer": "Clearwater Analytics Holdings, Inc.",
+      "issuer": "REGENXBIO Inc.",
       "bidder": null,
-      "cik": 1866368,
-      "ticker": "CWAN",
+      "cik": 1590877,
+      "ticker": "RGNX",
       "isin": null,
-      "form": "SC 13E3/A",
-      "event_type": "Going-private",
-      "category": "going_private",
-      "announce_date": "2026-06-25",
-      "exec_date": null,
-      "url": "https://www.sec.gov/Archives/edgar/data/1866368/000119312526282102/d95008dsc13e3a.htm",
-      "offer_price": 24.55,
-      "current_price": 24.559999465942383,
-      "spread_pct": -0.04
+      "form": "SC TO-I/A",
+      "event_type": "Issuer tender offer",
+      "category": "tender",
+      "announce_date": "2026-07-06",
+      "exec_date": "2026-07-01",
+      "url": "https://www.sec.gov/Archives/edgar/data/1590877/000119312526295587/rgnx-to-i-a-2.htm",
+      "offer_price": 13.28,
+      "current_price": 14.829999923706055,
+      "spread_pct": -10.45
     },
     {
       "id": "bafin:DE000KC01000:2026-06-03",
@@ -314,8 +314,8 @@
       "exec_date": null,
       "offer_price": 11.0,
       "url": "https://www.bafin.de/SharedDocs/Downloads/DE/Angebotsunterlage/kloeckner-co-se-2.pdf?__blob=publicationFile&v=1",
-      "current_price": 12.300000190734863,
-      "spread_pct": -10.57
+      "current_price": 12.319999694824219,
+      "spread_pct": -10.71
     },
     {
       "id": "0001476840-26-000063:expensifyinc-scheduletoxia.htm",
@@ -332,8 +332,8 @@
       "exec_date": "2026-06-10",
       "url": "https://www.sec.gov/Archives/edgar/data/1476840/000147684026000063/expensifyinc-scheduletoxia.htm",
       "offer_price": 1.2,
-      "current_price": 1.7000000476837158,
-      "spread_pct": -29.41
+      "current_price": 1.8600000143051147,
+      "spread_pct": -35.48
     },
     {
       "id": "bafin:DE000FPH9000:2025-07-18",
@@ -350,8 +350,8 @@
       "exec_date": null,
       "offer_price": 2.8,
       "url": "https://www.bafin.de/SharedDocs/Downloads/DE/Angebotsunterlage/Francotyp_Saltarax.pdf?__blob=publicationFile&v=1",
-      "current_price": 5.21999979019165,
-      "spread_pct": -46.36
+      "current_price": 5.079999923706055,
+      "spread_pct": -44.88
     },
     {
       "id": "0001140361-26-024731:ny20068687x1_sctot.htm",
@@ -368,8 +368,8 @@
       "exec_date": "2026-07-10",
       "url": "https://www.sec.gov/Archives/edgar/data/320017/000114036126024731/ny20068687x1_sctot.htm",
       "offer_price": 1.25,
-      "current_price": 3.3299999237060547,
-      "spread_pct": -62.46
+      "current_price": 3.3499999046325684,
+      "spread_pct": -62.69
     },
     {
       "id": "0001554625-26-000011:a20260618-prisxscheduletoxi.htm",
@@ -386,8 +386,8 @@
       "exec_date": "2026-07-31",
       "url": "https://www.sec.gov/Archives/edgar/data/1554625/000155462526000011/a20260618-prisxscheduletoxi.htm",
       "offer_price": 3.7,
-      "current_price": 24.469999313354492,
-      "spread_pct": -84.88
+      "current_price": 24.629899978637695,
+      "spread_pct": -84.98
     },
     {
       "id": "0001661306-26-000051:hpci_q2_26_to-ia_7.2.26.htm",
@@ -405,6 +405,114 @@
       "url": "https://www.sec.gov/Archives/edgar/data/1661306/000166130626000051/hpci_q2_26_to-ia_7.2.26.htm",
       "offer_price": 6.27,
       "current_price": null,
+      "spread_pct": null
+    },
+    {
+      "id": "0001580642-26-004231:fairwaypevc_sctoia.htm",
+      "source": "SEC",
+      "issuer": "Fairway Private Equity & Venture Capital Opportunities Fund",
+      "bidder": null,
+      "cik": 1877967,
+      "ticker": null,
+      "isin": null,
+      "form": "SC TO-I/A",
+      "event_type": "Issuer tender offer",
+      "category": "tender",
+      "announce_date": "2026-07-06",
+      "exec_date": null,
+      "url": "https://www.sec.gov/Archives/edgar/data/1877967/000158064226004231/fairwaypevc_sctoia.htm",
+      "offer_price": null,
+      "current_price": null,
+      "spread_pct": null
+    },
+    {
+      "id": "0001213900-26-075249:ea0292029-04.htm",
+      "source": "SEC",
+      "issuer": "Optimum Communications, Inc.",
+      "bidder": null,
+      "cik": 1702780,
+      "ticker": "OPTU",
+      "isin": null,
+      "form": "SC TO-I/A",
+      "event_type": "Issuer tender offer",
+      "category": "tender",
+      "announce_date": "2026-07-06",
+      "exec_date": "2026-06-30",
+      "url": "https://www.sec.gov/Archives/edgar/data/1702780/000121390026075249/ea0292029-04.htm",
+      "offer_price": null,
+      "current_price": 1.2300000190734863,
+      "spread_pct": null
+    },
+    {
+      "id": "0001104659-26-080756:tm2619711d2_sctoia.htm",
+      "source": "SEC",
+      "issuer": "KKR FS Income Trust Select",
+      "bidder": null,
+      "cik": 1975736,
+      "ticker": null,
+      "isin": null,
+      "form": "SC TO-I/A",
+      "event_type": "Issuer tender offer",
+      "category": "tender",
+      "announce_date": "2026-07-06",
+      "exec_date": "2026-06-29",
+      "url": "https://www.sec.gov/Archives/edgar/data/1975736/000110465926080756/tm2619711d2_sctoia.htm",
+      "offer_price": null,
+      "current_price": null,
+      "spread_pct": null
+    },
+    {
+      "id": "0001104659-26-080753:tm2619711d1_sctoia.htm",
+      "source": "SEC",
+      "issuer": "KKR FS Income Trust",
+      "bidder": null,
+      "cik": 1930679,
+      "ticker": null,
+      "isin": null,
+      "form": "SC TO-I/A",
+      "event_type": "Issuer tender offer",
+      "category": "tender",
+      "announce_date": "2026-07-06",
+      "exec_date": "2026-06-29",
+      "url": "https://www.sec.gov/Archives/edgar/data/1930679/000110465926080753/tm2619711d1_sctoia.htm",
+      "offer_price": null,
+      "current_price": null,
+      "spread_pct": null
+    },
+    {
+      "id": "0001493152-26-032084:formsc13e-3a.htm",
+      "source": "SEC",
+      "issuer": "COSCIENS Biopharma Inc.",
+      "bidder": null,
+      "cik": 1113423,
+      "ticker": "CSCIF",
+      "isin": null,
+      "form": "SC 13E3/A",
+      "event_type": "Going-private",
+      "category": "going_private",
+      "announce_date": "2026-07-06",
+      "exec_date": null,
+      "url": "https://www.sec.gov/Archives/edgar/data/1113423/000149315226032084/formsc13e-3a.htm",
+      "offer_price": null,
+      "current_price": 2.35,
+      "spread_pct": null
+    },
+    {
+      "id": "0000876661-26-000597:primary_doc.xml",
+      "source": "SEC",
+      "issuer": "Lanvin Group Holdings Ltd",
+      "bidder": null,
+      "cik": 1922097,
+      "ticker": "LANV",
+      "isin": null,
+      "form": "25-NSE",
+      "event_type": "Delisting notice",
+      "category": "delisting",
+      "announce_date": "2026-07-06",
+      "exec_date": null,
+      "url": "https://www.sec.gov/Archives/edgar/data/1922097/000087666126000597/primary_doc.xml",
+      "offer_price": null,
+      "current_price": 1.4600000381469727,
       "spread_pct": null
     },
     {
@@ -530,7 +638,7 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/34088/000087666126000593/primary_doc.xml",
       "offer_price": null,
-      "current_price": 137.08999633789062,
+      "current_price": 136.44000244140625,
       "spread_pct": null
     },
     {
@@ -552,24 +660,6 @@
       "spread_pct": null
     },
     {
-      "id": "0001213900-26-074020:ea0292029-03.htm",
-      "source": "SEC",
-      "issuer": "Optimum Communications, Inc.",
-      "bidder": null,
-      "cik": 1702780,
-      "ticker": "OPTU",
-      "isin": null,
-      "form": "SC TO-I/A",
-      "event_type": "Issuer tender offer",
-      "category": "tender",
-      "announce_date": "2026-07-01",
-      "exec_date": "2026-06-30",
-      "url": "https://www.sec.gov/Archives/edgar/data/1702780/000121390026074020/ea0292029-03.htm",
-      "offer_price": null,
-      "current_price": 1.159999966621399,
-      "spread_pct": null
-    },
-    {
       "id": "0001193125-26-292340:d71824dsctoi.htm",
       "source": "SEC",
       "issuer": "Jefferies Credit Partners BDC Inc.",
@@ -585,24 +675,6 @@
       "url": "https://www.sec.gov/Archives/edgar/data/1959604/000119312526292340/d71824dsctoi.htm",
       "offer_price": null,
       "current_price": null,
-      "spread_pct": null
-    },
-    {
-      "id": "0001193125-26-291681:rgnx-to-i-a-1.htm",
-      "source": "SEC",
-      "issuer": "REGENXBIO Inc.",
-      "bidder": null,
-      "cik": 1590877,
-      "ticker": "RGNX",
-      "isin": null,
-      "form": "SC TO-I/A",
-      "event_type": "Issuer tender offer",
-      "category": "tender",
-      "announce_date": "2026-07-01",
-      "exec_date": "2026-07-01",
-      "url": "https://www.sec.gov/Archives/edgar/data/1590877/000119312526291681/rgnx-to-i-a-1.htm",
-      "offer_price": null,
-      "current_price": 13.279999732971191,
       "spread_pct": null
     },
     {
@@ -638,7 +710,7 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/882361/000119312526291467/d159509dsc13e3a.htm",
       "offer_price": null,
-      "current_price": 1.690000057220459,
+      "current_price": 1.69,
       "spread_pct": null
     },
     {
@@ -692,7 +764,7 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/1821159/000135445726000636/primary_doc.xml",
       "offer_price": null,
-      "current_price": 1.8700000047683716,
+      "current_price": 1.9600000381469727,
       "spread_pct": null
     },
     {
@@ -710,7 +782,7 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/1462223/000135445726000635/primary_doc.xml",
       "offer_price": null,
-      "current_price": 1.5199999809265137,
+      "current_price": 1.5099999904632568,
       "spread_pct": null
     },
     {
@@ -782,7 +854,7 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/1633931/000087666126000589/primary_doc.xml",
       "offer_price": null,
-      "current_price": 354.5299987792969,
+      "current_price": 354.53,
       "spread_pct": null
     },
     {
@@ -1070,7 +1142,7 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/1840502/000135445726000626/primary_doc.xml",
       "offer_price": null,
-      "current_price": 5.139999866485596,
+      "current_price": 5.53000020980835,
       "spread_pct": null
     },
     {
@@ -1088,7 +1160,7 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/1145255/000135445726000625/primary_doc.xml",
       "offer_price": null,
-      "current_price": 9.989999771118164,
+      "current_price": 10.069999694824219,
       "spread_pct": null
     },
     {
@@ -1340,7 +1412,7 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/1865631/000135445726000624/primary_doc.xml",
       "offer_price": null,
-      "current_price": 16.280000686645508,
+      "current_price": 17.200000762939453,
       "spread_pct": null
     },
     {
@@ -1358,7 +1430,7 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/1782941/000135445726000623/primary_doc.xml",
       "offer_price": null,
-      "current_price": 9.999999747378752e-05,
+      "current_price": 0.00019999999494757503,
       "spread_pct": null
     },
     {
@@ -1376,7 +1448,7 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/1119639/000087666126000576/primary_doc.xml",
       "offer_price": null,
-      "current_price": 16.110000610351562,
+      "current_price": 16.260000228881836,
       "spread_pct": null
     },
     {
@@ -1403,7 +1475,7 @@
       "issuer": "PROASSURANCE CORP",
       "bidder": null,
       "cik": 1127703,
-      "ticker": "PRA",
+      "ticker": null,
       "isin": null,
       "form": "25-NSE",
       "event_type": "Delisting notice",
@@ -1412,7 +1484,7 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/1127703/000087666126000573/primary_doc.xml",
       "offer_price": null,
-      "current_price": 25.0,
+      "current_price": null,
       "spread_pct": null
     },
     {
@@ -1430,7 +1502,7 @@
       "exec_date": null,
       "offer_price": null,
       "url": "https://www.bafin.de/DE/die-bafin/publikationen-daten/datenbanken-uebersichten/WPUeG/angebotsunterlagen/angebotsunterlagen_node.html",
-      "current_price": 75.1500015258789,
+      "current_price": 75.6500015258789,
       "spread_pct": null
     },
     {
@@ -1538,7 +1610,7 @@
       "exec_date": "2026-06-30",
       "url": "https://www.sec.gov/Archives/edgar/data/1854275/000121390026071900/ea0295875-sctoia8_zoom.htm",
       "offer_price": null,
-      "current_price": 0.16200000047683716,
+      "current_price": 0.13300000131130219,
       "spread_pct": null
     },
     {
@@ -1592,6 +1664,24 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/2031283/000110465926077602/tm2618968d1_sctoia.htm",
       "offer_price": null,
+      "current_price": null,
+      "spread_pct": null
+    },
+    {
+      "id": "0001193125-26-282102:d95008dsc13e3a.htm",
+      "source": "SEC",
+      "issuer": "Clearwater Analytics Holdings, Inc.",
+      "bidder": null,
+      "cik": 1866368,
+      "ticker": null,
+      "isin": null,
+      "form": "SC 13E3/A",
+      "event_type": "Going-private",
+      "category": "going_private",
+      "announce_date": "2026-06-25",
+      "exec_date": null,
+      "url": "https://www.sec.gov/Archives/edgar/data/1866368/000119312526282102/d95008dsc13e3a.htm",
+      "offer_price": 24.55,
       "current_price": null,
       "spread_pct": null
     },
@@ -1844,7 +1934,7 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/1306830/000087666126000556/primary_doc.xml",
       "offer_price": null,
-      "current_price": 47.68000030517578,
+      "current_price": 47.63999938964844,
       "spread_pct": null
     },
     {
@@ -1871,7 +1961,7 @@
       "issuer": "Clearwater Analytics Holdings, Inc.",
       "bidder": null,
       "cik": 1866368,
-      "ticker": "CWAN",
+      "ticker": null,
       "isin": null,
       "form": "25-NSE",
       "event_type": "Delisting notice",
@@ -1880,7 +1970,7 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/1866368/000087666126000553/primary_doc.xml",
       "offer_price": null,
-      "current_price": 24.559999465942383,
+      "current_price": null,
       "spread_pct": null
     },
     {
@@ -2033,7 +2123,7 @@
       "issuer": "Centessa Pharmaceuticals plc",
       "bidder": null,
       "cik": 1847903,
-      "ticker": "CNTA",
+      "ticker": null,
       "isin": null,
       "form": "25-NSE",
       "event_type": "Delisting notice",
@@ -2042,7 +2132,7 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/1847903/000135445726000616/primary_doc.xml",
       "offer_price": null,
-      "current_price": 40.5,
+      "current_price": null,
       "spread_pct": null
     },
     {
@@ -2172,24 +2262,6 @@
       "spread_pct": null
     },
     {
-      "id": "0001493152-26-029667:formsc13e-3a.htm",
-      "source": "SEC",
-      "issuer": "COSCIENS Biopharma Inc.",
-      "bidder": null,
-      "cik": 1113423,
-      "ticker": "CSCIF",
-      "isin": null,
-      "form": "SC 13E3/A",
-      "event_type": "Going-private",
-      "category": "going_private",
-      "announce_date": "2026-06-23",
-      "exec_date": null,
-      "url": "https://www.sec.gov/Archives/edgar/data/1113423/000149315226029667/formsc13e-3a.htm",
-      "offer_price": null,
-      "current_price": 7.349999904632568,
-      "spread_pct": null
-    },
-    {
       "id": "0001354457-26-000608:primary_doc.xml",
       "source": "SEC",
       "issuer": "Origin Materials, Inc.",
@@ -2222,7 +2294,7 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/1659323/000135445726000607/primary_doc.xml",
       "offer_price": null,
-      "current_price": 0.05000000074505806,
+      "current_price": 0.0560000017285347,
       "spread_pct": null
     },
     {
@@ -2240,7 +2312,7 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/1962738/000135445726000606/primary_doc.xml",
       "offer_price": null,
-      "current_price": 0.15000000596046448,
+      "current_price": 0.20000000298023224,
       "spread_pct": null
     },
     {
@@ -2276,7 +2348,7 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/2102155/000087666126000550/primary_doc.xml",
       "offer_price": null,
-      "current_price": 9.949999809265137,
+      "current_price": 9.960000038146973,
       "spread_pct": null
     },
     {
@@ -2348,7 +2420,7 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/2048951/000135445726000605/primary_doc.xml",
       "offer_price": null,
-      "current_price": 7.5,
+      "current_price": 7.25,
       "spread_pct": null
     },
     {
@@ -2366,7 +2438,7 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/1803901/000135445726000603/primary_doc.xml",
       "offer_price": null,
-      "current_price": 5.199999809265137,
+      "current_price": 5.239999771118164,
       "spread_pct": null
     },
     {
@@ -2456,7 +2528,7 @@
       "exec_date": null,
       "offer_price": null,
       "url": "https://www.bafin.de/DE/die-bafin/publikationen-daten/datenbanken-uebersichten/WPUeG/angebotsunterlagen/angebotsunterlagen_node.html",
-      "current_price": 10.5,
+      "current_price": 14.0,
       "spread_pct": null
     },
     {
@@ -2618,7 +2690,7 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/1849221/000114331326000033/primary_doc.xml",
       "offer_price": null,
-      "current_price": 0.12999999523162842,
+      "current_price": 0.11100000143051147,
       "spread_pct": null
     },
     {
@@ -2708,7 +2780,7 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/1823878/000135445726000587/primary_doc.xml",
       "offer_price": null,
-      "current_price": 0.6269999742507935,
+      "current_price": 0.6690000295639038,
       "spread_pct": null
     },
     {
@@ -2816,7 +2888,7 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/1852551/000135445726000580/primary_doc.xml",
       "offer_price": null,
-      "current_price": 4.78000020980835,
+      "current_price": 4.860000133514404,
       "spread_pct": null
     },
     {
@@ -2888,7 +2960,7 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/844150/000087666126000533/primary_doc.xml",
       "offer_price": null,
-      "current_price": 17.989999771118164,
+      "current_price": 18.3700008392334,
       "spread_pct": null
     },
     {
@@ -2906,7 +2978,7 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/1403161/000087666126000531/primary_doc.xml",
       "offer_price": null,
-      "current_price": 362.1300048828125,
+      "current_price": 357.25,
       "spread_pct": null
     },
     {
@@ -2924,7 +2996,7 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/898174/000087666126000529/primary_doc.xml",
       "offer_price": null,
-      "current_price": 221.0,
+      "current_price": 224.0800018310547,
       "spread_pct": null
     },
     {
@@ -2978,7 +3050,7 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/1590364/000135445726000572/primary_doc.xml",
       "offer_price": null,
-      "current_price": 248.05999755859375,
+      "current_price": 241.5399932861328,
       "spread_pct": null
     },
     {
@@ -3068,7 +3140,7 @@
       "exec_date": "2026-06-09",
       "url": "https://www.sec.gov/Archives/edgar/data/891478/000119312526264813/d111441dsctoia.htm",
       "offer_price": null,
-      "current_price": 13.949999809265137,
+      "current_price": 14.369999885559082,
       "spread_pct": null
     },
     {
@@ -3086,7 +3158,7 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/2095443/000135445726000561/primary_doc.xml",
       "offer_price": null,
-      "current_price": 9.9399995803833,
+      "current_price": 9.949999809265137,
       "spread_pct": null
     },
     {
@@ -3104,7 +3176,7 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/1816431/000135445726000560/primary_doc.xml",
       "offer_price": null,
-      "current_price": 0.9300000071525574,
+      "current_price": 0.9520000219345093,
       "spread_pct": null
     },
     {
@@ -3194,7 +3266,7 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/1439124/000087666126000521/primary_doc.xml",
       "offer_price": null,
-      "current_price": 10.380000114440918,
+      "current_price": 10.430000305175781,
       "spread_pct": null
     },
     {
@@ -3230,7 +3302,7 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/2093524/000135445726000554/primary_doc.xml",
       "offer_price": null,
-      "current_price": 9.920000076293945,
+      "current_price": 9.930000305175781,
       "spread_pct": null
     },
     {
@@ -3266,7 +3338,7 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/1785424/000135445726000544/primary_doc.xml",
       "offer_price": null,
-      "current_price": 7.610000133514404,
+      "current_price": 7.739999771118164,
       "spread_pct": null
     },
     {
@@ -3284,7 +3356,7 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/1865494/000135445726000541/primary_doc.xml",
       "offer_price": null,
-      "current_price": 0.004999999888241291,
+      "current_price": 0.007000000216066837,
       "spread_pct": null
     },
     {
@@ -3320,7 +3392,7 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/1994624/000135445726000539/primary_doc.xml",
       "offer_price": null,
-      "current_price": 0.1599999964237213,
+      "current_price": 0.14000000059604645,
       "spread_pct": null
     },
     {
@@ -3392,7 +3464,7 @@
       "exec_date": null,
       "offer_price": null,
       "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQWTd2V2tDSk85UGdCZ1RfQVliYWQ0ME9hUzdteXc3M2hwSklDaEZWaGRqc0VjM0JjQWNSUjZZd2FiWWhXWnAyN21xZjJqbVlkTm5xV3dVaGszNXA3eWQ2VVozeW1adlRPam1VR2stQ1VnX3VvVlFYQ0wyUE9jZTBVc0ZjV1BHYmhNU21FdWcwOHlyR01mRUJsbVVkYWhXb2c1NGlyb1IxUWR5ekNId1hFNA?oc=5",
-      "current_price": 1.690000057220459,
+      "current_price": 1.7000000476837158,
       "spread_pct": null
     },
     {
@@ -3410,7 +3482,7 @@
       "exec_date": null,
       "offer_price": null,
       "url": "https://www.bafin.de/SharedDocs/Downloads/DE/Angebotsunterlage/commerzbank.pdf?__blob=publicationFile&v=1",
-      "current_price": 38.0,
+      "current_price": 38.209999084472656,
       "spread_pct": null
     },
     {
@@ -3428,7 +3500,7 @@
       "exec_date": null,
       "offer_price": null,
       "url": "https://www.bafin.de/SharedDocs/Downloads/DE/Angebotsunterlage/PSI_Software.pdf?__blob=publicationFile&v=1",
-      "current_price": 45.099998474121094,
+      "current_price": 46.400001525878906,
       "spread_pct": null
     },
     {
@@ -3446,7 +3518,7 @@
       "exec_date": "2025-11-18",
       "offer_price": null,
       "url": "https://www.bafin.de/SharedDocs/Downloads/DE/Angebotsunterlage/turbon.pdf?__blob=publicationFile&v=1",
-      "current_price": 50.72999954223633,
+      "current_price": 51.310001373291016,
       "spread_pct": null
     },
     {

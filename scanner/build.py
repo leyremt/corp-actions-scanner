@@ -6,7 +6,7 @@ import json
 import pathlib
 import sys
 
-from scanner import bafin, buybacks
+from scanner import bafin, buybacks, llm_extract
 from scanner.edgar import collect as collect_sec
 from scanner.enrich import enrich
 
@@ -51,6 +51,7 @@ def main(sec_days: int = 30, bafin_days: int = 365) -> None:
     }
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(json.dumps(payload, indent=2, ensure_ascii=False))
+    print(f"LLM fallback calls: {llm_extract.calls_used()}/{llm_extract.MAX_CALLS}", file=sys.stderr)
     print(f"wrote {OUT} ({len(events)} events)", file=sys.stderr)
 
 

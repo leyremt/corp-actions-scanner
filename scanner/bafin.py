@@ -26,6 +26,8 @@ import time
 import pypdf
 import requests
 
+from scanner import llm_extract
+
 import os
 
 UA = f"Mozilla/5.0 (corp-actions-scanner; {os.environ.get('SEC_CONTACT', 'corp-actions-scanner@users.noreply.github.com')})"
@@ -164,6 +166,12 @@ def _parse_offer_pdf(pdf_url: str) -> tuple[float | None, str | None]:
     am = re.search(r"Annahmefrist[:\s]*([0-9]{1,2}\.\s*\w+\s*[0-9]{4})\s*bis\s*([0-9]{1,2}\.\s*\w+\s*[0-9]{4})", flat)
     if am:
         end = _de_date(am.group(2))
+    # Regex missed something — LLM fallback on the same PDF text.
+    if (price is None or end is None) and llm_extract.available():
+        res = llm_extract.extract(flat, hint="German WpÜG Angebotsunterlage (takeover offer document)")
+        if res:
+            price = price if price is not None else res["offer_price"]
+            end = end or res["expiration_date"]
     return price, end
 
 

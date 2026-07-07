@@ -28,6 +28,7 @@ jobs:
       - name: Run scanner
         env:
           SEC_CONTACT: ${{ secrets.SEC_CONTACT }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}  # LLM fallback extraction (Haiku)
         run: python -m scanner.build 30 365   # SEC window 30d, BaFin window 365d
 
       - name: Commit results

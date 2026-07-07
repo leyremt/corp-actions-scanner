@@ -18,6 +18,8 @@ import urllib.parse
 import requests
 import yfinance as yf
 
+from scanner import llm_extract
+
 logging.getLogger("yfinance").setLevel(logging.CRITICAL)
 
 UA = f"corp-actions-scanner {os.environ.get('SEC_CONTACT', 'corp-actions-scanner@users.noreply.github.com')}"
@@ -213,21 +215,41 @@ def _sane_exec(exec_date: str | None, announce_date: str | None,
 def sec_offer_details(event: dict) -> tuple[float | None, str | None]:
     """Return (offer_price, expiration_date) for a SEC tender. Scans candidate
     Offer-to-Purchase docs (current filing, then the original for amendments)
-    and keeps the first one that yields an expiration date."""
+    and keeps the first one that yields an expiration date. If the regexes
+    miss, falls back to LLM extraction over the latest filing's cover (which
+    carries extensions) plus the offer document."""
     folder = event["url"].rsplit("/", 1)[0]
     cands = _otp_candidates(folder)
     if of := _original_folder(event.get("cik"), event.get("form", "")):
         cands += _otp_candidates(of)
 
-    price = None
+    announce = event.get("announce_date")
+    price, texts = None, []
     for otp in cands[:4]:
         text = _get_text(otp)
         if not text:
             continue
+        texts.append(text)
         price = price or _otp_price(text)
-        exp = _expiration(text)
+        # Only accept a regex date that passes the sanity window — an insane
+        # one (stale original of an extended tender) must not short-circuit
+        # the LLM fallback below.
+        exp = _sane_exec(_expiration(text), announce)
         if exp:
             return price or offer_price(event["url"]), exp
+
+    # Regex missed — LLM fallback on the offer doc + the newest filing's cover
+    # (amendments carry extensions; the LLM must not confuse unrelated dates).
+    if llm_extract.available():
+        cover = _get_text(event["url"]) or ""
+        best = max(texts, key=len) if texts else ""
+        doc = "\n\n=== LATEST FILING (may contain extensions) ===\n".join(
+            filter(None, [best, cover])) or cover
+        res = llm_extract.extract(doc, hint="SEC tender offer filing")
+        if res:
+            price = price or res["offer_price"]
+            if res["expiration_date"]:
+                return price or offer_price(event["url"]), res["expiration_date"]
     return price or offer_price(event["url"]), None
 
 

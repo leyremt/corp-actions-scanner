@@ -352,11 +352,14 @@ def enrich(event: dict) -> dict:
         event["spread_pct"] = None
 
     # Plausibility gate for the noisy-extraction categories: merger proxies
-    # (DEFM14A) quote dozens of per-share figures, and an announced cash
-    # merger never trades ±35% off the consideration — a spread that wide is
-    # an extraction error, so drop the price rather than show a fake edge.
-    if event.get("category") in ("merger", "split_off") and event["spread_pct"] is not None \
-            and abs(event["spread_pct"]) > 35:
+    # (DEFM14A) quote dozens of per-share figures, SEC delisting notices have
+    # no real offer price at all, and an announced deal never trades ±35% off
+    # the consideration — a spread that wide is an extraction error, so drop
+    # the price rather than show a fake edge. (BaFin delistings keep theirs:
+    # those prices come from the standardized offer PDF.)
+    noisy = event.get("category") in ("merger", "split_off") or (
+        event.get("category") == "delisting" and event.get("source") == "SEC")
+    if noisy and event["spread_pct"] is not None and abs(event["spread_pct"]) > 35:
         event["offer_price"] = None
         event["spread_pct"] = None
     return event

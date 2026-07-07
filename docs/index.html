@@ -19,9 +19,12 @@
   .controls input,.controls select{background:var(--panel);border:1px solid var(--border);
        color:var(--text);border-radius:6px;padding:6px 10px;font-size:13px}
   .controls input{flex:1;min-width:160px}
+  .chk{display:inline-flex;align-items:center;gap:6px;color:var(--text);
+       font-size:13px;white-space:nowrap;cursor:pointer;user-select:none}
+  .chk input{flex:none;min-width:0;width:14px;height:14px;accent-color:#58a6ff;margin:0}
   .pill{color:var(--muted);font-size:12px;margin-left:auto}
   .wrap{overflow-x:auto;padding:0 24px 40px}
-  table{border-collapse:collapse;width:100%;min-width:920px}
+  table{border-collapse:collapse;width:100%;min-width:1120px}
   th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--border);white-space:nowrap}
   th{color:var(--muted);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.04em;
      cursor:pointer;user-select:none;position:sticky;top:0;background:var(--bg)}
@@ -38,7 +41,9 @@
   .src.Buyback{background:#8957e533;color:#d2a8ff}
   .src.Squeeze{background:#da363333;color:#ff9e9e}
   .tag.oddlot{background:#3fb95022;color:#3fb950;border-color:#3fb95066;font-weight:600}
-  .new{font-size:11px}
+  .tag.splitoff{background:#d2992222;color:#e3b341;border-color:#d2992266;font-weight:600}
+  .new{font-size:11px;cursor:help}
+  td.why{white-space:normal;max-width:250px;min-width:170px;color:#9aa4b2;font-size:12px;line-height:1.35}
   a{color:var(--accent);text-decoration:none} a:hover{text-decoration:underline}
   .empty{padding:40px 24px;color:var(--muted)}
 </style>
@@ -62,12 +67,14 @@
     <option value="">Todas las categorías</option>
     <option value="tender">Tender / ofertas</option>
     <option value="going_private">Going-private</option>
+    <option value="merger">Fusiones (cash)</option>
     <option value="delisting">Delistings</option>
     <option value="squeeze_out">Squeeze-outs</option>
+    <option value="split_off">Split-offs</option>
   </select>
-  <label class="dim" style="font-size:13px"><input type="checkbox" id="onlyspread"> solo con spread</label>
-  <label class="dim" style="font-size:13px"><input type="checkbox" id="hideexpired" checked> ocultar vencidas</label>
-  <label class="dim" style="font-size:13px"><input type="checkbox" id="hidefunds" checked> ocultar fondos</label>
+  <label class="chk" title="Oculta las filas sin spread calculable (falta precio de oferta o de mercado)"><input type="checkbox" id="onlyspread"> solo con spread</label>
+  <label class="chk" title="Oculta eventos cuya fecha de ejecución ya pasó (o recompras estimadas como cerradas)"><input type="checkbox" id="hideexpired" checked> ocultar vencidas</label>
+  <label class="chk" title="Oculta recompras rutinarias de fondos cerrados/BDCs (sin edge)"><input type="checkbox" id="hidefunds" checked> ocultar fondos</label>
   <span class="pill" id="count"></span>
 </div>
 
@@ -78,6 +85,7 @@
       <th data-k="spread_pct" class="num">Spread %</th>
       <th data-k="ticker">Ticker / ISIN</th>
       <th data-k="issuer">Emisor</th>
+      <th>Interés</th>
       <th data-k="event_type">Evento</th>
       <th data-k="offer_price" class="num">Oferta</th>
       <th data-k="current_price" class="num">Actual</th>
@@ -97,7 +105,7 @@ const fmt = (v, d=2) => v == null ? "—" : Number(v).toFixed(d);
 const cur = e => e.source === "SEC" ? "$" : "€";
 const srcClass = e => e.source === "SEC" ? "SEC" : (e.source === "BaFin" ? "BaFin" :
   (e.source === "DE-SqueezeOut" ? "Squeeze" : "Buyback"));
-const TAGS = {tender:"#3fb95033", going_private:"#d2992233", delisting:"#f8514933", squeeze_out:"#f8514955"};
+const TAGS = {tender:"#3fb95033", going_private:"#d2992233", delisting:"#f8514933", squeeze_out:"#f8514955", merger:"#1f6feb33", split_off:"#d2992255"};
 const TODAY = new Date().toISOString().slice(0,10);
 // "New" = first seen by the scanner within the last 2 days.
 const isNew = e => e.first_seen && (new Date(TODAY) - new Date(e.first_seen)) <= 2*864e5;
@@ -127,7 +135,7 @@ function render(){
     (!onlyspread || e.spread_pct != null) &&
     (!hideExpired || !isExpired(e)) &&
     (!hideFunds || !e.is_fund) &&
-    (!q || [e.issuer, e.ticker, e.isin, e.bidder].some(x => (x||"").toLowerCase().includes(q)))
+    (!q || [e.issuer, e.ticker, e.isin, e.bidder, e.why, e.event_type].some(x => (x||"").toLowerCase().includes(q)))
   );
   rows.sort((a,b)=>{
     let x=a[sortK], y=b[sortK];
@@ -151,8 +159,9 @@ function render(){
       <td><span class="src ${srcClass(e)}">${esc(e.source)}</span></td>
       <td class="num ${scls}">${sval}</td>
       <td>${idcell}</td>
-      <td class="issuer">${isNew(e)?'<span class="new">🆕</span> ':''}${esc(e.issuer)}${bidder}</td>
-      <td><span class="tag" style="background:${TAGS[e.category]||''}">${esc(e.event_type)}</span>${e.odd_lot?' <span class="tag oddlot">ODD-LOT</span>':''}</td>
+      <td class="issuer">${isNew(e)?'<span class="new" title="Visto por primera vez por el escáner en los últimos 2 días">🆕</span> ':''}${esc(e.issuer)}${bidder}</td>
+      <td class="why">${esc(e.why||"")}</td>
+      <td><span class="tag" style="background:${TAGS[e.category]||''}">${esc(e.event_type)}</span>${e.odd_lot?' <span class="tag oddlot">ODD-LOT</span>':''}${e.split_off?' <span class="tag splitoff">SPLIT-OFF</span>':''}</td>
       <td class="num">${e.offer_price==null?'<span class=dim>—</span>':cur(e)+fmt(e.offer_price)}</td>
       <td class="num">${e.current_price==null?'<span class=dim>—</span>':cur(e)+fmt(e.current_price)}</td>
       <td class="dim">${e.announce_date||"—"}</td>

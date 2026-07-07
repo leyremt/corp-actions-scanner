@@ -87,6 +87,7 @@ _EXP_RE2 = re.compile(
 _OTP_PRICE_RE = re.compile(
     r"\$\s*([0-9]{1,4}(?:\.[0-9]{2})?)\s*(?:net[^$]{0,40}?)?per\s+[Ss]hare", re.IGNORECASE)
 _ODD_LOT_RE = re.compile(r"odd\s?lots?\b", re.IGNORECASE)
+_SPLIT_OFF_RE = re.compile(r"split-?off", re.IGNORECASE)
 # SEC issuer tenders from closed-end funds / BDCs are routine NAV repurchases,
 # not equity arbitrage — flag them so the dashboard can hide them by default.
 _FUND_NAME_RE = re.compile(r"\b(fund|trust)\b", re.IGNORECASE)
@@ -238,6 +239,8 @@ def sec_offer_details(event: dict) -> tuple[float | None, str | None]:
         # the classic small-size arb; worth a dedicated flag.
         if _ODD_LOT_RE.search(text):
             event["odd_lot"] = True
+        if _SPLIT_OFF_RE.search(text):
+            event["split_off"] = True
         price = price or _otp_price(text)
         # Only accept a regex date that passes the sanity window — an insane
         # one (stale original of an extended tender) must not short-circuit
@@ -323,7 +326,7 @@ def enrich(event: dict) -> dict:
     already parsed from the offer PDF by the collector.
     """
     if event.get("source") == "SEC":
-        if event.get("category") in ("tender", "going_private"):
+        if event.get("category") in ("tender", "going_private", "merger", "split_off"):
             op, exec_date = sec_offer_details(event)
             event["offer_price"] = op
             event["exec_date"] = _sane_exec(exec_date, event.get("announce_date"))
@@ -346,5 +349,14 @@ def enrich(event: dict) -> dict:
     if op and cp and cp > 0:
         event["spread_pct"] = round((op / cp - 1) * 100, 2)
     else:
+        event["spread_pct"] = None
+
+    # Plausibility gate for the noisy-extraction categories: merger proxies
+    # (DEFM14A) quote dozens of per-share figures, and an announced cash
+    # merger never trades ±35% off the consideration — a spread that wide is
+    # an extraction error, so drop the price rather than show a fake edge.
+    if event.get("category") in ("merger", "split_off") and event["spread_pct"] is not None \
+            and abs(event["spread_pct"]) > 35:
+        event["offer_price"] = None
         event["spread_pct"] = None
     return event

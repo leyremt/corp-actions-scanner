@@ -30,8 +30,14 @@ FORMS = {
     "SC TO-I": ("Issuer tender offer", "tender"),
     "SC TO-T": ("Third-party tender offer", "tender"),
     "SC 13E3": ("Going-private", "going_private"),
+    "DEFM14A": ("Cash merger (proxy)", "merger"),
     "25-NSE": ("Delisting notice", "delisting"),
 }
+# Full-text searches for situations without a dedicated form. Split-offs are
+# rare (a handful per year) but valuable — this is a low-frequency watchman.
+TEXT_SEARCHES = [
+    ('"split-off"', "SC TO-I,SC TO-T,S-4", "Posible split-off", "split_off"),
+]
 
 _session = requests.Session()
 _session.headers.update({"User-Agent": UA, "Accept-Encoding": "gzip, deflate"})
@@ -65,9 +71,9 @@ def cik_to_ticker() -> dict[int, str]:
     return out
 
 
-def _search(form: str, start: str, end: str) -> list[dict]:
+def _search(form: str, start: str, end: str, q: str = "") -> list[dict]:
     params = {
-        "q": "",
+        "q": q,
         "forms": form,
         "dateRange": "custom",
         "startdt": start,
@@ -84,9 +90,11 @@ def collect(days: int = 30) -> list[dict]:
     tickers = cik_to_ticker()
     events: dict[str, dict] = {}
 
-    for form, (label, category) in FORMS.items():
+    passes = [(form, "", label, category) for form, (label, category) in FORMS.items()]
+    passes += [(forms, q, label, category) for q, forms, label, category in TEXT_SEARCHES]
+    for form, q, label, category in passes:
         try:
-            hits = _search(form, start.isoformat(), end.isoformat())
+            hits = _search(form, start.isoformat(), end.isoformat(), q=q)
         except requests.RequestException as exc:
             # One form failing (transient EFTS outage) must not kill the run —
             # the daily cron will pick up anything missed tomorrow.

@@ -146,12 +146,12 @@
       "first_seen": "2026-07-07"
     },
     {
-      "id": "0001140361-26-025134:ny20072853x8_sctota.htm",
+      "id": "0001104659-26-071107:tm2615754-2_defm14a.htm",
       "source": "SEC",
-      "issuer": "FS KKR Capital Corp",
+      "issuer": "Esperion Therapeutics, Inc.",
       "bidder": null,
-      "cik": 1422183,
-      "ticker": "FSK",
+      "cik": 1434868,
+      "ticker": "ESPR",
       "isin": null,
       "form": "SC TO-T/A",
       "event_type": "Third-party tender offer",
@@ -260,19 +260,19 @@
       "first_seen": "2026-07-07"
     },
     {
-      "id": "0001140361-26-025092:ny20068726x7_sc13e3a.htm",
+      "id": "0001140361-26-025086:ny20068726x6_defm14a.htm",
       "source": "SEC",
       "issuer": "KORE Group Holdings, Inc.",
       "bidder": null,
       "cik": 1855457,
       "ticker": "KORE",
       "isin": null,
-      "form": "SC 13E3/A",
-      "event_type": "Going-private",
-      "category": "going_private",
-      "announce_date": "2026-06-15",
+      "form": "DEFM14A",
+      "event_type": "Cash merger (proxy)",
+      "category": "merger",
+      "announce_date": "2026-06-12",
       "exec_date": null,
-      "url": "https://www.sec.gov/Archives/edgar/data/1855457/000114036126025092/ny20068726x7_sc13e3a.htm",
+      "url": "https://www.sec.gov/Archives/edgar/data/1855457/000114036126025086/ny20068726x6_defm14a.htm",
       "offer_price": 9.25,
       "current_price": 9.234999656677246,
       "spread_pct": 0.16,
@@ -352,6 +352,27 @@
       "url": "https://www.bafin.de/SharedDocs/Downloads/DE/Angebotsunterlage/kloeckner-co-se-2.pdf?__blob=publicationFile&v=1",
       "current_price": 12.319999694824219,
       "spread_pct": -10.71,
+      "why": "Cotiza en/ sobre la oferta: el mercado descuenta mejora o cierre",
+      "first_seen": "2026-07-07"
+    },
+    {
+      "id": "0001193125-26-266069:d137792ddefm14a.htm",
+      "source": "SEC",
+      "issuer": "XOMA Royalty Corp",
+      "bidder": null,
+      "cik": 791908,
+      "ticker": "XOMA",
+      "isin": null,
+      "form": "DEFM14A",
+      "event_type": "Cash merger (proxy)",
+      "category": "merger",
+      "announce_date": "2026-06-10",
+      "exec_date": "2026-07-12",
+      "url": "https://www.sec.gov/Archives/edgar/data/791908/000119312526266069/d137792ddefm14a.htm",
+      "offer_price": 39.0,
+      "current_price": 43.88999938964844,
+      "spread_pct": -11.14,
+      "why": "Fusión en efectivo: spread hasta cierre (voto/condiciones pendientes)",
       "first_seen": "2026-07-07"
     },
     {
@@ -587,6 +608,7 @@
       "is_fund": true,
       "current_price": null,
       "spread_pct": null,
+      "why": "Recompra periódica de fondo a NAV — sin edge típico · 🎯 prioridad odd-lot (<100 acc., sin prorrateo)",
       "first_seen": "2026-07-07"
     },
     {
@@ -607,6 +629,7 @@
       "is_fund": true,
       "current_price": null,
       "spread_pct": null,
+      "why": "Recompra periódica de fondo a NAV — sin edge típico",
       "first_seen": "2026-07-07"
     },
     {
@@ -646,6 +669,7 @@
       "is_fund": true,
       "current_price": null,
       "spread_pct": null,
+      "why": "Recompra periódica de fondo a NAV — sin edge típico",
       "first_seen": "2026-07-07"
     },
     {
@@ -666,6 +690,7 @@
       "is_fund": true,
       "current_price": null,
       "spread_pct": null,
+      "why": "Recompra periódica de fondo a NAV — sin edge típico",
       "first_seen": "2026-07-07"
     },
     {
@@ -685,6 +710,7 @@
       "offer_price": null,
       "current_price": 2.35,
       "spread_pct": null,
+      "why": "Exclusión de bolsa: cobras la contraprestación al cierre",
       "first_seen": "2026-07-07"
     },
     {
@@ -743,6 +769,7 @@
       "is_fund": true,
       "current_price": null,
       "spread_pct": null,
+      "why": "Recompra periódica de fondo a NAV — sin edge típico",
       "first_seen": "2026-07-07"
     },
     {
@@ -763,6 +790,7 @@
       "is_fund": true,
       "current_price": null,
       "spread_pct": null,
+      "why": "Recompra periódica de fondo a NAV — sin edge típico",
       "first_seen": "2026-07-07"
     },
     {
@@ -783,6 +811,7 @@
       "is_fund": true,
       "current_price": null,
       "spread_pct": null,
+      "why": "Recompra periódica de fondo a NAV — sin edge típico",
       "first_seen": "2026-07-07"
     },
     {
@@ -797,12 +826,13 @@
       "event_type": "Issuer tender offer",
       "category": "tender",
       "announce_date": "2026-07-02",
-      "exec_date": null,
+      "exec_date": "2026-09-21",
       "url": "https://www.sec.gov/Archives/edgar/data/1709447/000119312526293694/d86799dsctoia.htm",
       "offer_price": null,
       "is_fund": true,
       "current_price": null,
       "spread_pct": null,
+      "why": "Recompra periódica de fondo a NAV — sin edge típico",
       "first_seen": "2026-07-07"
     },
     {
@@ -823,6 +853,7 @@
       "is_fund": true,
       "current_price": null,
       "spread_pct": null,
+      "why": "Recompra periódica de fondo a NAV — sin edge típico",
       "first_seen": "2026-07-07"
     },
     {
@@ -842,6 +873,7 @@
       "offer_price": null,
       "current_price": null,
       "spread_pct": null,
+      "why": "Aviso de exclusión: vigilar oferta y liquidez",
       "first_seen": "2026-07-07"
     },
     {
@@ -900,6 +932,7 @@
       "is_fund": true,
       "current_price": null,
       "spread_pct": null,
+      "why": "Recompra periódica de fondo a NAV — sin edge típico",
       "first_seen": "2026-07-07"
     },
     {
@@ -920,6 +953,7 @@
       "is_fund": true,
       "current_price": null,
       "spread_pct": null,
+      "why": "Recompra periódica de fondo a NAV — sin edge típico",
       "first_seen": "2026-07-07"
     },
     {
@@ -940,6 +974,7 @@
       "is_fund": true,
       "current_price": null,
       "spread_pct": null,
+      "why": "Recompra periódica de fondo a NAV — sin edge típico",
       "first_seen": "2026-07-07"
     },
     {
@@ -959,6 +994,7 @@
       "offer_price": null,
       "current_price": 1.69,
       "spread_pct": null,
+      "why": "Exclusión de bolsa: cobras la contraprestación al cierre",
       "first_seen": "2026-07-07"
     },
     {
@@ -978,6 +1014,27 @@
       "offer_price": null,
       "current_price": 16.51,
       "spread_pct": null,
+      "why": "Exclusión de bolsa: cobras la contraprestación al cierre",
+      "first_seen": "2026-07-07"
+    },
+    {
+      "id": "0001213900-26-074267:ea0296576-01.htm",
+      "source": "SEC",
+      "issuer": "Allegro Merger Corp.",
+      "bidder": null,
+      "cik": 1720025,
+      "ticker": null,
+      "isin": null,
+      "form": "DEFM14A",
+      "event_type": "Cash merger (proxy)",
+      "category": "merger",
+      "announce_date": "2026-07-01",
+      "exec_date": null,
+      "url": "https://www.sec.gov/Archives/edgar/data/1720025/000121390026074267/ea0296576-01.htm",
+      "offer_price": 5.0,
+      "current_price": null,
+      "spread_pct": null,
+      "why": "Fusión en efectivo: spread hasta cierre (voto/condiciones pendientes)",
       "first_seen": "2026-07-07"
     },
     {
@@ -997,6 +1054,7 @@
       "offer_price": null,
       "current_price": 11.78,
       "spread_pct": null,
+      "why": "Aviso de exclusión: vigilar oferta y liquidez",
       "first_seen": "2026-07-07"
     },
     {
@@ -1054,6 +1112,7 @@
       "offer_price": null,
       "current_price": 13.42,
       "spread_pct": null,
+      "why": "Aviso de exclusión: vigilar oferta y liquidez",
       "first_seen": "2026-07-07"
     },
     {
@@ -1092,6 +1151,7 @@
       "offer_price": null,
       "current_price": 30.36,
       "spread_pct": null,
+      "why": "Aviso de exclusión: vigilar oferta y liquidez",
       "first_seen": "2026-07-07"
     },
     {
@@ -1111,6 +1171,7 @@
       "offer_price": null,
       "current_price": 354.53,
       "spread_pct": null,
+      "why": "Aviso de exclusión: vigilar oferta y liquidez",
       "first_seen": "2026-07-07"
     },
     {
@@ -1149,6 +1210,7 @@
       "offer_price": null,
       "current_price": 16.51,
       "spread_pct": null,
+      "why": "Aviso de exclusión: vigilar oferta y liquidez",
       "first_seen": "2026-07-07"
     },
     {
@@ -1168,6 +1230,7 @@
       "offer_price": null,
       "current_price": 39.32,
       "spread_pct": null,
+      "why": "Aviso de exclusión: vigilar oferta y liquidez",
       "first_seen": "2026-07-07"
     },
     {
@@ -1188,6 +1251,7 @@
       "is_fund": true,
       "current_price": null,
       "spread_pct": null,
+      "why": "Recompra periódica de fondo a NAV — sin edge típico",
       "first_seen": "2026-07-07"
     },
     {
@@ -1208,6 +1272,7 @@
       "is_fund": true,
       "current_price": null,
       "spread_pct": null,
+      "why": "Recompra periódica de fondo a NAV — sin edge típico",
       "first_seen": "2026-07-07"
     },
     {
@@ -1228,6 +1293,7 @@
       "is_fund": true,
       "current_price": null,
       "spread_pct": null,
+      "why": "Recompra periódica de fondo a NAV — sin edge típico",
       "first_seen": "2026-07-07"
     },
     {
@@ -1247,6 +1313,7 @@
       "offer_price": null,
       "current_price": null,
       "spread_pct": null,
+      "why": "Aviso de exclusión: vigilar oferta y liquidez",
       "first_seen": "2026-07-07"
     },
     {
@@ -1266,6 +1333,7 @@
       "offer_price": null,
       "current_price": null,
       "spread_pct": null,
+      "why": "Aviso de exclusión: vigilar oferta y liquidez",
       "first_seen": "2026-07-07"
     },
     {
@@ -1305,6 +1373,7 @@
       "is_fund": true,
       "current_price": null,
       "spread_pct": null,
+      "why": "Recompra periódica de fondo a NAV — sin edge típico",
       "first_seen": "2026-07-07"
     },
     {
@@ -1325,6 +1394,7 @@
       "is_fund": true,
       "current_price": null,
       "spread_pct": null,
+      "why": "Recompra periódica de fondo a NAV — sin edge típico",
       "first_seen": "2026-07-07"
     },
     {
@@ -1345,6 +1415,7 @@
       "is_fund": true,
       "current_price": null,
       "spread_pct": null,
+      "why": "Recompra periódica de fondo a NAV — sin edge típico",
       "first_seen": "2026-07-07"
     },
     {
@@ -1365,6 +1436,7 @@
       "is_fund": true,
       "current_price": null,
       "spread_pct": null,
+      "why": "Recompra periódica de fondo a NAV — sin edge típico",
       "first_seen": "2026-07-07"
     },
     {
@@ -1404,6 +1476,7 @@
       "offer_price": null,
       "current_price": null,
       "spread_pct": null,
+      "why": "Aviso de exclusión: vigilar oferta y liquidez",
       "first_seen": "2026-07-07"
     },
     {
@@ -1442,6 +1515,7 @@
       "offer_price": null,
       "current_price": 10.100099563598633,
       "spread_pct": null,
+      "why": "Autocartera: la empresa recompra a prima sobre mercado",
       "first_seen": "2026-07-07"
     },
     {
@@ -1462,6 +1536,7 @@
       "is_fund": true,
       "current_price": null,
       "spread_pct": null,
+      "why": "Recompra periódica de fondo a NAV — sin edge típico",
       "first_seen": "2026-07-07"
     },
     {
@@ -1482,6 +1557,7 @@
       "is_fund": true,
       "current_price": null,
       "spread_pct": null,
+      "why": "Recompra periódica de fondo a NAV — sin edge típico",
       "first_seen": "2026-07-07"
     },
     {
@@ -1502,6 +1578,7 @@
       "is_fund": true,
       "current_price": null,
       "spread_pct": null,
+      "why": "Recompra periódica de fondo a NAV — sin edge típico",
       "first_seen": "2026-07-07"
     },
     {
@@ -1522,6 +1599,7 @@
       "is_fund": true,
       "current_price": null,
       "spread_pct": null,
+      "why": "Recompra periódica de fondo a NAV — sin edge típico",
       "first_seen": "2026-07-07"
     },
     {
@@ -1542,6 +1620,7 @@
       "is_fund": true,
       "current_price": null,
       "spread_pct": null,
+      "why": "Recompra periódica de fondo a NAV — sin edge típico",
       "first_seen": "2026-07-07"
     },
     {
@@ -1562,6 +1641,7 @@
       "is_fund": true,
       "current_price": null,
       "spread_pct": null,
+      "why": "Recompra periódica de fondo a NAV — sin edge típico",
       "first_seen": "2026-07-07"
     },
     {
@@ -1582,6 +1662,7 @@
       "is_fund": true,
       "current_price": null,
       "spread_pct": null,
+      "why": "Recompra periódica de fondo a NAV — sin edge típico",
       "first_seen": "2026-07-07"
     },
     {
@@ -1602,6 +1683,7 @@
       "is_fund": true,
       "current_price": null,
       "spread_pct": null,
+      "why": "Recompra periódica de fondo a NAV — sin edge típico",
       "first_seen": "2026-07-07"
     },
     {
@@ -1622,6 +1704,7 @@
       "is_fund": true,
       "current_price": null,
       "spread_pct": null,
+      "why": "Recompra periódica de fondo a NAV — sin edge típico",
       "first_seen": "2026-07-07"
     },
     {
@@ -1642,6 +1725,7 @@
       "is_fund": true,
       "current_price": null,
       "spread_pct": null,
+      "why": "Recompra periódica de fondo a NAV — sin edge típico",
       "first_seen": "2026-07-07"
     },
     {
@@ -1661,6 +1745,7 @@
       "offer_price": null,
       "current_price": null,
       "spread_pct": null,
+      "why": "Aviso de exclusión: vigilar oferta y liquidez",
       "first_seen": "2026-07-07"
     },
     {
@@ -1680,6 +1765,7 @@
       "offer_price": null,
       "current_price": null,
       "spread_pct": null,
+      "why": "Aviso de exclusión: vigilar oferta y liquidez",
       "first_seen": "2026-07-07"
     },
     {
@@ -1756,6 +1842,7 @@
       "offer_price": null,
       "current_price": null,
       "spread_pct": null,
+      "why": "Aviso de exclusión: vigilar oferta y liquidez",
       "first_seen": "2026-07-07"
     },
     {
@@ -1764,7 +1851,7 @@
       "issuer": "PROASSURANCE CORP",
       "bidder": null,
       "cik": 1127703,
-      "ticker": "PRA",
+      "ticker": null,
       "isin": null,
       "form": "25-NSE",
       "event_type": "Delisting notice",
@@ -1773,8 +1860,9 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/1127703/000087666126000573/primary_doc.xml",
       "offer_price": null,
-      "current_price": 25.0,
+      "current_price": null,
       "spread_pct": null,
+      "why": "Aviso de exclusión: vigilar oferta y liquidez",
       "first_seen": "2026-07-07"
     },
     {
@@ -1833,6 +1921,7 @@
       "is_fund": true,
       "current_price": null,
       "spread_pct": null,
+      "why": "Recompra periódica de fondo a NAV — sin edge típico",
       "first_seen": "2026-07-07"
     },
     {
@@ -1853,6 +1942,7 @@
       "is_fund": true,
       "current_price": null,
       "spread_pct": null,
+      "why": "Recompra periódica de fondo a NAV — sin edge típico",
       "first_seen": "2026-07-07"
     },
     {
@@ -1873,6 +1963,7 @@
       "is_fund": true,
       "current_price": null,
       "spread_pct": null,
+      "why": "Recompra periódica de fondo a NAV — sin edge típico",
       "first_seen": "2026-07-07"
     },
     {
@@ -1893,6 +1984,7 @@
       "is_fund": true,
       "current_price": null,
       "spread_pct": null,
+      "why": "Recompra periódica de fondo a NAV — sin edge típico",
       "first_seen": "2026-07-07"
     },
     {
@@ -1913,6 +2005,7 @@
       "is_fund": true,
       "current_price": null,
       "spread_pct": null,
+      "why": "Recompra periódica de fondo a NAV — sin edge típico",
       "first_seen": "2026-07-07"
     },
     {
@@ -1952,6 +2045,7 @@
       "is_fund": true,
       "current_price": null,
       "spread_pct": null,
+      "why": "Recompra periódica de fondo a NAV — sin edge típico",
       "first_seen": "2026-07-07"
     },
     {
@@ -1972,6 +2066,7 @@
       "is_fund": true,
       "current_price": null,
       "spread_pct": null,
+      "why": "Recompra periódica de fondo a NAV — sin edge típico",
       "first_seen": "2026-07-07"
     },
     {
@@ -1992,6 +2087,27 @@
       "is_fund": true,
       "current_price": null,
       "spread_pct": null,
+      "why": "Recompra periódica de fondo a NAV — sin edge típico",
+      "first_seen": "2026-07-07"
+    },
+    {
+      "id": "0001193125-26-282102:d95008dsc13e3a.htm",
+      "source": "SEC",
+      "issuer": "Clearwater Analytics Holdings, Inc.",
+      "bidder": null,
+      "cik": 1866368,
+      "ticker": null,
+      "isin": null,
+      "form": "SC 13E3/A",
+      "event_type": "Going-private",
+      "category": "going_private",
+      "announce_date": "2026-06-25",
+      "exec_date": null,
+      "url": "https://www.sec.gov/Archives/edgar/data/1866368/000119312526282102/d95008dsc13e3a.htm",
+      "offer_price": 24.55,
+      "current_price": null,
+      "spread_pct": null,
+      "why": "Exclusión de bolsa: cobras la contraprestación al cierre",
       "first_seen": "2026-07-07"
     },
     {
@@ -2011,6 +2127,7 @@
       "offer_price": null,
       "current_price": null,
       "spread_pct": null,
+      "why": "Aviso de exclusión: vigilar oferta y liquidez",
       "first_seen": "2026-07-07"
     },
     {
@@ -2030,6 +2147,7 @@
       "offer_price": null,
       "current_price": null,
       "spread_pct": null,
+      "why": "Aviso de exclusión: vigilar oferta y liquidez",
       "first_seen": "2026-07-07"
     },
     {
@@ -2049,6 +2167,7 @@
       "offer_price": null,
       "current_price": null,
       "spread_pct": null,
+      "why": "Aviso de exclusión: vigilar oferta y liquidez",
       "first_seen": "2026-07-07"
     },
     {
@@ -2068,6 +2187,7 @@
       "offer_price": null,
       "current_price": null,
       "spread_pct": null,
+      "why": "Aviso de exclusión: vigilar oferta y liquidez",
       "first_seen": "2026-07-07"
     },
     {
@@ -2087,6 +2207,7 @@
       "offer_price": null,
       "current_price": null,
       "spread_pct": null,
+      "why": "Aviso de exclusión: vigilar oferta y liquidez",
       "first_seen": "2026-07-07"
     },
     {
@@ -2106,6 +2227,7 @@
       "offer_price": null,
       "current_price": null,
       "spread_pct": null,
+      "why": "Aviso de exclusión: vigilar oferta y liquidez",
       "first_seen": "2026-07-07"
     },
     {
@@ -2125,6 +2247,7 @@
       "offer_price": null,
       "current_price": null,
       "spread_pct": null,
+      "why": "Aviso de exclusión: vigilar oferta y liquidez",
       "first_seen": "2026-07-07"
     },
     {
@@ -2144,6 +2267,7 @@
       "offer_price": null,
       "current_price": null,
       "spread_pct": null,
+      "why": "Aviso de exclusión: vigilar oferta y liquidez",
       "first_seen": "2026-07-07"
     },
     {
@@ -2163,6 +2287,7 @@
       "offer_price": null,
       "current_price": null,
       "spread_pct": null,
+      "why": "Aviso de exclusión: vigilar oferta y liquidez",
       "first_seen": "2026-07-07"
     },
     {
@@ -2182,6 +2307,7 @@
       "offer_price": null,
       "current_price": null,
       "spread_pct": null,
+      "why": "Aviso de exclusión: vigilar oferta y liquidez",
       "first_seen": "2026-07-07"
     },
     {
@@ -2201,6 +2327,7 @@
       "offer_price": null,
       "current_price": null,
       "spread_pct": null,
+      "why": "Aviso de exclusión: vigilar oferta y liquidez",
       "first_seen": "2026-07-07"
     },
     {
@@ -2220,6 +2347,7 @@
       "offer_price": null,
       "current_price": null,
       "spread_pct": null,
+      "why": "Aviso de exclusión: vigilar oferta y liquidez",
       "first_seen": "2026-07-07"
     },
     {
@@ -2239,6 +2367,7 @@
       "offer_price": null,
       "current_price": null,
       "spread_pct": null,
+      "why": "Aviso de exclusión: vigilar oferta y liquidez",
       "first_seen": "2026-07-07"
     },
     {
@@ -2277,6 +2406,7 @@
       "offer_price": null,
       "current_price": null,
       "spread_pct": null,
+      "why": "Aviso de exclusión: vigilar oferta y liquidez",
       "first_seen": "2026-07-07"
     },
     {
@@ -2285,7 +2415,7 @@
       "issuer": "Clearwater Analytics Holdings, Inc.",
       "bidder": null,
       "cik": 1866368,
-      "ticker": "CWAN",
+      "ticker": null,
       "isin": null,
       "form": "25-NSE",
       "event_type": "Delisting notice",
@@ -2294,8 +2424,9 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/1866368/000087666126000553/primary_doc.xml",
       "offer_price": null,
-      "current_price": 24.56,
+      "current_price": null,
       "spread_pct": null,
+      "why": "Aviso de exclusión: vigilar oferta y liquidez",
       "first_seen": "2026-07-07"
     },
     {
@@ -2315,6 +2446,7 @@
       "url": "https://www.bafin.de/DE/die-bafin/publikationen-daten/datenbanken-uebersichten/WPUeG/angebotsunterlagen/angebotsunterlagen_node.html",
       "current_price": 7.550000190734863,
       "spread_pct": null,
+      "why": "Oferta en curso: confirmar precio en el documento",
       "first_seen": "2026-07-07"
     },
     {
@@ -2335,6 +2467,7 @@
       "is_fund": true,
       "current_price": null,
       "spread_pct": null,
+      "why": "Recompra periódica de fondo a NAV — sin edge típico",
       "first_seen": "2026-07-07"
     },
     {
@@ -2355,6 +2488,7 @@
       "is_fund": true,
       "current_price": null,
       "spread_pct": null,
+      "why": "Recompra periódica de fondo a NAV — sin edge típico",
       "first_seen": "2026-07-07"
     },
     {
@@ -2375,6 +2509,7 @@
       "is_fund": true,
       "current_price": null,
       "spread_pct": null,
+      "why": "Recompra periódica de fondo a NAV — sin edge típico",
       "first_seen": "2026-07-07"
     },
     {
@@ -2395,6 +2530,7 @@
       "is_fund": true,
       "current_price": null,
       "spread_pct": null,
+      "why": "Recompra periódica de fondo a NAV — sin edge típico",
       "first_seen": "2026-07-07"
     },
     {
@@ -2415,6 +2551,7 @@
       "is_fund": true,
       "current_price": null,
       "spread_pct": null,
+      "why": "Recompra periódica de fondo a NAV — sin edge típico",
       "first_seen": "2026-07-07"
     },
     {
@@ -2435,6 +2572,7 @@
       "is_fund": true,
       "current_price": null,
       "spread_pct": null,
+      "why": "Recompra periódica de fondo a NAV — sin edge típico",
       "first_seen": "2026-07-07"
     },
     {
@@ -2454,6 +2592,27 @@
       "offer_price": null,
       "current_price": 0.067,
       "spread_pct": null,
+      "why": "Exclusión de bolsa: cobras la contraprestación al cierre",
+      "first_seen": "2026-07-07"
+    },
+    {
+      "id": "0001104659-26-077331:tm2615734-8_defm14a.htm",
+      "source": "SEC",
+      "issuer": "MODIV INDUSTRIAL, INC.",
+      "bidder": null,
+      "cik": 1645873,
+      "ticker": "MDV",
+      "isin": null,
+      "form": "DEFM14A",
+      "event_type": "Cash merger (proxy)",
+      "category": "merger",
+      "announce_date": "2026-06-24",
+      "exec_date": "2026-08-09",
+      "url": "https://www.sec.gov/Archives/edgar/data/1645873/000110465926077331/tm2615734-8_defm14a.htm",
+      "offer_price": null,
+      "current_price": 17.459999084472656,
+      "spread_pct": null,
+      "why": "Fusión en efectivo: spread hasta cierre (voto/condiciones pendientes)",
       "first_seen": "2026-07-07"
     },
     {
@@ -2462,7 +2621,7 @@
       "issuer": "Centessa Pharmaceuticals plc",
       "bidder": null,
       "cik": 1847903,
-      "ticker": "CNTA",
+      "ticker": null,
       "isin": null,
       "form": "25-NSE",
       "event_type": "Delisting notice",
@@ -2471,8 +2630,9 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/1847903/000135445726000616/primary_doc.xml",
       "offer_price": null,
-      "current_price": 40.5,
+      "current_price": null,
       "spread_pct": null,
+      "why": "Aviso de exclusión: vigilar oferta y liquidez",
       "first_seen": "2026-07-07"
     },
     {
@@ -2493,6 +2653,7 @@
       "is_fund": true,
       "current_price": null,
       "spread_pct": null,
+      "why": "Recompra periódica de fondo a NAV — sin edge típico",
       "first_seen": "2026-07-07"
     },
     {
@@ -2513,6 +2674,7 @@
       "is_fund": true,
       "current_price": null,
       "spread_pct": null,
+      "why": "Recompra periódica de fondo a NAV — sin edge típico",
       "first_seen": "2026-07-07"
     },
     {
@@ -2533,6 +2695,7 @@
       "is_fund": true,
       "current_price": null,
       "spread_pct": null,
+      "why": "Recompra periódica de fondo a NAV — sin edge típico",
       "first_seen": "2026-07-07"
     },
     {
@@ -2553,6 +2716,7 @@
       "is_fund": true,
       "current_price": null,
       "spread_pct": null,
+      "why": "Recompra periódica de fondo a NAV — sin edge típico",
       "first_seen": "2026-07-07"
     },
     {
@@ -2573,6 +2737,7 @@
       "is_fund": true,
       "current_price": null,
       "spread_pct": null,
+      "why": "Recompra periódica de fondo a NAV — sin edge típico",
       "first_seen": "2026-07-07"
     },
     {
@@ -2593,6 +2758,7 @@
       "is_fund": true,
       "current_price": null,
       "spread_pct": null,
+      "why": "Recompra periódica de fondo a NAV — sin edge típico",
       "first_seen": "2026-07-07"
     },
     {
@@ -2613,6 +2779,47 @@
       "is_fund": true,
       "current_price": null,
       "spread_pct": null,
+      "why": "Recompra periódica de fondo a NAV — sin edge típico",
+      "first_seen": "2026-07-07"
+    },
+    {
+      "id": "0001193125-26-279668:d115497ddefm14a.htm",
+      "source": "SEC",
+      "issuer": "Equitable Holdings, Inc.",
+      "bidder": null,
+      "cik": 1333986,
+      "ticker": "EQH",
+      "isin": null,
+      "form": "DEFM14A",
+      "event_type": "Cash merger (proxy)",
+      "category": "merger",
+      "announce_date": "2026-06-23",
+      "exec_date": "2026-07-29",
+      "url": "https://www.sec.gov/Archives/edgar/data/1333986/000119312526279668/d115497ddefm14a.htm",
+      "offer_price": null,
+      "current_price": 46.97999954223633,
+      "spread_pct": null,
+      "why": "Fusión en efectivo: spread hasta cierre (voto/condiciones pendientes)",
+      "first_seen": "2026-07-07"
+    },
+    {
+      "id": "0001193125-26-279656:d115497ddefm14a.htm",
+      "source": "SEC",
+      "issuer": "Corebridge Financial, Inc.",
+      "bidder": null,
+      "cik": 1889539,
+      "ticker": "CRBG",
+      "isin": null,
+      "form": "DEFM14A",
+      "event_type": "Cash merger (proxy)",
+      "category": "merger",
+      "announce_date": "2026-06-23",
+      "exec_date": "2026-07-29",
+      "url": "https://www.sec.gov/Archives/edgar/data/1889539/000119312526279656/d115497ddefm14a.htm",
+      "offer_price": null,
+      "current_price": 30.594999313354492,
+      "spread_pct": null,
+      "why": "Fusión en efectivo: spread hasta cierre (voto/condiciones pendientes)",
       "first_seen": "2026-07-07"
     },
     {
@@ -2689,6 +2896,7 @@
       "offer_price": null,
       "current_price": null,
       "spread_pct": null,
+      "why": "Aviso de exclusión: vigilar oferta y liquidez",
       "first_seen": "2026-07-07"
     },
     {
@@ -2747,6 +2955,7 @@
       "is_fund": true,
       "current_price": null,
       "spread_pct": null,
+      "why": "Recompra periódica de fondo a NAV — sin edge típico",
       "first_seen": "2026-07-07"
     },
     {
@@ -2767,6 +2976,7 @@
       "is_fund": true,
       "current_price": null,
       "spread_pct": null,
+      "why": "Recompra periódica de fondo a NAV — sin edge típico",
       "first_seen": "2026-07-07"
     },
     {
@@ -2787,6 +2997,27 @@
       "is_fund": true,
       "current_price": null,
       "spread_pct": null,
+      "why": "Recompra periódica de fondo a NAV — sin edge típico",
+      "first_seen": "2026-07-07"
+    },
+    {
+      "id": "0001140361-26-025965:ny20076539x1_sctoia.htm",
+      "source": "SEC",
+      "issuer": "National Healthcare Properties, Inc.",
+      "bidder": null,
+      "cik": 1561032,
+      "ticker": "NHP",
+      "isin": null,
+      "form": "SC TO-I/A",
+      "event_type": "Issuer tender offer",
+      "category": "tender",
+      "announce_date": "2026-06-22",
+      "exec_date": "2026-06-16",
+      "url": "https://www.sec.gov/Archives/edgar/data/1561032/000114036126025965/ny20076539x1_sctoia.htm",
+      "offer_price": 22.5,
+      "current_price": null,
+      "spread_pct": null,
+      "why": "Oferta en curso: confirmar precio en el documento",
       "first_seen": "2026-07-07"
     },
     {
@@ -2844,6 +3075,7 @@
       "offer_price": null,
       "current_price": null,
       "spread_pct": null,
+      "why": "Aviso de exclusión: vigilar oferta y liquidez",
       "first_seen": "2026-07-07"
     },
     {
@@ -2863,6 +3095,7 @@
       "offer_price": null,
       "current_price": null,
       "spread_pct": null,
+      "why": "Aviso de exclusión: vigilar oferta y liquidez",
       "first_seen": "2026-07-07"
     },
     {
@@ -2882,6 +3115,7 @@
       "offer_price": null,
       "current_price": null,
       "spread_pct": null,
+      "why": "Aviso de exclusión: vigilar oferta y liquidez",
       "first_seen": "2026-07-07"
     },
     {
@@ -2901,6 +3135,7 @@
       "offer_price": null,
       "current_price": null,
       "spread_pct": null,
+      "why": "Aviso de exclusión: vigilar oferta y liquidez",
       "first_seen": "2026-07-07"
     },
     {
@@ -2920,6 +3155,7 @@
       "url": "https://spruchverfahren.blogspot.com/2026/06/spruchverfahren-zum-squeeze-out-bei-der_0724394065.html",
       "current_price": null,
       "spread_pct": null,
+      "why": "Fase judicial: posible mejora de la Barabfindung (Nachbesserung)",
       "first_seen": "2026-07-07"
     },
     {
@@ -2939,6 +3175,7 @@
       "url": "https://spruchverfahren.blogspot.com/2026/06/spruchverfahren-zum-squeeze-out-bei-der_01295729614.html",
       "current_price": null,
       "spread_pct": null,
+      "why": "Fase judicial: posible mejora de la Barabfindung (Nachbesserung)",
       "first_seen": "2026-07-07"
     },
     {
@@ -2958,6 +3195,7 @@
       "url": "https://www.bafin.de/DE/die-bafin/publikationen-daten/datenbanken-uebersichten/WPUeG/angebotsunterlagen/angebotsunterlagen_node.html",
       "current_price": 14.0,
       "spread_pct": null,
+      "why": "Oferta en curso: confirmar precio en el documento",
       "first_seen": "2026-07-07"
     },
     {
@@ -2978,6 +3216,7 @@
       "is_fund": true,
       "current_price": null,
       "spread_pct": null,
+      "why": "Recompra periódica de fondo a NAV — sin edge típico",
       "first_seen": "2026-07-07"
     },
     {
@@ -2998,6 +3237,7 @@
       "is_fund": true,
       "current_price": null,
       "spread_pct": null,
+      "why": "Recompra periódica de fondo a NAV — sin edge típico",
       "first_seen": "2026-07-07"
     },
     {
@@ -3018,6 +3258,7 @@
       "is_fund": true,
       "current_price": null,
       "spread_pct": null,
+      "why": "Recompra periódica de fondo a NAV — sin edge típico",
       "first_seen": "2026-07-07"
     },
     {
@@ -3038,6 +3279,7 @@
       "is_fund": true,
       "current_price": null,
       "spread_pct": null,
+      "why": "Recompra periódica de fondo a NAV — sin edge típico",
       "first_seen": "2026-07-07"
     },
     {
@@ -3058,6 +3300,7 @@
       "is_fund": true,
       "current_price": null,
       "spread_pct": null,
+      "why": "Recompra periódica de fondo a NAV — sin edge típico",
       "first_seen": "2026-07-07"
     },
     {
@@ -3078,6 +3321,7 @@
       "is_fund": true,
       "current_price": null,
       "spread_pct": null,
+      "why": "Recompra periódica de fondo a NAV — sin edge típico",
       "first_seen": "2026-07-07"
     },
     {
@@ -3097,6 +3341,7 @@
       "offer_price": null,
       "current_price": null,
       "spread_pct": null,
+      "why": "Aviso de exclusión: vigilar oferta y liquidez",
       "first_seen": "2026-07-07"
     },
     {
@@ -3116,6 +3361,7 @@
       "offer_price": null,
       "current_price": null,
       "spread_pct": null,
+      "why": "Aviso de exclusión: vigilar oferta y liquidez",
       "first_seen": "2026-07-07"
     },
     {
@@ -3174,6 +3420,7 @@
       "is_fund": true,
       "current_price": null,
       "spread_pct": null,
+      "why": "Recompra periódica de fondo a NAV — sin edge típico",
       "first_seen": "2026-07-07"
     },
     {
@@ -3194,6 +3441,7 @@
       "is_fund": true,
       "current_price": null,
       "spread_pct": null,
+      "why": "Recompra periódica de fondo a NAV — sin edge típico",
       "first_seen": "2026-07-07"
     },
     {
@@ -3214,6 +3462,7 @@
       "is_fund": true,
       "current_price": null,
       "spread_pct": null,
+      "why": "Recompra periódica de fondo a NAV — sin edge típico",
       "first_seen": "2026-07-07"
     },
     {
@@ -3234,6 +3483,27 @@
       "is_fund": true,
       "current_price": null,
       "spread_pct": null,
+      "why": "Recompra periódica de fondo a NAV — sin edge típico",
+      "first_seen": "2026-07-07"
+    },
+    {
+      "id": "0001193125-26-273323:d15298ddefm14a.htm",
+      "source": "SEC",
+      "issuer": "Organon & Co.",
+      "bidder": null,
+      "cik": 1821825,
+      "ticker": "OGN",
+      "isin": null,
+      "form": "DEFM14A",
+      "event_type": "Cash merger (proxy)",
+      "category": "merger",
+      "announce_date": "2026-06-17",
+      "exec_date": "2026-06-22",
+      "url": "https://www.sec.gov/Archives/edgar/data/1821825/000119312526273323/d15298ddefm14a.htm",
+      "offer_price": 14.0,
+      "current_price": null,
+      "spread_pct": null,
+      "why": "Fusión en efectivo: spread hasta cierre (voto/condiciones pendientes)",
       "first_seen": "2026-07-07"
     },
     {
@@ -3292,6 +3562,7 @@
       "is_fund": true,
       "current_price": null,
       "spread_pct": null,
+      "why": "Recompra periódica de fondo a NAV — sin edge típico",
       "first_seen": "2026-07-07"
     },
     {
@@ -3312,6 +3583,7 @@
       "is_fund": true,
       "current_price": null,
       "spread_pct": null,
+      "why": "Recompra periódica de fondo a NAV — sin edge típico",
       "first_seen": "2026-07-07"
     },
     {
@@ -3331,6 +3603,7 @@
       "offer_price": 10.9,
       "current_price": null,
       "spread_pct": null,
+      "why": "Exclusión de bolsa: cobras la contraprestación al cierre",
       "first_seen": "2026-07-07"
     },
     {
@@ -3350,6 +3623,7 @@
       "offer_price": null,
       "current_price": null,
       "spread_pct": null,
+      "why": "Aviso de exclusión: vigilar oferta y liquidez",
       "first_seen": "2026-07-07"
     },
     {
@@ -3388,6 +3662,7 @@
       "offer_price": null,
       "current_price": null,
       "spread_pct": null,
+      "why": "Aviso de exclusión: vigilar oferta y liquidez",
       "first_seen": "2026-07-07"
     },
     {
@@ -3407,6 +3682,47 @@
       "offer_price": null,
       "current_price": null,
       "spread_pct": null,
+      "why": "Aviso de exclusión: vigilar oferta y liquidez",
+      "first_seen": "2026-07-07"
+    },
+    {
+      "id": "0001140361-26-025134:ny20072853x8_sctota.htm",
+      "source": "SEC",
+      "issuer": "FS KKR Capital Corp",
+      "bidder": null,
+      "cik": 1422183,
+      "ticker": "FSK",
+      "isin": null,
+      "form": "SC TO-T/A",
+      "event_type": "Third-party tender offer",
+      "category": "tender",
+      "announce_date": "2026-06-15",
+      "exec_date": "2026-06-09",
+      "url": "https://www.sec.gov/Archives/edgar/data/1422183/000114036126025134/ny20072853x8_sctota.htm",
+      "offer_price": 10.76,
+      "current_price": null,
+      "spread_pct": null,
+      "why": "Oferta en curso: confirmar precio en el documento",
+      "first_seen": "2026-07-07"
+    },
+    {
+      "id": "0001140361-26-025092:ny20068726x7_sc13e3a.htm",
+      "source": "SEC",
+      "issuer": "KORE Group Holdings, Inc.",
+      "bidder": null,
+      "cik": 1855457,
+      "ticker": "KORE",
+      "isin": null,
+      "form": "SC 13E3/A",
+      "event_type": "Going-private",
+      "category": "going_private",
+      "announce_date": "2026-06-15",
+      "exec_date": null,
+      "url": "https://www.sec.gov/Archives/edgar/data/1855457/000114036126025092/ny20068726x7_sc13e3a.htm",
+      "offer_price": 9.25,
+      "current_price": null,
+      "spread_pct": null,
+      "why": "Exclusión de bolsa: cobras la contraprestación al cierre",
       "first_seen": "2026-07-07"
     },
     {
@@ -3502,6 +3818,7 @@
       "offer_price": null,
       "current_price": null,
       "spread_pct": null,
+      "why": "Aviso de exclusión: vigilar oferta y liquidez",
       "first_seen": "2026-07-07"
     },
     {
@@ -3522,6 +3839,27 @@
       "is_fund": true,
       "current_price": null,
       "spread_pct": null,
+      "why": "Recompra periódica de fondo a NAV — sin edge típico",
+      "first_seen": "2026-07-07"
+    },
+    {
+      "id": "0001193125-26-269503:d92293ddefm14a.htm",
+      "source": "SEC",
+      "issuer": "National Storage Affiliates Trust",
+      "bidder": null,
+      "cik": 1618563,
+      "ticker": "NSA",
+      "isin": null,
+      "form": "DEFM14A",
+      "event_type": "Cash merger (proxy)",
+      "category": "merger",
+      "announce_date": "2026-06-12",
+      "exec_date": "2026-07-13",
+      "url": "https://www.sec.gov/Archives/edgar/data/1618563/000119312526269503/d92293ddefm14a.htm",
+      "offer_price": null,
+      "current_price": 45.939998626708984,
+      "spread_pct": null,
+      "why": "Fusión en efectivo: spread hasta cierre (voto/condiciones pendientes)",
       "first_seen": "2026-07-07"
     },
     {
@@ -3560,6 +3898,7 @@
       "offer_price": null,
       "current_price": null,
       "spread_pct": null,
+      "why": "Aviso de exclusión: vigilar oferta y liquidez",
       "first_seen": "2026-07-07"
     },
     {
@@ -3579,6 +3918,7 @@
       "url": "https://spruchverfahren.blogspot.com/2026/06/spruchverfahren-zum-squeeze-out-bei-der.html",
       "current_price": null,
       "spread_pct": null,
+      "why": "Fase judicial: posible mejora de la Barabfindung (Nachbesserung)",
       "first_seen": "2026-07-07"
     },
     {
@@ -3599,6 +3939,7 @@
       "is_fund": true,
       "current_price": null,
       "spread_pct": null,
+      "why": "Recompra periódica de fondo a NAV — sin edge típico",
       "first_seen": "2026-07-07"
     },
     {
@@ -3618,6 +3959,7 @@
       "offer_price": null,
       "current_price": null,
       "spread_pct": null,
+      "why": "Aviso de exclusión: vigilar oferta y liquidez",
       "first_seen": "2026-07-07"
     },
     {
@@ -3637,6 +3979,7 @@
       "offer_price": null,
       "current_price": null,
       "spread_pct": null,
+      "why": "Aviso de exclusión: vigilar oferta y liquidez",
       "first_seen": "2026-07-07"
     },
     {
@@ -3713,6 +4056,7 @@
       "offer_price": null,
       "current_price": null,
       "spread_pct": null,
+      "why": "Aviso de exclusión: vigilar oferta y liquidez",
       "first_seen": "2026-07-07"
     },
     {
@@ -3732,6 +4076,7 @@
       "offer_price": null,
       "current_price": null,
       "spread_pct": null,
+      "why": "Aviso de exclusión: vigilar oferta y liquidez",
       "first_seen": "2026-07-07"
     },
     {
@@ -3751,6 +4096,7 @@
       "offer_price": null,
       "current_price": null,
       "spread_pct": null,
+      "why": "Aviso de exclusión: vigilar oferta y liquidez",
       "first_seen": "2026-07-07"
     },
     {
@@ -3770,6 +4116,7 @@
       "offer_price": 11.5,
       "current_price": null,
       "spread_pct": null,
+      "why": "Aviso de exclusión: vigilar oferta y liquidez",
       "first_seen": "2026-07-07"
     },
     {
@@ -3809,6 +4156,28 @@
       "is_fund": true,
       "current_price": null,
       "spread_pct": null,
+      "why": "Recompra periódica de fondo a NAV — sin edge típico",
+      "first_seen": "2026-07-07"
+    },
+    {
+      "id": "0001437749-26-019932:ater20260608_defm14a.htm",
+      "source": "SEC",
+      "issuer": "Aterian, Inc.",
+      "bidder": null,
+      "cik": 1757715,
+      "ticker": "ATER",
+      "isin": null,
+      "form": "DEFM14A",
+      "event_type": "Cash merger (proxy)",
+      "category": "merger",
+      "announce_date": "2026-06-09",
+      "exec_date": "2026-07-09",
+      "url": "https://www.sec.gov/Archives/edgar/data/1757715/000143774926019932/ater20260608_defm14a.htm",
+      "odd_lot": true,
+      "offer_price": 1.0,
+      "current_price": null,
+      "spread_pct": null,
+      "why": "Fusión en efectivo: spread hasta cierre (voto/condiciones pendientes) · 🎯 prioridad odd-lot (<100 acc., sin prorrateo)",
       "first_seen": "2026-07-07"
     },
     {
@@ -3826,8 +4195,9 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/2093524/000135445726000554/primary_doc.xml",
       "offer_price": null,
-      "current_price": 9.930000305175781,
+      "current_price": 9.93,
       "spread_pct": null,
+      "why": "Aviso de exclusión: vigilar oferta y liquidez",
       "first_seen": "2026-07-07"
     },
     {
@@ -3847,6 +4217,7 @@
       "offer_price": null,
       "current_price": null,
       "spread_pct": null,
+      "why": "Aviso de exclusión: vigilar oferta y liquidez",
       "first_seen": "2026-07-07"
     },
     {
@@ -3942,6 +4313,7 @@
       "offer_price": null,
       "current_price": null,
       "spread_pct": null,
+      "why": "Aviso de exclusión: vigilar oferta y liquidez",
       "first_seen": "2026-07-07"
     },
     {
@@ -3961,6 +4333,7 @@
       "offer_price": null,
       "current_price": null,
       "spread_pct": null,
+      "why": "Aviso de exclusión: vigilar oferta y liquidez",
       "first_seen": "2026-07-07"
     },
     {
@@ -3980,6 +4353,7 @@
       "offer_price": null,
       "current_price": null,
       "spread_pct": null,
+      "why": "Aviso de exclusión: vigilar oferta y liquidez",
       "first_seen": "2026-07-07"
     },
     {
@@ -3999,6 +4373,7 @@
       "url": "https://spruchverfahren.blogspot.com/2026/06/klockner-co-se-entscheidung-zur-abgabe.html",
       "current_price": null,
       "spread_pct": null,
+      "why": "Delisting alemán: oferta obligatoria (mín. VWAP 6 meses)",
       "first_seen": "2026-07-07"
     },
     {
@@ -4037,6 +4412,7 @@
       "url": "https://www.bafin.de/SharedDocs/Downloads/DE/Angebotsunterlage/readcrest_capital.pdf?__blob=publicationFile&v=1",
       "current_price": null,
       "spread_pct": null,
+      "why": "Oferta en curso: confirmar precio en el documento",
       "first_seen": "2026-07-07"
     }
   ]

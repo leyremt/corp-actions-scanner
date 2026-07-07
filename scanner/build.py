@@ -61,6 +61,47 @@ def _write_alert(fresh: list[dict]) -> int:
     return len(worthy)
 
 
+def _why(e: dict) -> str:
+    """One-line, rule-based rationale for the 'Interés' column (Spanish)."""
+    cur = "$" if e["source"] == "SEC" else "€"
+    s, exec_, op = e.get("spread_pct"), e.get("exec_date"), e.get("offer_price")
+    et, cat = e.get("event_type", ""), e.get("category", "")
+
+    if e.get("is_fund"):
+        base = "Recompra periódica de fondo a NAV — sin edge típico"
+    elif e["source"] == "DE-Buyback":
+        base = "Autocartera: la empresa recompra a prima sobre mercado"
+    elif cat == "split_off":
+        base = "Menciona split-off: canje con posible prima; revisar odd-lot"
+    elif cat == "merger":
+        base = "Fusión en efectivo: spread hasta cierre (voto/condiciones pendientes)"
+    elif cat == "going_private":
+        base = "Exclusión de bolsa: cobras la contraprestación al cierre"
+    elif cat == "squeeze_out":
+        base = ("Fase judicial: posible mejora de la Barabfindung (Nachbesserung)"
+                if "Spruch" in et else
+                "Squeeze-out: efectivo asegurado + opción gratuita de mejora judicial")
+    elif cat == "delisting":
+        base = ("Delisting alemán: oferta obligatoria (mín. VWAP 6 meses)"
+                if e["source"] != "SEC" else "Aviso de exclusión: vigilar oferta y liquidez")
+    elif cat == "tender":
+        if s is not None and s > 0 and op:
+            base = f"Acudes a {cur}{op:.2f} ({s:+.1f}%)" + (f" antes del {exec_}" if exec_ else "")
+        elif s is not None and s <= 0:
+            base = "Cotiza en/ sobre la oferta: el mercado descuenta mejora o cierre"
+        else:
+            base = "Oferta en curso: confirmar precio en el documento"
+    else:
+        base = et
+
+    extras = []
+    if e.get("odd_lot"):
+        extras.append("🎯 prioridad odd-lot (<100 acc., sin prorrateo)")
+    if e.get("split_off") and cat != "split_off":
+        extras.append("posible split-off")
+    return base + ((" · " + " · ".join(extras)) if extras else "")
+
+
 def main(sec_days: int = 30, bafin_days: int = 365) -> None:
     events = collect_sec(days=sec_days)
     print(f"SEC: {len(events)} events", file=sys.stderr)
@@ -79,6 +120,9 @@ def main(sec_days: int = 30, bafin_days: int = 365) -> None:
         enrich(ev)
         if i % 25 == 0:
             print(f"  {i}/{len(events)}", file=sys.stderr)
+
+    for ev in events:
+        ev["why"] = _why(ev)
 
     fresh = _mark_new(events)
     alerted = _write_alert(fresh)

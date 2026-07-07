@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import datetime as dt
 import re
+import sys
 import time
 import urllib.parse
 from typing import Iterable
@@ -37,15 +38,22 @@ _session.headers.update({"User-Agent": UA, "Accept-Encoding": "gzip, deflate"})
 
 
 def _get(url: str, **kwargs) -> requests.Response:
-    """GET with retry + SEC's 10 req/s politeness limit."""
-    for attempt in range(4):
-        r = _session.get(url, timeout=30, **kwargs)
+    """GET with exponential-backoff retry + SEC's 10 req/s politeness limit.
+    EFTS throws transient 500s under load — be patient before giving up."""
+    r = None
+    for attempt in range(6):
+        try:
+            r = _session.get(url, timeout=30, **kwargs)
+        except requests.RequestException:
+            time.sleep(2.0 * (attempt + 1))
+            continue
         if r.status_code == 200:
             time.sleep(0.15)
             return r
-        time.sleep(1.0 + attempt)
-    r.raise_for_status()
-    return r
+        time.sleep(2.0 * (attempt + 1))  # 2,4,6,8,10s — outlasts EFTS hiccups
+    if r is not None:
+        r.raise_for_status()
+    raise requests.RequestException(f"giving up on {url}")
 
 
 def cik_to_ticker() -> dict[int, str]:
@@ -77,7 +85,14 @@ def collect(days: int = 30) -> list[dict]:
     events: dict[str, dict] = {}
 
     for form, (label, category) in FORMS.items():
-        for hit in _search(form, start.isoformat(), end.isoformat()):
+        try:
+            hits = _search(form, start.isoformat(), end.isoformat())
+        except requests.RequestException as exc:
+            # One form failing (transient EFTS outage) must not kill the run —
+            # the daily cron will pick up anything missed tomorrow.
+            print(f"EDGAR search failed for {form}: {exc}", file=sys.stderr)
+            continue
+        for hit in hits:
             src = hit.get("_source", {})
             adsh = src.get("adsh")
             if not adsh:

@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-07-07T19:43:13+00:00",
+  "generated_at": "2026-07-07T20:30:31+00:00",
   "window_days": {
     "SEC": 30,
     "BaFin": 365
   },
-  "count": 208,
+  "count": 234,
   "sources": [
     "SEC EDGAR",
     "BaFin",
@@ -27,8 +27,9 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/1819438/000087666126000595/primary_doc.xml",
       "offer_price": 172.5,
-      "current_price": 0.7638000249862671,
-      "spread_pct": 22484.45,
+      "current_price": 0.7602999806404114,
+      "spread_pct": 22588.41,
+      "why": "Aviso de exclusión: vigilar oferta y liquidez",
       "first_seen": "2026-07-07"
     },
     {
@@ -46,8 +47,9 @@
       "exec_date": "2026-06-08",
       "url": "https://www.sec.gov/Archives/edgar/data/896493/000119380526000788/e665568_sctoia-hyperscale.htm",
       "offer_price": 0.21,
-      "current_price": 0.12939999997615814,
-      "spread_pct": 62.29,
+      "current_price": 0.13449999690055847,
+      "spread_pct": 56.13,
+      "why": "Acudes a $0.21 (+56.1%) antes del 2026-06-08",
       "first_seen": "2026-07-07"
     },
     {
@@ -65,8 +67,9 @@
       "exec_date": "2026-06-16",
       "url": "https://www.sec.gov/Archives/edgar/data/1561032/000114036126025965/ny20076539x1_sctoia.htm",
       "offer_price": 22.5,
-      "current_price": 15.220000267028809,
-      "spread_pct": 47.83,
+      "current_price": 15.5,
+      "spread_pct": 45.16,
+      "why": "Acudes a $22.50 (+45.2%) antes del 2026-06-16",
       "first_seen": "2026-07-07"
     },
     {
@@ -84,8 +87,29 @@
       "exec_date": "2026-07-24",
       "url": "https://www.sec.gov/Archives/edgar/data/813298/000149315226029708/formsctota.htm",
       "offer_price": 0.84,
-      "current_price": 0.6297000050544739,
-      "spread_pct": 33.4,
+      "current_price": 0.6230000257492065,
+      "spread_pct": 34.83,
+      "why": "Acudes a $0.84 (+34.8%) antes del 2026-07-24",
+      "first_seen": "2026-07-07"
+    },
+    {
+      "id": "buyback:AAG.DE",
+      "source": "DE-Buyback",
+      "issuer": "Aumann",
+      "bidder": null,
+      "cik": null,
+      "ticker": "AAG.DE",
+      "isin": null,
+      "form": "Share buyback offer",
+      "event_type": "Buyback offer",
+      "category": "tender",
+      "announce_date": "2026-06-05",
+      "exec_date": null,
+      "offer_price": 17.8,
+      "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE9jMG83Q2dTcXloNmlwMHZHRXRsbHNPU0hNclRBWFlscnVZOFhJZVdsOFJwNWFRWDNma3VpZGs1RS00SVlub0E4YWJzUXJqOTJaZS13cWxDN2FpRWpLVjRtbVVn?oc=5",
+      "current_price": 14.100000381469727,
+      "spread_pct": 26.24,
+      "why": "Autocartera: la empresa recompra a prima sobre mercado",
       "first_seen": "2026-07-07"
     },
     {
@@ -105,6 +129,7 @@
       "url": "https://www.bafin.de/SharedDocs/Downloads/DE/Angebotsunterlage/CECONOMY.pdf?__blob=publicationFile&v=1",
       "current_price": 3.8299999237060547,
       "spread_pct": 20.1,
+      "why": "Acudes a €4.60 (+20.1%) antes del 2025-11-10",
       "first_seen": "2026-07-07"
     },
     {
@@ -124,6 +149,27 @@
       "url": "https://www.bafin.de/SharedDocs/Downloads/DE/Angebotsunterlage/turbon.pdf?__blob=publicationFile&v=1",
       "current_price": 2.9000000953674316,
       "spread_pct": 15.17,
+      "why": "Acudes a €3.34 (+15.2%) antes del 2025-11-18",
+      "first_seen": "2026-07-07"
+    },
+    {
+      "id": "0001829126-26-007326:dboralarcacq_defm14a.htm",
+      "source": "SEC",
+      "issuer": "D. Boral ARC Acquisition I Corp.",
+      "bidder": null,
+      "cik": 2065779,
+      "ticker": "BCAR",
+      "isin": null,
+      "form": "DEFM14A",
+      "event_type": "Cash merger (proxy)",
+      "category": "merger",
+      "announce_date": "2026-07-07",
+      "exec_date": null,
+      "url": "https://www.sec.gov/Archives/edgar/data/2065779/000182912626007326/dboralarcacq_defm14a.htm",
+      "offer_price": 11.5,
+      "current_price": 10.4399995803833,
+      "spread_pct": 10.15,
+      "why": "Fusión en efectivo: spread hasta cierre (voto/condiciones pendientes)",
       "first_seen": "2026-07-07"
     },
     {
@@ -141,8 +187,9 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/1326200/000110465926079410/tm2619439d1_sctota.htm",
       "offer_price": 27.34,
-      "current_price": 25.03499984741211,
-      "spread_pct": 9.21,
+      "current_price": 25.030000686645508,
+      "spread_pct": 9.23,
+      "why": "Acudes a $27.34 (+9.2%)",
       "first_seen": "2026-07-07"
     },
     {
@@ -153,6 +200,47 @@
       "cik": 1434868,
       "ticker": "ESPR",
       "isin": null,
+      "form": "DEFM14A",
+      "event_type": "Cash merger (proxy)",
+      "category": "merger",
+      "announce_date": "2026-06-08",
+      "exec_date": "2026-07-07",
+      "url": "https://www.sec.gov/Archives/edgar/data/1434868/000110465926071107/tm2615754-2_defm14a.htm",
+      "split_off": true,
+      "offer_price": 3.31,
+      "current_price": 3.1600000858306885,
+      "spread_pct": 4.75,
+      "why": "Fusión en efectivo: spread hasta cierre (voto/condiciones pendientes) · posible split-off",
+      "first_seen": "2026-07-07"
+    },
+    {
+      "id": "0001193125-26-273323:d15298ddefm14a.htm",
+      "source": "SEC",
+      "issuer": "Organon & Co.",
+      "bidder": null,
+      "cik": 1821825,
+      "ticker": "OGN",
+      "isin": null,
+      "form": "DEFM14A",
+      "event_type": "Cash merger (proxy)",
+      "category": "merger",
+      "announce_date": "2026-06-17",
+      "exec_date": "2026-06-22",
+      "url": "https://www.sec.gov/Archives/edgar/data/1821825/000119312526273323/d15298ddefm14a.htm",
+      "offer_price": 14.0,
+      "current_price": 13.510000228881836,
+      "spread_pct": 3.63,
+      "why": "Fusión en efectivo: spread hasta cierre (voto/condiciones pendientes)",
+      "first_seen": "2026-07-07"
+    },
+    {
+      "id": "0001140361-26-025134:ny20072853x8_sctota.htm",
+      "source": "SEC",
+      "issuer": "FS KKR Capital Corp",
+      "bidder": null,
+      "cik": 1422183,
+      "ticker": "FSK",
+      "isin": null,
       "form": "SC TO-T/A",
       "event_type": "Third-party tender offer",
       "category": "tender",
@@ -160,8 +248,30 @@
       "exec_date": "2026-06-09",
       "url": "https://www.sec.gov/Archives/edgar/data/1422183/000114036126025134/ny20072853x8_sctota.htm",
       "offer_price": 10.76,
-      "current_price": 10.479999542236328,
-      "spread_pct": 2.67,
+      "current_price": 10.449999809265137,
+      "spread_pct": 2.97,
+      "why": "Acudes a $10.76 (+3.0%) antes del 2026-06-09",
+      "first_seen": "2026-07-07"
+    },
+    {
+      "id": "0001104659-26-080505:tm264528-7_defm14aseq1.htm",
+      "source": "SEC",
+      "issuer": "LiveRamp Holdings, Inc.",
+      "bidder": null,
+      "cik": 733269,
+      "ticker": "RAMP",
+      "isin": null,
+      "form": "DEFM14A",
+      "event_type": "Cash merger (proxy)",
+      "category": "merger",
+      "announce_date": "2026-07-06",
+      "exec_date": null,
+      "url": "https://www.sec.gov/Archives/edgar/data/733269/000110465926080505/tm264528-7_defm14aseq1.htm",
+      "split_off": true,
+      "offer_price": 38.5,
+      "current_price": 37.56999969482422,
+      "spread_pct": 2.48,
+      "why": "Fusión en efectivo: spread hasta cierre (voto/condiciones pendientes) · posible split-off",
       "first_seen": "2026-07-07"
     },
     {
@@ -181,6 +291,7 @@
       "url": "https://www.bafin.de/SharedDocs/Downloads/DE/Angebotsunterlage/Kontron.pdf?__blob=publicationFile&v=1",
       "current_price": 23.0,
       "spread_pct": 2.17,
+      "why": "Acudes a €23.50 (+2.2%) antes del 2026-07-27",
       "first_seen": "2026-07-07"
     },
     {
@@ -198,8 +309,69 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/1876183/000110465926077872/tm2611054-3_sc13e3a.htm",
       "offer_price": 8.29,
-      "current_price": 8.194999694824219,
-      "spread_pct": 1.16,
+      "current_price": 8.149999618530273,
+      "spread_pct": 1.72,
+      "why": "Exclusión de bolsa: cobras la contraprestación al cierre",
+      "first_seen": "2026-07-07"
+    },
+    {
+      "id": "0001140361-26-027649:ny20072693x2_defm14a.htm",
+      "source": "SEC",
+      "issuer": "Global Business Travel Group, Inc.",
+      "bidder": null,
+      "cik": 1820872,
+      "ticker": "GBTG",
+      "isin": null,
+      "form": "DEFM14A",
+      "event_type": "Cash merger (proxy)",
+      "category": "merger",
+      "announce_date": "2026-07-06",
+      "exec_date": "2026-11-02",
+      "url": "https://www.sec.gov/Archives/edgar/data/1820872/000114036126027649/ny20072693x2_defm14a.htm",
+      "offer_price": 9.5,
+      "current_price": 9.390000343322754,
+      "spread_pct": 1.17,
+      "why": "Fusión en efectivo: spread hasta cierre (voto/condiciones pendientes)",
+      "first_seen": "2026-07-07"
+    },
+    {
+      "id": "0001193125-26-279627:d57916ddefm14a.htm",
+      "source": "SEC",
+      "issuer": "Taylor Morrison Home Corp",
+      "bidder": null,
+      "cik": 1562476,
+      "ticker": "TMHC",
+      "isin": null,
+      "form": "DEFM14A",
+      "event_type": "Cash merger (proxy)",
+      "category": "merger",
+      "announce_date": "2026-06-23",
+      "exec_date": "2026-07-21",
+      "url": "https://www.sec.gov/Archives/edgar/data/1562476/000119312526279627/d57916ddefm14a.htm",
+      "offer_price": 72.5,
+      "current_price": 71.7699966430664,
+      "spread_pct": 1.02,
+      "why": "Fusión en efectivo: spread hasta cierre (voto/condiciones pendientes)",
+      "first_seen": "2026-07-07"
+    },
+    {
+      "id": "0001140361-26-026456:ny20072844x2_defm14a.htm",
+      "source": "SEC",
+      "issuer": "ELECTRO SENSORS INC",
+      "bidder": null,
+      "cik": 351789,
+      "ticker": "ELSE",
+      "isin": null,
+      "form": "DEFM14A",
+      "event_type": "Cash merger (proxy)",
+      "category": "merger",
+      "announce_date": "2026-06-26",
+      "exec_date": "2026-07-20",
+      "url": "https://www.sec.gov/Archives/edgar/data/351789/000114036126026456/ny20072844x2_defm14a.htm",
+      "offer_price": 7.75,
+      "current_price": 7.679999828338623,
+      "spread_pct": 0.91,
+      "why": "Fusión en efectivo: spread hasta cierre (voto/condiciones pendientes)",
       "first_seen": "2026-07-07"
     },
     {
@@ -217,8 +389,9 @@
       "exec_date": "2026-07-27",
       "url": "https://www.sec.gov/Archives/edgar/data/1806201/000110465926078510/tm2617977d3_sctot.htm",
       "offer_price": 3.15,
-      "current_price": 3.119999885559082,
-      "spread_pct": 0.96,
+      "current_price": 3.130000114440918,
+      "spread_pct": 0.64,
+      "why": "Acudes a $3.15 (+0.6%) antes del 2026-07-27",
       "first_seen": "2026-07-07"
     },
     {
@@ -238,6 +411,67 @@
       "url": "https://www.bafin.de/SharedDocs/Downloads/DE/Angebotsunterlage/HUGO_BOSS.pdf?__blob=publicationFile&v=3",
       "current_price": 37.79999923706055,
       "spread_pct": 0.53,
+      "why": "Acudes a €38.00 (+0.5%) antes del 2026-07-27",
+      "first_seen": "2026-07-07"
+    },
+    {
+      "id": "0001193125-26-280277:d107826ddefm14a.htm",
+      "source": "SEC",
+      "issuer": "Axalta Coating Systems Ltd.",
+      "bidder": null,
+      "cik": 1616862,
+      "ticker": "AXTA",
+      "isin": null,
+      "form": "DEFM14A",
+      "event_type": "Cash merger (proxy)",
+      "category": "merger",
+      "announce_date": "2026-06-24",
+      "exec_date": "2026-08-04",
+      "url": "https://www.sec.gov/Archives/edgar/data/1616862/000119312526280277/d107826ddefm14a.htm",
+      "offer_price": 34.36,
+      "current_price": 34.25,
+      "spread_pct": 0.32,
+      "why": "Fusión en efectivo: spread hasta cierre (voto/condiciones pendientes)",
+      "first_seen": "2026-07-07"
+    },
+    {
+      "id": "0001104659-26-072432:tm2614353-2_defm14a.htm",
+      "source": "SEC",
+      "issuer": "AVANOS MEDICAL, INC.",
+      "bidder": null,
+      "cik": 1606498,
+      "ticker": "AVNS",
+      "isin": null,
+      "form": "DEFM14A",
+      "event_type": "Cash merger (proxy)",
+      "category": "merger",
+      "announce_date": "2026-06-10",
+      "exec_date": "2026-07-21",
+      "url": "https://www.sec.gov/Archives/edgar/data/1606498/000110465926072432/tm2614353-2_defm14a.htm",
+      "offer_price": 25.0,
+      "current_price": 24.920000076293945,
+      "spread_pct": 0.32,
+      "why": "Fusión en efectivo: spread hasta cierre (voto/condiciones pendientes)",
+      "first_seen": "2026-07-07"
+    },
+    {
+      "id": "0001140361-26-025249:ny20073866x2_defm14a.htm",
+      "source": "SEC",
+      "issuer": "CROSS COUNTRY HEALTHCARE INC",
+      "bidder": null,
+      "cik": 1141103,
+      "ticker": "CCRN",
+      "isin": null,
+      "form": "DEFM14A",
+      "event_type": "Cash merger (proxy)",
+      "category": "merger",
+      "announce_date": "2026-06-15",
+      "exec_date": "2026-06-22",
+      "url": "https://www.sec.gov/Archives/edgar/data/1141103/000114036126025249/ny20073866x2_defm14a.htm",
+      "offer_price": 13.25,
+      "current_price": 13.220000267028809,
+      "spread_pct": 0.23,
+      "why": "Fusión en efectivo: spread hasta cierre (voto/condiciones pendientes)",
       "first_seen": "2026-07-07"
     },
     {
@@ -255,8 +489,29 @@
       "exec_date": "2026-07-14",
       "url": "https://www.sec.gov/Archives/edgar/data/1861560/000119312526280246/d90297dsctot.htm",
       "offer_price": 124.0,
-      "current_price": 123.7750015258789,
-      "spread_pct": 0.18,
+      "current_price": 123.7699966430664,
+      "spread_pct": 0.19,
+      "why": "Acudes a $124.00 (+0.2%) antes del 2026-07-14",
+      "first_seen": "2026-07-07"
+    },
+    {
+      "id": "0001140361-26-025092:ny20068726x7_sc13e3a.htm",
+      "source": "SEC",
+      "issuer": "KORE Group Holdings, Inc.",
+      "bidder": null,
+      "cik": 1855457,
+      "ticker": "KORE",
+      "isin": null,
+      "form": "SC 13E3/A",
+      "event_type": "Going-private",
+      "category": "going_private",
+      "announce_date": "2026-06-15",
+      "exec_date": null,
+      "url": "https://www.sec.gov/Archives/edgar/data/1855457/000114036126025092/ny20068726x7_sc13e3a.htm",
+      "offer_price": 9.25,
+      "current_price": 9.239999771118164,
+      "spread_pct": 0.11,
+      "why": "Exclusión de bolsa: cobras la contraprestación al cierre",
       "first_seen": "2026-07-07"
     },
     {
@@ -274,8 +529,9 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/1855457/000114036126025086/ny20068726x6_defm14a.htm",
       "offer_price": 9.25,
-      "current_price": 9.234999656677246,
-      "spread_pct": 0.16,
+      "current_price": 9.239999771118164,
+      "spread_pct": 0.11,
+      "why": "Fusión en efectivo: spread hasta cierre (voto/condiciones pendientes)",
       "first_seen": "2026-07-07"
     },
     {
@@ -295,6 +551,27 @@
       "offer_price": 52.0,
       "current_price": 51.95,
       "spread_pct": 0.1,
+      "why": "Exclusión de bolsa: cobras la contraprestación al cierre",
+      "first_seen": "2026-07-07"
+    },
+    {
+      "id": "0001193125-26-261719:d76493ddefm14a.htm",
+      "source": "SEC",
+      "issuer": "CATALYST PHARMACEUTICALS, INC.",
+      "bidder": null,
+      "cik": 1369568,
+      "ticker": "CPRX",
+      "isin": null,
+      "form": "DEFM14A",
+      "event_type": "Cash merger (proxy)",
+      "category": "merger",
+      "announce_date": "2026-06-08",
+      "exec_date": "2026-11-06",
+      "url": "https://www.sec.gov/Archives/edgar/data/1369568/000119312526261719/d76493ddefm14a.htm",
+      "offer_price": 31.5,
+      "current_price": 31.489999771118164,
+      "spread_pct": 0.03,
+      "why": "Fusión en efectivo: spread hasta cierre (voto/condiciones pendientes)",
       "first_seen": "2026-07-07"
     },
     {
@@ -314,6 +591,7 @@
       "offer_price": 24.55,
       "current_price": 24.56,
       "spread_pct": -0.04,
+      "why": "Exclusión de bolsa: cobras la contraprestación al cierre",
       "first_seen": "2026-07-07"
     },
     {
@@ -333,6 +611,7 @@
       "url": "https://www.bafin.de/SharedDocs/Downloads/DE/Angebotsunterlage/PSI_Software.pdf?__blob=publicationFile&v=1",
       "current_price": 45.400001525878906,
       "spread_pct": -0.88,
+      "why": "Cotiza en/ sobre la oferta: el mercado descuenta mejora o cierre",
       "first_seen": "2026-07-07"
     },
     {
@@ -390,8 +669,50 @@
       "exec_date": "2026-07-01",
       "url": "https://www.sec.gov/Archives/edgar/data/1590877/000119312526295587/rgnx-to-i-a-2.htm",
       "offer_price": 13.28,
-      "current_price": 15.109999656677246,
-      "spread_pct": -12.11,
+      "current_price": 15.020000457763672,
+      "spread_pct": -11.58,
+      "why": "Cotiza en/ sobre la oferta: el mercado descuenta mejora o cierre",
+      "first_seen": "2026-07-07"
+    },
+    {
+      "id": "0001140361-26-026611:ny20075452x2_defm14a.htm",
+      "source": "SEC",
+      "issuer": "Amneal Pharmaceuticals, Inc.",
+      "bidder": null,
+      "cik": 1723128,
+      "ticker": "AMRX",
+      "isin": null,
+      "form": "DEFM14A",
+      "event_type": "Cash merger (proxy)",
+      "category": "merger",
+      "announce_date": "2026-06-29",
+      "exec_date": "2026-07-30",
+      "url": "https://www.sec.gov/Archives/edgar/data/1723128/000114036126026611/ny20075452x2_defm14a.htm",
+      "offer_price": 14.0,
+      "current_price": 17.049999237060547,
+      "spread_pct": -17.89,
+      "why": "Fusión en efectivo: spread hasta cierre (voto/condiciones pendientes)",
+      "first_seen": "2026-07-07"
+    },
+    {
+      "id": "0001437749-26-019932:ater20260608_defm14a.htm",
+      "source": "SEC",
+      "issuer": "Aterian, Inc.",
+      "bidder": null,
+      "cik": 1757715,
+      "ticker": "ATER",
+      "isin": null,
+      "form": "DEFM14A",
+      "event_type": "Cash merger (proxy)",
+      "category": "merger",
+      "announce_date": "2026-06-09",
+      "exec_date": "2026-07-09",
+      "url": "https://www.sec.gov/Archives/edgar/data/1757715/000143774926019932/ater20260608_defm14a.htm",
+      "odd_lot": true,
+      "offer_price": 1.0,
+      "current_price": 1.2400000095367432,
+      "spread_pct": -19.35,
+      "why": "Fusión en efectivo: spread hasta cierre (voto/condiciones pendientes) · 🎯 prioridad odd-lot (<100 acc., sin prorrateo)",
       "first_seen": "2026-07-07"
     },
     {
@@ -409,8 +730,9 @@
       "exec_date": "2026-06-10",
       "url": "https://www.sec.gov/Archives/edgar/data/1476840/000147684026000063/expensifyinc-scheduletoxia.htm",
       "offer_price": 1.2,
-      "current_price": 1.7447999715805054,
-      "spread_pct": -31.22,
+      "current_price": 1.7100000381469727,
+      "spread_pct": -29.82,
+      "why": "Cotiza en/ sobre la oferta: el mercado descuenta mejora o cierre",
       "first_seen": "2026-07-07"
     },
     {
@@ -428,8 +750,9 @@
       "exec_date": "2025-08-28",
       "offer_price": 2.8,
       "url": "https://www.bafin.de/SharedDocs/Downloads/DE/Angebotsunterlage/Francotyp_Saltarax.pdf?__blob=publicationFile&v=1",
-      "current_price": 5.065000057220459,
-      "spread_pct": -44.72,
+      "current_price": 5.079999923706055,
+      "spread_pct": -44.88,
+      "why": "Cotiza en/ sobre la oferta: el mercado descuenta mejora o cierre",
       "first_seen": "2026-07-07"
     },
     {
@@ -447,8 +770,9 @@
       "exec_date": "2026-07-10",
       "url": "https://www.sec.gov/Archives/edgar/data/320017/000114036126024731/ny20068687x1_sctot.htm",
       "offer_price": 1.25,
-      "current_price": 3.305000066757202,
-      "spread_pct": -62.18,
+      "current_price": 3.2699999809265137,
+      "spread_pct": -61.77,
+      "why": "Cotiza en/ sobre la oferta: el mercado descuenta mejora o cierre",
       "first_seen": "2026-07-07"
     },
     {
@@ -470,6 +794,7 @@
       "is_fund": true,
       "current_price": 24.520000457763672,
       "spread_pct": -84.91,
+      "why": "Recompra periódica de fondo a NAV — sin edge típico · 🎯 prioridad odd-lot (<100 acc., sin prorrateo)",
       "first_seen": "2026-07-07"
     },
     {
@@ -490,6 +815,7 @@
       "is_fund": true,
       "current_price": null,
       "spread_pct": null,
+      "why": "Recompra periódica de fondo a NAV — sin edge típico",
       "first_seen": "2026-07-07"
     },
     {
@@ -506,10 +832,11 @@
       "announce_date": "2026-07-07",
       "exec_date": "2026-09-16",
       "url": "https://www.sec.gov/Archives/edgar/data/1811114/000139834426011797/fp0099565-1_sctoi.htm",
-      "offer_price": 14.4,
+      "offer_price": null,
       "is_fund": true,
       "current_price": null,
       "spread_pct": null,
+      "why": "Recompra periódica de fondo a NAV — sin edge típico",
       "first_seen": "2026-07-07"
     },
     {
@@ -530,6 +857,7 @@
       "is_fund": true,
       "current_price": null,
       "spread_pct": null,
+      "why": "Recompra periódica de fondo a NAV — sin edge típico",
       "first_seen": "2026-07-07"
     },
     {
@@ -549,6 +877,7 @@
       "offer_price": null,
       "current_price": null,
       "spread_pct": null,
+      "why": "Aviso de exclusión: vigilar oferta y liquidez",
       "first_seen": "2026-07-07"
     },
     {
@@ -568,6 +897,7 @@
       "offer_price": null,
       "current_price": 2.07,
       "spread_pct": null,
+      "why": "Aviso de exclusión: vigilar oferta y liquidez",
       "first_seen": "2026-07-07"
     },
     {
@@ -585,8 +915,9 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/14693/000087666126000602/primary_doc.xml",
       "offer_price": null,
-      "current_price": 26.6299991607666,
+      "current_price": 26.510000228881836,
       "spread_pct": null,
+      "why": "Aviso de exclusión: vigilar oferta y liquidez",
       "first_seen": "2026-07-07"
     },
     {
@@ -647,8 +978,9 @@
       "exec_date": "2026-06-30",
       "url": "https://www.sec.gov/Archives/edgar/data/1702780/000121390026075249/ea0292029-04.htm",
       "offer_price": null,
-      "current_price": 1.2350000143051147,
+      "current_price": 1.1799999475479126,
       "spread_pct": null,
+      "why": "Oferta en curso: confirmar precio en el documento",
       "first_seen": "2026-07-07"
     },
     {
@@ -730,6 +1062,7 @@
       "offer_price": null,
       "current_price": 1.3600000143051147,
       "spread_pct": null,
+      "why": "Aviso de exclusión: vigilar oferta y liquidez",
       "first_seen": "2026-07-07"
     },
     {
@@ -749,6 +1082,7 @@
       "url": "https://spruchverfahren.blogspot.com/2026/07/httpsonline.html",
       "current_price": null,
       "spread_pct": null,
+      "why": "Fase judicial: posible mejora de la Barabfindung (Nachbesserung)",
       "first_seen": "2026-07-07"
     },
     {
@@ -805,7 +1139,7 @@
       "event_type": "Issuer tender offer",
       "category": "tender",
       "announce_date": "2026-07-02",
-      "exec_date": null,
+      "exec_date": "2026-09-21",
       "url": "https://www.sec.gov/Archives/edgar/data/1709406/000119312526293699/d53805dsctoia.htm",
       "offer_price": null,
       "is_fund": true,
@@ -891,8 +1225,9 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/34088/000087666126000593/primary_doc.xml",
       "offer_price": null,
-      "current_price": 141.42010498046875,
+      "current_price": 141.69000244140625,
       "spread_pct": null,
+      "why": "Aviso de exclusión: vigilar oferta y liquidez",
       "first_seen": "2026-07-07"
     },
     {
@@ -912,6 +1247,7 @@
       "url": "https://spruchverfahren.blogspot.com/2026/07/spruchverfahren-zum-squeeze-out-bei-der.html",
       "current_price": null,
       "spread_pct": null,
+      "why": "Fase judicial: posible mejora de la Barabfindung (Nachbesserung)",
       "first_seen": "2026-07-07"
     },
     {
@@ -1072,8 +1408,9 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/1821159/000135445726000636/primary_doc.xml",
       "offer_price": null,
-      "current_price": 1.8250000476837158,
+      "current_price": 1.8200000524520874,
       "spread_pct": null,
+      "why": "Aviso de exclusión: vigilar oferta y liquidez",
       "first_seen": "2026-07-07"
     },
     {
@@ -1091,8 +1428,9 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/1462223/000135445726000635/primary_doc.xml",
       "offer_price": null,
-      "current_price": 1.4600000381469727,
+      "current_price": 1.4700000286102295,
       "spread_pct": null,
+      "why": "Aviso de exclusión: vigilar oferta y liquidez",
       "first_seen": "2026-07-07"
     },
     {
@@ -1132,6 +1470,7 @@
       "offer_price": null,
       "current_price": 25.62,
       "spread_pct": null,
+      "why": "Aviso de exclusión: vigilar oferta y liquidez",
       "first_seen": "2026-07-07"
     },
     {
@@ -1191,6 +1530,7 @@
       "offer_price": null,
       "current_price": 51.95,
       "spread_pct": null,
+      "why": "Aviso de exclusión: vigilar oferta y liquidez",
       "first_seen": "2026-07-07"
     },
     {
@@ -1247,7 +1587,7 @@
       "announce_date": "2026-06-30",
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/1854919/000158064226004048/dynamic-alts_sctoia.htm",
-      "offer_price": 11.32,
+      "offer_price": null,
       "is_fund": true,
       "current_price": null,
       "spread_pct": null,
@@ -1353,6 +1693,29 @@
       "offer_price": null,
       "current_price": 20.5,
       "spread_pct": null,
+      "why": "Aviso de exclusión: vigilar oferta y liquidez",
+      "first_seen": "2026-07-07"
+    },
+    {
+      "id": "0001214659-26-007963:v629260s4a2.htm",
+      "source": "SEC",
+      "issuer": "VerifyMe, Inc.",
+      "bidder": null,
+      "cik": 1104038,
+      "ticker": "VRME",
+      "isin": null,
+      "form": "S-4/A",
+      "event_type": "Posible split-off",
+      "category": "split_off",
+      "announce_date": "2026-06-30",
+      "exec_date": null,
+      "url": "https://www.sec.gov/Archives/edgar/data/1104038/000121465926007963/v629260s4a2.htm",
+      "odd_lot": true,
+      "split_off": true,
+      "offer_price": null,
+      "current_price": 0.660099983215332,
+      "spread_pct": null,
+      "why": "Menciona split-off: canje con posible prima; revisar odd-lot · 🎯 prioridad odd-lot (<100 acc., sin prorrateo)",
       "first_seen": "2026-07-07"
     },
     {
@@ -1455,8 +1818,29 @@
       "url": "https://www.sec.gov/Archives/edgar/data/1692705/000110465926078464/tm2618847d2_sctoi.htm",
       "odd_lot": true,
       "offer_price": null,
-      "current_price": 2.578900098800659,
+      "current_price": 2.619999885559082,
       "spread_pct": null,
+      "why": "Oferta en curso: confirmar precio en el documento · 🎯 prioridad odd-lot (<100 acc., sin prorrateo)",
+      "first_seen": "2026-07-07"
+    },
+    {
+      "id": "0001213900-26-073218:ea0296324-01.htm",
+      "source": "SEC",
+      "issuer": "Texas Mineral Resources Corp.",
+      "bidder": null,
+      "cik": 1445942,
+      "ticker": "TMRC",
+      "isin": null,
+      "form": "DEFM14A",
+      "event_type": "Cash merger (proxy)",
+      "category": "merger",
+      "announce_date": "2026-06-29",
+      "exec_date": "2026-07-27",
+      "url": "https://www.sec.gov/Archives/edgar/data/1445942/000121390026073218/ea0296324-01.htm",
+      "offer_price": null,
+      "current_price": 0.7598999738693237,
+      "spread_pct": null,
+      "why": "Fusión en efectivo: spread hasta cierre (voto/condiciones pendientes)",
       "first_seen": "2026-07-07"
     },
     {
@@ -1494,8 +1878,9 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/1840502/000135445726000626/primary_doc.xml",
       "offer_price": null,
-      "current_price": 5.445000171661377,
+      "current_price": 5.429999828338623,
       "spread_pct": null,
+      "why": "Aviso de exclusión: vigilar oferta y liquidez",
       "first_seen": "2026-07-07"
     },
     {
@@ -1513,7 +1898,27 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/1145255/000135445726000625/primary_doc.xml",
       "offer_price": null,
-      "current_price": 10.100099563598633,
+      "current_price": 10.260000228881836,
+      "spread_pct": null,
+      "why": "Aviso de exclusión: vigilar oferta y liquidez",
+      "first_seen": "2026-07-07"
+    },
+    {
+      "id": "buyback:renault zeigt mit rückkaufangebot",
+      "source": "DE-Buyback",
+      "issuer": "Renault zeigt mit Rückkaufangebot",
+      "bidder": null,
+      "cik": null,
+      "ticker": null,
+      "isin": null,
+      "form": "Share buyback offer",
+      "event_type": "Buyback offer",
+      "category": "tender",
+      "announce_date": "2026-06-28",
+      "exec_date": null,
+      "offer_price": null,
+      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQajFMRHdQS0NacWZpdUQ0amoyNW0wQU9qSmxUR0JyQnh6N3pkWWY3ZXJOcWxjMlBRaTB6TENRaVlIVGw1UUVaaEZrNjN5bXcyZ3AySmMwV1hSNzRHWG5BaEYyNzZaNXhwcWlHdGRMUm9EekRwVkJQMDB6a0RUeDhoc1pJMElHZnNzcGtiY0VzQXg3VEFBWklJNVRXWktzbWozNjFHaGNraXFyMHZMUjh3YVdwS3p6N1V2UmVtU0tzeHRnSlg1SXc?oc=5",
+      "current_price": null,
       "spread_pct": null,
       "why": "Autocartera: la empresa recompra a prima sobre mercado",
       "first_seen": "2026-07-07"
@@ -1783,8 +2188,9 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/1865631/000135445726000624/primary_doc.xml",
       "offer_price": null,
-      "current_price": 17.1200008392334,
+      "current_price": 16.889999389648438,
       "spread_pct": null,
+      "why": "Aviso de exclusión: vigilar oferta y liquidez",
       "first_seen": "2026-07-07"
     },
     {
@@ -1804,6 +2210,7 @@
       "offer_price": null,
       "current_price": 0.0002,
       "spread_pct": null,
+      "why": "Aviso de exclusión: vigilar oferta y liquidez",
       "first_seen": "2026-07-07"
     },
     {
@@ -1821,8 +2228,9 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/1119639/000087666126000576/primary_doc.xml",
       "offer_price": null,
-      "current_price": 16.7450008392334,
+      "current_price": 16.65999984741211,
       "spread_pct": null,
+      "why": "Aviso de exclusión: vigilar oferta y liquidez",
       "first_seen": "2026-07-07"
     },
     {
@@ -1851,7 +2259,7 @@
       "issuer": "PROASSURANCE CORP",
       "bidder": null,
       "cik": 1127703,
-      "ticker": null,
+      "ticker": "PRA",
       "isin": null,
       "form": "25-NSE",
       "event_type": "Delisting notice",
@@ -1860,7 +2268,7 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/1127703/000087666126000573/primary_doc.xml",
       "offer_price": null,
-      "current_price": null,
+      "current_price": 25.0,
       "spread_pct": null,
       "why": "Aviso de exclusión: vigilar oferta y liquidez",
       "first_seen": "2026-07-07"
@@ -1882,6 +2290,7 @@
       "url": "https://www.bafin.de/DE/die-bafin/publikationen-daten/datenbanken-uebersichten/WPUeG/angebotsunterlagen/angebotsunterlagen_node.html",
       "current_price": 77.0,
       "spread_pct": null,
+      "why": "Oferta en curso: confirmar precio en el documento",
       "first_seen": "2026-07-07"
     },
     {
@@ -1901,6 +2310,7 @@
       "url": "https://spruchverfahren.blogspot.com/2026/06/ccs-abwicklungs-ag-widerruf-der.html",
       "current_price": 0.0065,
       "spread_pct": null,
+      "why": "Delisting alemán: oferta obligatoria (mín. VWAP 6 meses)",
       "first_seen": "2026-07-07"
     },
     {
@@ -2025,6 +2435,7 @@
       "offer_price": null,
       "current_price": 0.133,
       "spread_pct": null,
+      "why": "Oferta en curso: confirmar precio en el documento",
       "first_seen": "2026-07-07"
     },
     {
@@ -2088,26 +2499,6 @@
       "current_price": null,
       "spread_pct": null,
       "why": "Recompra periódica de fondo a NAV — sin edge típico",
-      "first_seen": "2026-07-07"
-    },
-    {
-      "id": "0001193125-26-282102:d95008dsc13e3a.htm",
-      "source": "SEC",
-      "issuer": "Clearwater Analytics Holdings, Inc.",
-      "bidder": null,
-      "cik": 1866368,
-      "ticker": null,
-      "isin": null,
-      "form": "SC 13E3/A",
-      "event_type": "Going-private",
-      "category": "going_private",
-      "announce_date": "2026-06-25",
-      "exec_date": null,
-      "url": "https://www.sec.gov/Archives/edgar/data/1866368/000119312526282102/d95008dsc13e3a.htm",
-      "offer_price": 24.55,
-      "current_price": null,
-      "spread_pct": null,
-      "why": "Exclusión de bolsa: cobras la contraprestación al cierre",
       "first_seen": "2026-07-07"
     },
     {
@@ -2385,8 +2776,9 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/1306830/000087666126000556/primary_doc.xml",
       "offer_price": null,
-      "current_price": 48.83000183105469,
+      "current_price": 48.68000030517578,
       "spread_pct": null,
+      "why": "Aviso de exclusión: vigilar oferta y liquidez",
       "first_seen": "2026-07-07"
     },
     {
@@ -2415,7 +2807,7 @@
       "issuer": "Clearwater Analytics Holdings, Inc.",
       "bidder": null,
       "cik": 1866368,
-      "ticker": null,
+      "ticker": "CWAN",
       "isin": null,
       "form": "25-NSE",
       "event_type": "Delisting notice",
@@ -2424,7 +2816,7 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/1866368/000087666126000553/primary_doc.xml",
       "offer_price": null,
-      "current_price": null,
+      "current_price": 24.56,
       "spread_pct": null,
       "why": "Aviso de exclusión: vigilar oferta y liquidez",
       "first_seen": "2026-07-07"
@@ -2610,7 +3002,7 @@
       "exec_date": "2026-08-09",
       "url": "https://www.sec.gov/Archives/edgar/data/1645873/000110465926077331/tm2615734-8_defm14a.htm",
       "offer_price": null,
-      "current_price": 17.459999084472656,
+      "current_price": 17.469999313354492,
       "spread_pct": null,
       "why": "Fusión en efectivo: spread hasta cierre (voto/condiciones pendientes)",
       "first_seen": "2026-07-07"
@@ -2621,7 +3013,7 @@
       "issuer": "Centessa Pharmaceuticals plc",
       "bidder": null,
       "cik": 1847903,
-      "ticker": null,
+      "ticker": "CNTA",
       "isin": null,
       "form": "25-NSE",
       "event_type": "Delisting notice",
@@ -2630,7 +3022,7 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/1847903/000135445726000616/primary_doc.xml",
       "offer_price": null,
-      "current_price": null,
+      "current_price": 40.5,
       "spread_pct": null,
       "why": "Aviso de exclusión: vigilar oferta y liquidez",
       "first_seen": "2026-07-07"
@@ -2817,7 +3209,7 @@
       "exec_date": "2026-07-29",
       "url": "https://www.sec.gov/Archives/edgar/data/1889539/000119312526279656/d115497ddefm14a.htm",
       "offer_price": null,
-      "current_price": 30.594999313354492,
+      "current_price": 30.610000610351562,
       "spread_pct": null,
       "why": "Fusión en efectivo: spread hasta cierre (voto/condiciones pendientes)",
       "first_seen": "2026-07-07"
@@ -2839,6 +3231,7 @@
       "offer_price": null,
       "current_price": 0.95,
       "spread_pct": null,
+      "why": "Aviso de exclusión: vigilar oferta y liquidez",
       "first_seen": "2026-07-07"
     },
     {
@@ -2858,6 +3251,7 @@
       "offer_price": null,
       "current_price": 0.04989999905228615,
       "spread_pct": null,
+      "why": "Aviso de exclusión: vigilar oferta y liquidez",
       "first_seen": "2026-07-07"
     },
     {
@@ -2875,8 +3269,9 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/1962738/000135445726000606/primary_doc.xml",
       "offer_price": null,
-      "current_price": 0.1251000016927719,
+      "current_price": 0.13009999692440033,
       "spread_pct": null,
+      "why": "Aviso de exclusión: vigilar oferta y liquidez",
       "first_seen": "2026-07-07"
     },
     {
@@ -2916,6 +3311,7 @@
       "offer_price": null,
       "current_price": 9.970000267028809,
       "spread_pct": null,
+      "why": "Aviso de exclusión: vigilar oferta y liquidez",
       "first_seen": "2026-07-07"
     },
     {
@@ -2935,6 +3331,7 @@
       "url": "https://spruchverfahren.blogspot.com/2026/06/spruchverfahrenn-zum-squeeze-out-bei.html",
       "current_price": null,
       "spread_pct": null,
+      "why": "Fase judicial: posible mejora de la Barabfindung (Nachbesserung)",
       "first_seen": "2026-07-07"
     },
     {
@@ -3001,26 +3398,6 @@
       "first_seen": "2026-07-07"
     },
     {
-      "id": "0001140361-26-025965:ny20076539x1_sctoia.htm",
-      "source": "SEC",
-      "issuer": "National Healthcare Properties, Inc.",
-      "bidder": null,
-      "cik": 1561032,
-      "ticker": "NHP",
-      "isin": null,
-      "form": "SC TO-I/A",
-      "event_type": "Issuer tender offer",
-      "category": "tender",
-      "announce_date": "2026-06-22",
-      "exec_date": "2026-06-16",
-      "url": "https://www.sec.gov/Archives/edgar/data/1561032/000114036126025965/ny20076539x1_sctoia.htm",
-      "offer_price": 22.5,
-      "current_price": null,
-      "spread_pct": null,
-      "why": "Oferta en curso: confirmar precio en el documento",
-      "first_seen": "2026-07-07"
-    },
-    {
       "id": "0001354457-26-000605:primary_doc.xml",
       "source": "SEC",
       "issuer": "Live Oak Acquisition Corp. V",
@@ -3035,8 +3412,9 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/2048951/000135445726000605/primary_doc.xml",
       "offer_price": null,
-      "current_price": 7.699999809265137,
+      "current_price": 7.71999979019165,
       "spread_pct": null,
+      "why": "Aviso de exclusión: vigilar oferta y liquidez",
       "first_seen": "2026-07-07"
     },
     {
@@ -3054,8 +3432,9 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/1803901/000135445726000603/primary_doc.xml",
       "offer_price": null,
-      "current_price": 5.215000152587891,
+      "current_price": 5.210000038146973,
       "spread_pct": null,
+      "why": "Aviso de exclusión: vigilar oferta y liquidez",
       "first_seen": "2026-07-07"
     },
     {
@@ -3379,8 +3758,30 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/1849221/000114331326000033/primary_doc.xml",
       "offer_price": null,
-      "current_price": 0.11110000312328339,
+      "current_price": 0.12999999523162842,
       "spread_pct": null,
+      "why": "Aviso de exclusión: vigilar oferta y liquidez",
+      "first_seen": "2026-07-07"
+    },
+    {
+      "id": "0001104659-26-075810:kplt-20260331xs4.htm",
+      "source": "SEC",
+      "issuer": "Katapult Holdings, Inc.",
+      "bidder": null,
+      "cik": 1785424,
+      "ticker": "KPLT",
+      "isin": null,
+      "form": "S-4",
+      "event_type": "Posible split-off",
+      "category": "split_off",
+      "announce_date": "2026-06-18",
+      "exec_date": "2026-06-09",
+      "url": "https://www.sec.gov/Archives/edgar/data/1785424/000110465926075810/kplt-20260331xs4.htm",
+      "split_off": true,
+      "offer_price": null,
+      "current_price": 7.630000114440918,
+      "spread_pct": null,
+      "why": "Menciona split-off: canje con posible prima; revisar odd-lot",
       "first_seen": "2026-07-07"
     },
     {
@@ -3400,6 +3801,7 @@
       "url": "https://spruchverfahren.blogspot.com/2026/06/ludwig-beck-am-rathauseck-textilhaus_01847830885.html",
       "current_price": 25.600000381469727,
       "spread_pct": null,
+      "why": "Delisting alemán: oferta obligatoria (mín. VWAP 6 meses)",
       "first_seen": "2026-07-07"
     },
     {
@@ -3487,26 +3889,6 @@
       "first_seen": "2026-07-07"
     },
     {
-      "id": "0001193125-26-273323:d15298ddefm14a.htm",
-      "source": "SEC",
-      "issuer": "Organon & Co.",
-      "bidder": null,
-      "cik": 1821825,
-      "ticker": "OGN",
-      "isin": null,
-      "form": "DEFM14A",
-      "event_type": "Cash merger (proxy)",
-      "category": "merger",
-      "announce_date": "2026-06-17",
-      "exec_date": "2026-06-22",
-      "url": "https://www.sec.gov/Archives/edgar/data/1821825/000119312526273323/d15298ddefm14a.htm",
-      "offer_price": 14.0,
-      "current_price": null,
-      "spread_pct": null,
-      "why": "Fusión en efectivo: spread hasta cierre (voto/condiciones pendientes)",
-      "first_seen": "2026-07-07"
-    },
-    {
       "id": "0001354457-26-000587:primary_doc.xml",
       "source": "SEC",
       "issuer": "PLAYSTUDIOS, Inc.",
@@ -3521,8 +3903,9 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/1823878/000135445726000587/primary_doc.xml",
       "offer_price": null,
-      "current_price": 0.6751000285148621,
+      "current_price": 0.6638000011444092,
       "spread_pct": null,
+      "why": "Aviso de exclusión: vigilar oferta y liquidez",
       "first_seen": "2026-07-07"
     },
     {
@@ -3542,6 +3925,7 @@
       "url": "https://www.bafin.de/DE/die-bafin/publikationen-daten/datenbanken-uebersichten/WPUeG/angebotsunterlagen/angebotsunterlagen_node.html",
       "current_price": 25.600000381469727,
       "spread_pct": null,
+      "why": "Oferta en curso: confirmar precio en el documento",
       "first_seen": "2026-07-07"
     },
     {
@@ -3641,8 +4025,9 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/1852551/000135445726000580/primary_doc.xml",
       "offer_price": null,
-      "current_price": 4.585000038146973,
+      "current_price": 4.579999923706055,
       "spread_pct": null,
+      "why": "Aviso de exclusión: vigilar oferta y liquidez",
       "first_seen": "2026-07-07"
     },
     {
@@ -3686,46 +4071,6 @@
       "first_seen": "2026-07-07"
     },
     {
-      "id": "0001140361-26-025134:ny20072853x8_sctota.htm",
-      "source": "SEC",
-      "issuer": "FS KKR Capital Corp",
-      "bidder": null,
-      "cik": 1422183,
-      "ticker": "FSK",
-      "isin": null,
-      "form": "SC TO-T/A",
-      "event_type": "Third-party tender offer",
-      "category": "tender",
-      "announce_date": "2026-06-15",
-      "exec_date": "2026-06-09",
-      "url": "https://www.sec.gov/Archives/edgar/data/1422183/000114036126025134/ny20072853x8_sctota.htm",
-      "offer_price": 10.76,
-      "current_price": null,
-      "spread_pct": null,
-      "why": "Oferta en curso: confirmar precio en el documento",
-      "first_seen": "2026-07-07"
-    },
-    {
-      "id": "0001140361-26-025092:ny20068726x7_sc13e3a.htm",
-      "source": "SEC",
-      "issuer": "KORE Group Holdings, Inc.",
-      "bidder": null,
-      "cik": 1855457,
-      "ticker": "KORE",
-      "isin": null,
-      "form": "SC 13E3/A",
-      "event_type": "Going-private",
-      "category": "going_private",
-      "announce_date": "2026-06-15",
-      "exec_date": null,
-      "url": "https://www.sec.gov/Archives/edgar/data/1855457/000114036126025092/ny20068726x7_sc13e3a.htm",
-      "offer_price": 9.25,
-      "current_price": null,
-      "spread_pct": null,
-      "why": "Exclusión de bolsa: cobras la contraprestación al cierre",
-      "first_seen": "2026-07-07"
-    },
-    {
       "id": "0001354457-26-000573:primary_doc.xml",
       "source": "SEC",
       "issuer": "Harrison Global Holdings Inc.",
@@ -3742,6 +4087,7 @@
       "offer_price": null,
       "current_price": 0.0007,
       "spread_pct": null,
+      "why": "Aviso de exclusión: vigilar oferta y liquidez",
       "first_seen": "2026-07-07"
     },
     {
@@ -3759,8 +4105,9 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/844150/000087666126000533/primary_doc.xml",
       "offer_price": null,
-      "current_price": 18.020000457763672,
+      "current_price": 17.989999771118164,
       "spread_pct": null,
+      "why": "Aviso de exclusión: vigilar oferta y liquidez",
       "first_seen": "2026-07-07"
     },
     {
@@ -3778,8 +4125,9 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/1403161/000087666126000531/primary_doc.xml",
       "offer_price": null,
-      "current_price": 352.360107421875,
+      "current_price": 352.20001220703125,
       "spread_pct": null,
+      "why": "Aviso de exclusión: vigilar oferta y liquidez",
       "first_seen": "2026-07-07"
     },
     {
@@ -3797,8 +4145,9 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/898174/000087666126000529/primary_doc.xml",
       "offer_price": null,
-      "current_price": 229.1699981689453,
+      "current_price": 230.22000122070312,
       "spread_pct": null,
+      "why": "Aviso de exclusión: vigilar oferta y liquidez",
       "first_seen": "2026-07-07"
     },
     {
@@ -3877,8 +4226,9 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/1590364/000135445726000572/primary_doc.xml",
       "offer_price": null,
-      "current_price": 226.1699981689453,
+      "current_price": 227.5500030517578,
       "spread_pct": null,
+      "why": "Aviso de exclusión: vigilar oferta y liquidez",
       "first_seen": "2026-07-07"
     },
     {
@@ -3997,8 +4347,9 @@
       "exec_date": "2026-06-09",
       "url": "https://www.sec.gov/Archives/edgar/data/891478/000119312526264813/d111441dsctoia.htm",
       "offer_price": null,
-      "current_price": 14.175000190734863,
+      "current_price": 14.1899995803833,
       "spread_pct": null,
+      "why": "Oferta en curso: confirmar precio en el documento",
       "first_seen": "2026-07-07"
     },
     {
@@ -4016,8 +4367,9 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/2095443/000135445726000561/primary_doc.xml",
       "offer_price": null,
-      "current_price": 9.944999694824219,
+      "current_price": 9.960000038146973,
       "spread_pct": null,
+      "why": "Aviso de exclusión: vigilar oferta y liquidez",
       "first_seen": "2026-07-07"
     },
     {
@@ -4035,8 +4387,9 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/1816431/000135445726000560/primary_doc.xml",
       "offer_price": null,
-      "current_price": 0.917900025844574,
+      "current_price": 0.9194999933242798,
       "spread_pct": null,
+      "why": "Aviso de exclusión: vigilar oferta y liquidez",
       "first_seen": "2026-07-07"
     },
     {
@@ -4134,8 +4487,9 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/1439124/000087666126000521/primary_doc.xml",
       "offer_price": null,
-      "current_price": 10.335000038146973,
+      "current_price": 10.319999694824219,
       "spread_pct": null,
+      "why": "Aviso de exclusión: vigilar oferta y liquidez",
       "first_seen": "2026-07-07"
     },
     {
@@ -4160,27 +4514,6 @@
       "first_seen": "2026-07-07"
     },
     {
-      "id": "0001437749-26-019932:ater20260608_defm14a.htm",
-      "source": "SEC",
-      "issuer": "Aterian, Inc.",
-      "bidder": null,
-      "cik": 1757715,
-      "ticker": "ATER",
-      "isin": null,
-      "form": "DEFM14A",
-      "event_type": "Cash merger (proxy)",
-      "category": "merger",
-      "announce_date": "2026-06-09",
-      "exec_date": "2026-07-09",
-      "url": "https://www.sec.gov/Archives/edgar/data/1757715/000143774926019932/ater20260608_defm14a.htm",
-      "odd_lot": true,
-      "offer_price": 1.0,
-      "current_price": null,
-      "spread_pct": null,
-      "why": "Fusión en efectivo: spread hasta cierre (voto/condiciones pendientes) · 🎯 prioridad odd-lot (<100 acc., sin prorrateo)",
-      "first_seen": "2026-07-07"
-    },
-    {
       "id": "0001354457-26-000554:primary_doc.xml",
       "source": "SEC",
       "issuer": "Aperture AC",
@@ -4195,7 +4528,7 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/2093524/000135445726000554/primary_doc.xml",
       "offer_price": null,
-      "current_price": 9.93,
+      "current_price": 9.930000305175781,
       "spread_pct": null,
       "why": "Aviso de exclusión: vigilar oferta y liquidez",
       "first_seen": "2026-07-07"
@@ -4235,8 +4568,9 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/1785424/000135445726000544/primary_doc.xml",
       "offer_price": null,
-      "current_price": 7.599999904632568,
+      "current_price": 7.630000114440918,
       "spread_pct": null,
+      "why": "Aviso de exclusión: vigilar oferta y liquidez",
       "first_seen": "2026-07-07"
     },
     {
@@ -4256,6 +4590,7 @@
       "offer_price": null,
       "current_price": 0.005100000184029341,
       "spread_pct": null,
+      "why": "Aviso de exclusión: vigilar oferta y liquidez",
       "first_seen": "2026-07-07"
     },
     {
@@ -4275,6 +4610,7 @@
       "offer_price": null,
       "current_price": 0.07699999958276749,
       "spread_pct": null,
+      "why": "Aviso de exclusión: vigilar oferta y liquidez",
       "first_seen": "2026-07-07"
     },
     {
@@ -4292,8 +4628,9 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/1994624/000135445726000539/primary_doc.xml",
       "offer_price": null,
-      "current_price": 0.11100000143051147,
+      "current_price": 0.1054999977350235,
       "spread_pct": null,
+      "why": "Aviso de exclusión: vigilar oferta y liquidez",
       "first_seen": "2026-07-07"
     },
     {
@@ -4377,6 +4714,26 @@
       "first_seen": "2026-07-07"
     },
     {
+      "id": "buyback:HRPK.DE",
+      "source": "DE-Buyback",
+      "issuer": "7C Solarparken",
+      "bidder": null,
+      "cik": null,
+      "ticker": "HRPK.DE",
+      "isin": null,
+      "form": "Share buyback offer",
+      "event_type": "Buyback offer",
+      "category": "tender",
+      "announce_date": "2026-04-28",
+      "exec_date": null,
+      "offer_price": null,
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQWTd2V2tDSk85UGdCZ1RfQVliYWQ0ME9hUzdteXc3M2hwSklDaEZWaGRqc0VjM0JjQWNSUjZZd2FiWWhXWnAyN21xZjJqbVlkTm5xV3dVaGszNXA3eWQ2VVozeW1adlRPam1VR2stQ1VnX3VvVlFYQ0wyUE9jZTBVc0ZjV1BHYmhNU21FdWcwOHlyR01mRUJsbVVkYWhXb2c1NGlyb1IxUWR5ekNId1hFNA?oc=5",
+      "current_price": 1.715000033378601,
+      "spread_pct": null,
+      "why": "Autocartera: la empresa recompra a prima sobre mercado",
+      "first_seen": "2026-07-07"
+    },
+    {
       "id": "bafin:DE000CBK1001:2026-03-16",
       "source": "BaFin",
       "issuer": "COMMERZBANK Aktiengesellschaft, Frankfurt am Main",
@@ -4393,6 +4750,7 @@
       "url": "https://www.bafin.de/SharedDocs/Downloads/DE/Angebotsunterlage/commerzbank.pdf?__blob=publicationFile&v=1",
       "current_price": 38.279998779296875,
       "spread_pct": null,
+      "why": "Oferta en curso: confirmar precio en el documento",
       "first_seen": "2026-07-07"
     },
     {

@@ -8,7 +8,8 @@
   "sources": [
     "SEC EDGAR",
     "BaFin",
-    "DE-Buyback"
+    "DE-Buyback",
+    "DE-SqueezeOut"
   ],
   "events": [
     {
@@ -333,7 +334,27 @@
       "offer_price": 11.0,
       "url": "https://www.bafin.de/SharedDocs/Downloads/DE/Angebotsunterlage/kloeckner-co-se-2.pdf?__blob=publicationFile&v=1",
       "current_price": 12.319999694824219,
-      "spread_pct": -10.71
+      "spread_pct": -10.71,
+      "first_seen": "2026-07-07"
+    },
+    {
+      "id": "0001193125-26-295587:rgnx-to-i-a-2.htm",
+      "source": "SEC",
+      "issuer": "REGENXBIO Inc.",
+      "bidder": null,
+      "cik": 1590877,
+      "ticker": "RGNX",
+      "isin": null,
+      "form": "SC TO-I/A",
+      "event_type": "Issuer tender offer",
+      "category": "tender",
+      "announce_date": "2026-07-06",
+      "exec_date": "2026-07-01",
+      "url": "https://www.sec.gov/Archives/edgar/data/1590877/000119312526295587/rgnx-to-i-a-2.htm",
+      "offer_price": 13.28,
+      "current_price": 15.005000114440918,
+      "spread_pct": -11.5,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0001193125-26-295587:rgnx-to-i-a-2.htm",
@@ -421,6 +442,7 @@
       "announce_date": "2026-06-18",
       "exec_date": "2026-07-31",
       "url": "https://www.sec.gov/Archives/edgar/data/1554625/000155462526000011/a20260618-prisxscheduletoxi.htm",
+      "odd_lot": true,
       "offer_price": 3.7,
       "current_price": 24.479999542236328,
       "spread_pct": -84.89
@@ -529,9 +551,12 @@
       "announce_date": "2026-07-06",
       "exec_date": "2026-06-29",
       "url": "https://www.sec.gov/Archives/edgar/data/1661306/000166130626000051/hpci_q2_26_to-ia_7.2.26.htm",
+      "odd_lot": true,
       "offer_price": 6.27,
+      "is_fund": true,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0001580642-26-004231:fairwaypevc_sctoia.htm",
@@ -548,8 +573,10 @@
       "exec_date": "2026-06-26",
       "url": "https://www.sec.gov/Archives/edgar/data/1877967/000158064226004231/fairwaypevc_sctoia.htm",
       "offer_price": null,
+      "is_fund": true,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0001213900-26-075249:ea0292029-04.htm",
@@ -584,8 +611,10 @@
       "exec_date": "2026-06-29",
       "url": "https://www.sec.gov/Archives/edgar/data/1975736/000110465926080756/tm2619711d2_sctoia.htm",
       "offer_price": null,
+      "is_fund": true,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0001104659-26-080753:tm2619711d1_sctoia.htm",
@@ -602,8 +631,10 @@
       "exec_date": "2026-06-29",
       "url": "https://www.sec.gov/Archives/edgar/data/1930679/000110465926080753/tm2619711d1_sctoia.htm",
       "offer_price": null,
+      "is_fund": true,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0001493152-26-032084:formsc13e-3a.htm",
@@ -621,7 +652,8 @@
       "url": "https://www.sec.gov/Archives/edgar/data/1113423/000149315226032084/formsc13e-3a.htm",
       "offer_price": null,
       "current_price": 2.35,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0000876661-26-000597:primary_doc.xml",
@@ -656,8 +688,10 @@
       "exec_date": "2026-07-01",
       "url": "https://www.sec.gov/Archives/edgar/data/1817825/000121390026074885/ea0291523-02.htm",
       "offer_price": null,
+      "is_fund": true,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0001193125-26-294042:na-20260702.htm",
@@ -674,8 +708,10 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/1789470/000119312526294042/na-20260702.htm",
       "offer_price": null,
+      "is_fund": true,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0001193125-26-293699:d53805dsctoia.htm",
@@ -692,8 +728,10 @@
       "exec_date": "2026-09-21",
       "url": "https://www.sec.gov/Archives/edgar/data/1709406/000119312526293699/d53805dsctoia.htm",
       "offer_price": null,
+      "is_fund": true,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0001193125-26-293694:d86799dsctoia.htm",
@@ -710,8 +748,10 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/1709447/000119312526293694/d86799dsctoia.htm",
       "offer_price": null,
+      "is_fund": true,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0000868082-26-000002:eepl20260701_sctoia.htm",
@@ -728,8 +768,10 @@
       "exec_date": "2026-06-30",
       "url": "https://www.sec.gov/Archives/edgar/data/868082/000086808226000002/eepl20260701_sctoia.htm",
       "offer_price": null,
+      "is_fund": true,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0001143362-26-000237:primary_doc.xml",
@@ -747,7 +789,8 @@
       "url": "https://www.sec.gov/Archives/edgar/data/1722388/000114336226000237/primary_doc.xml",
       "offer_price": null,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0000876661-26-000593:primary_doc.xml",
@@ -782,8 +825,10 @@
       "exec_date": "2026-07-31",
       "url": "https://www.sec.gov/Archives/edgar/data/2044490/000121390026074291/ea0296715-01_sctoi.htm",
       "offer_price": null,
+      "is_fund": true,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0001193125-26-292340:d71824dsctoi.htm",
@@ -800,8 +845,10 @@
       "exec_date": "2026-07-30",
       "url": "https://www.sec.gov/Archives/edgar/data/1959604/000119312526292340/d71824dsctoi.htm",
       "offer_price": null,
+      "is_fund": true,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0001193125-26-291563:d36010dsctoia.htm",
@@ -818,8 +865,10 @@
       "exec_date": "2026-06-23",
       "url": "https://www.sec.gov/Archives/edgar/data/1920145/000119312526291563/d36010dsctoia.htm",
       "offer_price": null,
+      "is_fund": true,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0001193125-26-291467:d159509dsc13e3a.htm",
@@ -837,7 +886,8 @@
       "url": "https://www.sec.gov/Archives/edgar/data/882361/000119312526291467/d159509dsc13e3a.htm",
       "offer_price": null,
       "current_price": 1.69,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0001104659-26-079645:tm2619266-1_sc13e3a.htm",
@@ -855,7 +905,8 @@
       "url": "https://www.sec.gov/Archives/edgar/data/1320414/000110465926079645/tm2619266-1_sc13e3a.htm",
       "offer_price": null,
       "current_price": 16.51,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0001354457-26-000638:primary_doc.xml",
@@ -873,7 +924,8 @@
       "url": "https://www.sec.gov/Archives/edgar/data/2034269/000135445726000638/primary_doc.xml",
       "offer_price": null,
       "current_price": 11.78,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0001354457-26-000636:primary_doc.xml",
@@ -927,7 +979,8 @@
       "url": "https://www.sec.gov/Archives/edgar/data/2052161/000135445726000634/primary_doc.xml",
       "offer_price": null,
       "current_price": 13.42,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0001354457-26-000630:primary_doc.xml",
@@ -963,7 +1016,8 @@
       "url": "https://www.sec.gov/Archives/edgar/data/1567925/000087666126000591/primary_doc.xml",
       "offer_price": null,
       "current_price": 30.36,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0000876661-26-000589:primary_doc.xml",
@@ -981,7 +1035,8 @@
       "url": "https://www.sec.gov/Archives/edgar/data/1633931/000087666126000589/primary_doc.xml",
       "offer_price": null,
       "current_price": 354.53,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0000876661-26-000587:primary_doc.xml",
@@ -1017,7 +1072,8 @@
       "url": "https://www.sec.gov/Archives/edgar/data/1320414/000087666126000585/primary_doc.xml",
       "offer_price": null,
       "current_price": 16.51,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0000876661-26-000583:primary_doc.xml",
@@ -1035,7 +1091,8 @@
       "url": "https://www.sec.gov/Archives/edgar/data/1473844/000087666126000583/primary_doc.xml",
       "offer_price": null,
       "current_price": 39.32,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0001580642-26-004048:dynamic-alts_sctoia.htm",
@@ -1052,8 +1109,10 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/1854919/000158064226004048/dynamic-alts_sctoia.htm",
       "offer_price": null,
+      "is_fund": true,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0001213900-26-073467:ea0295739-01_sctoia.htm",
@@ -1070,8 +1129,10 @@
       "exec_date": "2026-06-16",
       "url": "https://www.sec.gov/Archives/edgar/data/1957121/000121390026073467/ea0295739-01_sctoia.htm",
       "offer_price": null,
+      "is_fund": true,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0001104659-26-079384:tm2619065d1_sctoi.htm",
@@ -1088,8 +1149,10 @@
       "exec_date": "2026-07-28",
       "url": "https://www.sec.gov/Archives/edgar/data/1858660/000110465926079384/tm2619065d1_sctoi.htm",
       "offer_price": null,
+      "is_fund": true,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0001417835-26-000193:primary_doc.xml",
@@ -1107,7 +1170,8 @@
       "url": "https://www.sec.gov/Archives/edgar/data/2043954/000141783526000193/primary_doc.xml",
       "offer_price": null,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0001143362-26-000234:primary_doc.xml",
@@ -1125,7 +1189,8 @@
       "url": "https://www.sec.gov/Archives/edgar/data/919160/000114336226000234/primary_doc.xml",
       "offer_price": null,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0000876661-26-000579:primary_doc.xml",
@@ -1160,8 +1225,10 @@
       "exec_date": "2026-07-28",
       "url": "https://www.sec.gov/Archives/edgar/data/1923622/000192362226000014/f45598d1.htm",
       "offer_price": null,
+      "is_fund": true,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0001104659-26-078829:tm2619130d3_sctoi.htm",
@@ -1178,8 +1245,10 @@
       "exec_date": "2026-07-29",
       "url": "https://www.sec.gov/Archives/edgar/data/2082557/000110465926078829/tm2619130d3_sctoi.htm",
       "offer_price": null,
+      "is_fund": true,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0001104659-26-078828:tm2619130d2_sctoi.htm",
@@ -1196,8 +1265,10 @@
       "exec_date": "2026-07-29",
       "url": "https://www.sec.gov/Archives/edgar/data/2082559/000110465926078828/tm2619130d2_sctoi.htm",
       "offer_price": null,
+      "is_fund": true,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0001104659-26-078827:tm2619130d1_sctoi.htm",
@@ -1214,8 +1285,10 @@
       "exec_date": "2026-07-29",
       "url": "https://www.sec.gov/Archives/edgar/data/1930087/000110465926078827/tm2619130d1_sctoi.htm",
       "offer_price": null,
+      "is_fund": true,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0001104659-26-078464:tm2618847d2_sctoi.htm",
@@ -1231,6 +1304,7 @@
       "announce_date": "2026-06-29",
       "exec_date": "2026-06-24",
       "url": "https://www.sec.gov/Archives/edgar/data/1692705/000110465926078464/tm2618847d2_sctoi.htm",
+      "odd_lot": true,
       "offer_price": null,
       "current_price": 2.5799999237060547,
       "spread_pct": null
@@ -1251,7 +1325,8 @@
       "url": "https://www.sec.gov/Archives/edgar/data/1976322/000141783526000191/primary_doc.xml",
       "offer_price": null,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0001354457-26-000626:primary_doc.xml",
@@ -1305,7 +1380,8 @@
       "offer_price": null,
       "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQajFMRHdQS0NacWZpdUQ0amoyNW0wQU9qSmxUR0JyQnh6N3pkWWY3ZXJOcWxjMlBRaTB6TENRaVlIVGw1UUVaaEZrNjN5bXcyZ3AySmMwV1hSNzRHWG5BaEYyNzZaNXhwcWlHdGRMUm9EekRwVkJQMDB6a0RUeDhoc1pJMElHZnNzcGtiY0VzQXg3VEFBWklJNVRXWktzbWozNjFHaGNraXFyMHZMUjh3YVdwS3p6N1V2UmVtU0tzeHRnSlg1SXc?oc=5",
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0001580642-26-003950:evanston_sctoi.htm",
@@ -1322,8 +1398,10 @@
       "exec_date": "2026-07-28",
       "url": "https://www.sec.gov/Archives/edgar/data/1589390/000158064226003950/evanston_sctoi.htm",
       "offer_price": null,
+      "is_fund": true,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0001521945-26-000075:a20260626-pfloattoxi.htm",
@@ -1340,8 +1418,10 @@
       "exec_date": "2026-07-29",
       "url": "https://www.sec.gov/Archives/edgar/data/1521945/000152194526000075/a20260626-pfloattoxi.htm",
       "offer_price": 3.83,
+      "is_fund": true,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0001193125-26-285571:d75897dsctoia.htm",
@@ -1358,8 +1438,10 @@
       "exec_date": "2026-06-24",
       "url": "https://www.sec.gov/Archives/edgar/data/1954360/000119312526285571/d75897dsctoia.htm",
       "offer_price": null,
+      "is_fund": true,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0001193125-26-284936:d119899dsctoi.htm",
@@ -1376,8 +1458,10 @@
       "exec_date": "2026-07-30",
       "url": "https://www.sec.gov/Archives/edgar/data/1982701/000119312526284936/d119899dsctoi.htm",
       "offer_price": null,
+      "is_fund": true,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0001193125-26-284016:d852687dsctoi.htm",
@@ -1394,8 +1478,10 @@
       "exec_date": "2026-07-27",
       "url": "https://www.sec.gov/Archives/edgar/data/1738008/000119312526284016/d852687dsctoi.htm",
       "offer_price": null,
+      "is_fund": true,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0001193125-26-284011:d931197dsctoi.htm",
@@ -1412,8 +1498,10 @@
       "exec_date": "2026-07-27",
       "url": "https://www.sec.gov/Archives/edgar/data/1475456/000119312526284011/d931197dsctoi.htm",
       "offer_price": null,
+      "is_fund": true,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0001193125-26-284007:d937941dsctoi.htm",
@@ -1430,8 +1518,10 @@
       "exec_date": "2026-07-27",
       "url": "https://www.sec.gov/Archives/edgar/data/1475457/000119312526284007/d937941dsctoi.htm",
       "offer_price": null,
+      "is_fund": true,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0001193125-26-283999:d39102dsctoi.htm",
@@ -1448,8 +1538,10 @@
       "exec_date": "2026-07-27",
       "url": "https://www.sec.gov/Archives/edgar/data/1212030/000119312526283999/d39102dsctoi.htm",
       "offer_price": null,
+      "is_fund": true,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0001104659-26-078246:tm2615050d2_sctoia.htm",
@@ -1466,8 +1558,10 @@
       "exec_date": "2026-06-18",
       "url": "https://www.sec.gov/Archives/edgar/data/2031750/000110465926078246/tm2615050d2_sctoia.htm",
       "offer_price": 24.93,
+      "is_fund": true,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0001104659-26-078244:tm2615016-5_sctoia.htm",
@@ -1484,8 +1578,10 @@
       "exec_date": "2026-06-18",
       "url": "https://www.sec.gov/Archives/edgar/data/1918712/000110465926078244/tm2615016-5_sctoia.htm",
       "offer_price": 27.0,
+      "is_fund": true,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0001417835-26-000184:primary_doc.xml",
@@ -1503,7 +1599,8 @@
       "url": "https://www.sec.gov/Archives/edgar/data/1587982/000141783526000184/primary_doc.xml",
       "offer_price": null,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0001417835-26-000182:primary_doc.xml",
@@ -1521,7 +1618,8 @@
       "url": "https://www.sec.gov/Archives/edgar/data/1771146/000141783526000182/primary_doc.xml",
       "offer_price": null,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0001354457-26-000624:primary_doc.xml",
@@ -1593,7 +1691,8 @@
       "url": "https://www.sec.gov/Archives/edgar/data/1557157/000087666126000575/primary_doc.xml",
       "offer_price": null,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0000876661-26-000573:primary_doc.xml",
@@ -1601,7 +1700,7 @@
       "issuer": "PROASSURANCE CORP",
       "bidder": null,
       "cik": 1127703,
-      "ticker": null,
+      "ticker": "PRA",
       "isin": null,
       "form": "25-NSE",
       "event_type": "Delisting notice",
@@ -1610,8 +1709,9 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/1127703/000087666126000573/primary_doc.xml",
       "offer_price": null,
-      "current_price": null,
-      "spread_pct": null
+      "current_price": 25.0,
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "bafin:DE000A3H2200:2026-06-26",
@@ -1646,8 +1746,10 @@
       "exec_date": "2026-07-29",
       "url": "https://www.sec.gov/Archives/edgar/data/1944831/000162828026045464/willowtreecreditpartners-s.htm",
       "offer_price": null,
+      "is_fund": true,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0001213900-26-072028:ea0295717-01_sctoia.htm",
@@ -1664,8 +1766,10 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/1803491/000121390026072028/ea0295717-01_sctoia.htm",
       "offer_price": null,
+      "is_fund": true,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0001213900-26-072023:ea0295726-01_sctoia.htm",
@@ -1682,8 +1786,10 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/2047692/000121390026072023/ea0295726-01_sctoia.htm",
       "offer_price": null,
+      "is_fund": true,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0001213900-26-072022:ea0295722-01_sctoia.htm",
@@ -1700,8 +1806,10 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/2020510/000121390026072022/ea0295722-01_sctoia.htm",
       "offer_price": null,
+      "is_fund": true,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0001213900-26-072020:ea0295725-01_sctoia.htm",
@@ -1718,8 +1826,10 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/2041398/000121390026072020/ea0295725-01_sctoia.htm",
       "offer_price": null,
+      "is_fund": true,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0001213900-26-071900:ea0295875-sctoia8_zoom.htm",
@@ -1754,8 +1864,10 @@
       "exec_date": "2026-06-11",
       "url": "https://www.sec.gov/Archives/edgar/data/1993402/000110465926077774/tm2618925d1_sctoia.htm",
       "offer_price": null,
+      "is_fund": true,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0001104659-26-077766:tm2618922d1_sctoia.htm",
@@ -1772,8 +1884,10 @@
       "exec_date": "2026-06-11",
       "url": "https://www.sec.gov/Archives/edgar/data/1976336/000110465926077766/tm2618922d1_sctoia.htm",
       "offer_price": null,
+      "is_fund": true,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0001104659-26-077602:tm2618968d1_sctoia.htm",
@@ -1790,26 +1904,10 @@
       "exec_date": "2026-06-16",
       "url": "https://www.sec.gov/Archives/edgar/data/2031283/000110465926077602/tm2618968d1_sctoia.htm",
       "offer_price": null,
+      "is_fund": true,
       "current_price": null,
-      "spread_pct": null
-    },
-    {
-      "id": "0001193125-26-282102:d95008dsc13e3a.htm",
-      "source": "SEC",
-      "issuer": "Clearwater Analytics Holdings, Inc.",
-      "bidder": null,
-      "cik": 1866368,
-      "ticker": null,
-      "isin": null,
-      "form": "SC 13E3/A",
-      "event_type": "Going-private",
-      "category": "going_private",
-      "announce_date": "2026-06-25",
-      "exec_date": null,
-      "url": "https://www.sec.gov/Archives/edgar/data/1866368/000119312526282102/d95008dsc13e3a.htm",
-      "offer_price": 24.55,
-      "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0000876661-26-000569:primary_doc.xml",
@@ -1827,7 +1925,8 @@
       "url": "https://www.sec.gov/Archives/edgar/data/1681009/000087666126000569/primary_doc.xml",
       "offer_price": null,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0000876661-26-000568:primary_doc.xml",
@@ -1845,7 +1944,8 @@
       "url": "https://www.sec.gov/Archives/edgar/data/1314503/000087666126000568/primary_doc.xml",
       "offer_price": null,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0000876661-26-000567:primary_doc.xml",
@@ -1863,7 +1963,8 @@
       "url": "https://www.sec.gov/Archives/edgar/data/1513332/000087666126000567/primary_doc.xml",
       "offer_price": null,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0000876661-26-000566:primary_doc.xml",
@@ -1881,7 +1982,8 @@
       "url": "https://www.sec.gov/Archives/edgar/data/1314512/000087666126000566/primary_doc.xml",
       "offer_price": null,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0000876661-26-000565:primary_doc.xml",
@@ -1899,7 +2001,8 @@
       "url": "https://www.sec.gov/Archives/edgar/data/1314513/000087666126000565/primary_doc.xml",
       "offer_price": null,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0000876661-26-000564:primary_doc.xml",
@@ -1917,7 +2020,8 @@
       "url": "https://www.sec.gov/Archives/edgar/data/1314511/000087666126000564/primary_doc.xml",
       "offer_price": null,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0000876661-26-000563:primary_doc.xml",
@@ -1935,7 +2039,8 @@
       "url": "https://www.sec.gov/Archives/edgar/data/1513331/000087666126000563/primary_doc.xml",
       "offer_price": null,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0000876661-26-000562:primary_doc.xml",
@@ -1953,7 +2058,8 @@
       "url": "https://www.sec.gov/Archives/edgar/data/1314506/000087666126000562/primary_doc.xml",
       "offer_price": null,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0000876661-26-000561:primary_doc.xml",
@@ -1971,7 +2077,8 @@
       "url": "https://www.sec.gov/Archives/edgar/data/1314502/000087666126000561/primary_doc.xml",
       "offer_price": null,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0000876661-26-000560:primary_doc.xml",
@@ -1989,7 +2096,8 @@
       "url": "https://www.sec.gov/Archives/edgar/data/812427/000087666126000560/primary_doc.xml",
       "offer_price": null,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0000876661-26-000559:primary_doc.xml",
@@ -2007,7 +2115,8 @@
       "url": "https://www.sec.gov/Archives/edgar/data/1314499/000087666126000559/primary_doc.xml",
       "offer_price": null,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0000876661-26-000558:primary_doc.xml",
@@ -2025,7 +2134,8 @@
       "url": "https://www.sec.gov/Archives/edgar/data/1314497/000087666126000558/primary_doc.xml",
       "offer_price": null,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0000876661-26-000557:primary_doc.xml",
@@ -2043,7 +2153,8 @@
       "url": "https://www.sec.gov/Archives/edgar/data/1314498/000087666126000557/primary_doc.xml",
       "offer_price": null,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0000876661-26-000556:primary_doc.xml",
@@ -2079,7 +2190,8 @@
       "url": "https://www.sec.gov/Archives/edgar/data/1314514/000087666126000555/primary_doc.xml",
       "offer_price": null,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0000876661-26-000553:primary_doc.xml",
@@ -2087,7 +2199,7 @@
       "issuer": "Clearwater Analytics Holdings, Inc.",
       "bidder": null,
       "cik": 1866368,
-      "ticker": null,
+      "ticker": "CWAN",
       "isin": null,
       "form": "25-NSE",
       "event_type": "Delisting notice",
@@ -2096,8 +2208,9 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/1866368/000087666126000553/primary_doc.xml",
       "offer_price": null,
-      "current_price": null,
-      "spread_pct": null
+      "current_price": 24.56,
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "bafin:DE0005405104:2026-06-25",
@@ -2115,7 +2228,8 @@
       "offer_price": null,
       "url": "https://www.bafin.de/DE/die-bafin/publikationen-daten/datenbanken-uebersichten/WPUeG/angebotsunterlagen/angebotsunterlagen_node.html",
       "current_price": 7.550000190734863,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0001398344-26-011201:fp0099513-1_sctoi.htm",
@@ -2132,8 +2246,10 @@
       "exec_date": "2026-07-24",
       "url": "https://www.sec.gov/Archives/edgar/data/1407736/000139834426011201/fp0099513-1_sctoi.htm",
       "offer_price": null,
+      "is_fund": true,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0001213900-26-071375:ea0295662-01_sctioa.htm",
@@ -2150,8 +2266,10 @@
       "exec_date": "2026-06-17",
       "url": "https://www.sec.gov/Archives/edgar/data/1830921/000121390026071375/ea0295662-01_sctioa.htm",
       "offer_price": null,
+      "is_fund": true,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0001213900-26-071355:ea0295661-01_sctoia.htm",
@@ -2168,8 +2286,10 @@
       "exec_date": "2026-06-17",
       "url": "https://www.sec.gov/Archives/edgar/data/1830974/000121390026071355/ea0295661-01_sctoia.htm",
       "offer_price": null,
+      "is_fund": true,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0001193125-26-281128:d132080dsctoi.htm",
@@ -2186,8 +2306,10 @@
       "exec_date": "2026-07-27",
       "url": "https://www.sec.gov/Archives/edgar/data/1833936/000119312526281128/d132080dsctoi.htm",
       "offer_price": null,
+      "is_fund": true,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0001193125-26-281104:d125881dsctoia.htm",
@@ -2204,8 +2326,10 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/1816389/000119312526281104/d125881dsctoia.htm",
       "offer_price": null,
+      "is_fund": true,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0001193125-26-280680:ck0001919369-20260624.htm",
@@ -2222,8 +2346,10 @@
       "exec_date": "2026-07-23",
       "url": "https://www.sec.gov/Archives/edgar/data/1919369/000119312526280680/ck0001919369-20260624.htm",
       "offer_price": null,
+      "is_fund": true,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0001213900-26-071392:ea0295626-sc13e3a8_lake.htm",
@@ -2241,7 +2367,8 @@
       "url": "https://www.sec.gov/Archives/edgar/data/1946399/000121390026071392/ea0295626-sc13e3a8_lake.htm",
       "offer_price": null,
       "current_price": 0.067,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0001354457-26-000616:primary_doc.xml",
@@ -2249,7 +2376,7 @@
       "issuer": "Centessa Pharmaceuticals plc",
       "bidder": null,
       "cik": 1847903,
-      "ticker": null,
+      "ticker": "CNTA",
       "isin": null,
       "form": "25-NSE",
       "event_type": "Delisting notice",
@@ -2258,8 +2385,9 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/1847903/000135445726000616/primary_doc.xml",
       "offer_price": null,
-      "current_price": null,
-      "spread_pct": null
+      "current_price": 40.5,
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0001580642-26-003873:cais_sctoia.htm",
@@ -2276,8 +2404,10 @@
       "exec_date": "2026-06-15",
       "url": "https://www.sec.gov/Archives/edgar/data/2090145/000158064226003873/cais_sctoia.htm",
       "offer_price": null,
+      "is_fund": true,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0001193125-26-279774:d894657dsctoia.htm",
@@ -2294,8 +2424,10 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/1973476/000119312526279774/d894657dsctoia.htm",
       "offer_price": null,
+      "is_fund": true,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0001193125-26-279769:d100704dsctoia.htm",
@@ -2312,8 +2444,10 @@
       "exec_date": "2026-06-18",
       "url": "https://www.sec.gov/Archives/edgar/data/1987221/000119312526279769/d100704dsctoia.htm",
       "offer_price": null,
+      "is_fund": true,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0001193125-26-279765:d897582dsctoia.htm",
@@ -2330,8 +2464,10 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/1851322/000119312526279765/d897582dsctoia.htm",
       "offer_price": null,
+      "is_fund": true,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0001193125-26-278100:d16433dsctoia.htm",
@@ -2348,8 +2484,10 @@
       "exec_date": "2026-06-16",
       "url": "https://www.sec.gov/Archives/edgar/data/1588272/000119312526278100/d16433dsctoia.htm",
       "offer_price": 4.43,
+      "is_fund": true,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0001104659-26-076522:tm2618420d3_sctoi.htm",
@@ -2366,8 +2504,10 @@
       "exec_date": "2026-07-20",
       "url": "https://www.sec.gov/Archives/edgar/data/1506707/000110465926076522/tm2618420d3_sctoi.htm",
       "offer_price": null,
+      "is_fund": true,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0001104659-26-076520:tm2618420d1_sctoi.htm",
@@ -2384,8 +2524,10 @@
       "exec_date": "2026-07-20",
       "url": "https://www.sec.gov/Archives/edgar/data/1186641/000110465926076520/tm2618420d1_sctoi.htm",
       "offer_price": null,
+      "is_fund": true,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0001354457-26-000608:primary_doc.xml",
@@ -2457,7 +2599,8 @@
       "url": "https://www.sec.gov/Archives/edgar/data/2049717/000114331326000035/primary_doc.xml",
       "offer_price": null,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0000876661-26-000550:primary_doc.xml",
@@ -2492,8 +2635,10 @@
       "exec_date": "2026-07-20",
       "url": "https://www.sec.gov/Archives/edgar/data/1702510/000170251026000064/cars_20260622xscto.htm",
       "offer_price": null,
+      "is_fund": true,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0001628280-26-044605:crestline-scheduletoxiq220.htm",
@@ -2510,8 +2655,10 @@
       "exec_date": "2026-07-21",
       "url": "https://www.sec.gov/Archives/edgar/data/2035713/000162828026044605/crestline-scheduletoxiq220.htm",
       "offer_price": null,
+      "is_fund": true,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0001398344-26-011079:fp0099372-1_sctoi.htm",
@@ -2528,8 +2675,10 @@
       "exec_date": "2026-07-21",
       "url": "https://www.sec.gov/Archives/edgar/data/1616203/000139834426011079/fp0099372-1_sctoi.htm",
       "offer_price": null,
+      "is_fund": true,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0001354457-26-000605:primary_doc.xml",
@@ -2583,7 +2732,8 @@
       "url": "https://www.sec.gov/Archives/edgar/data/1742912/000087688226000014/primary_doc.xml",
       "offer_price": null,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0000876661-26-000548:primary_doc.xml",
@@ -2601,7 +2751,8 @@
       "url": "https://www.sec.gov/Archives/edgar/data/851170/000087666126000548/primary_doc.xml",
       "offer_price": null,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0000876661-26-000546:primary_doc.xml",
@@ -2619,7 +2770,8 @@
       "url": "https://www.sec.gov/Archives/edgar/data/833021/000087666126000546/primary_doc.xml",
       "offer_price": null,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0000876661-26-000544:primary_doc.xml",
@@ -2637,7 +2789,46 @@
       "url": "https://www.sec.gov/Archives/edgar/data/1160661/000087666126000544/primary_doc.xml",
       "offer_price": null,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
+    },
+    {
+      "id": "squeezeout:kabel deutschland holding ag",
+      "source": "DE-SqueezeOut",
+      "issuer": "Kabel Deutschland Holding AG",
+      "bidder": null,
+      "cik": null,
+      "ticker": null,
+      "isin": null,
+      "form": "Spruchverfahren",
+      "event_type": "Spruchverfahren",
+      "category": "squeeze_out",
+      "announce_date": "2026-06-22",
+      "exec_date": null,
+      "offer_price": null,
+      "url": "https://spruchverfahren.blogspot.com/2026/06/spruchverfahren-zum-squeeze-out-bei-der_0724394065.html",
+      "current_price": null,
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
+    },
+    {
+      "id": "squeezeout:voquz labs ag",
+      "source": "DE-SqueezeOut",
+      "issuer": "VOQUZ Labs AG",
+      "bidder": null,
+      "cik": null,
+      "ticker": null,
+      "isin": null,
+      "form": "Spruchverfahren",
+      "event_type": "Spruchverfahren",
+      "category": "squeeze_out",
+      "announce_date": "2026-06-21",
+      "exec_date": null,
+      "offer_price": null,
+      "url": "https://spruchverfahren.blogspot.com/2026/06/spruchverfahren-zum-squeeze-out-bei-der_01295729614.html",
+      "current_price": null,
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "bafin:DE000A41YEG8:2026-06-19",
@@ -2655,7 +2846,8 @@
       "offer_price": null,
       "url": "https://www.bafin.de/DE/die-bafin/publikationen-daten/datenbanken-uebersichten/WPUeG/angebotsunterlagen/angebotsunterlagen_node.html",
       "current_price": 14.0,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0001580642-26-003852:peachtree_sc-toia.htm",
@@ -2672,8 +2864,10 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/1682662/000158064226003852/peachtree_sc-toia.htm",
       "offer_price": null,
+      "is_fund": true,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0001580642-26-003847:pdi_sctoi.htm",
@@ -2690,8 +2884,10 @@
       "exec_date": "2026-07-30",
       "url": "https://www.sec.gov/Archives/edgar/data/2043597/000158064226003847/pdi_sctoi.htm",
       "offer_price": null,
+      "is_fund": true,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0001580642-26-003835:alignaltaccess_sc-toi.htm",
@@ -2708,8 +2904,10 @@
       "exec_date": "2026-07-20",
       "url": "https://www.sec.gov/Archives/edgar/data/2026675/000158064226003835/alignaltaccess_sc-toi.htm",
       "offer_price": null,
+      "is_fund": true,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0001580642-26-003825:pef_sctoi.htm",
@@ -2726,8 +2924,10 @@
       "exec_date": "2026-07-20",
       "url": "https://www.sec.gov/Archives/edgar/data/1620515/000158064226003825/pef_sctoi.htm",
       "offer_price": null,
+      "is_fund": true,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0001104659-26-075484:tm2617543d1_sctoi.htm",
@@ -2744,8 +2944,10 @@
       "exec_date": "2026-07-21",
       "url": "https://www.sec.gov/Archives/edgar/data/2066984/000110465926075484/tm2617543d1_sctoi.htm",
       "offer_price": 24.52,
+      "is_fund": true,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0001104659-26-075482:tm2616637d1_sctoi.htm",
@@ -2762,8 +2964,10 @@
       "exec_date": "2026-07-21",
       "url": "https://www.sec.gov/Archives/edgar/data/2067009/000110465926075482/tm2616637d1_sctoi.htm",
       "offer_price": 25.34,
+      "is_fund": true,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0001354457-26-000597:primary_doc.xml",
@@ -2781,7 +2985,8 @@
       "url": "https://www.sec.gov/Archives/edgar/data/1689873/000135445726000597/primary_doc.xml",
       "offer_price": null,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0001143362-26-000216:primary_doc.xml",
@@ -2799,7 +3004,8 @@
       "url": "https://www.sec.gov/Archives/edgar/data/1924868/000114336226000216/primary_doc.xml",
       "offer_price": null,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0001143313-26-000033:primary_doc.xml",
@@ -2834,8 +3040,10 @@
       "exec_date": null,
       "url": "https://www.sec.gov/Archives/edgar/data/2054995/000139834426010940/fp0099417-1_sctoia.htm",
       "offer_price": null,
+      "is_fund": true,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0001193125-26-274221:d81138dsctoia.htm",
@@ -2852,8 +3060,10 @@
       "exec_date": "2026-06-12",
       "url": "https://www.sec.gov/Archives/edgar/data/1872371/000119312526274221/d81138dsctoia.htm",
       "offer_price": null,
+      "is_fund": true,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0001193125-26-274097:d138522dsctoi.htm",
@@ -2870,8 +3080,10 @@
       "exec_date": "2026-07-16",
       "url": "https://www.sec.gov/Archives/edgar/data/1803958/000119312526274097/d138522dsctoi.htm",
       "offer_price": null,
+      "is_fund": true,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0001193125-26-273795:d120772dsctoia.htm",
@@ -2888,8 +3100,10 @@
       "exec_date": "2026-06-23",
       "url": "https://www.sec.gov/Archives/edgar/data/2029010/000119312526273795/d120772dsctoia.htm",
       "offer_price": null,
+      "is_fund": true,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0001354457-26-000587:primary_doc.xml",
@@ -2942,8 +3156,10 @@
       "exec_date": "2026-07-15",
       "url": "https://www.sec.gov/Archives/edgar/data/2044519/000110465926074543/tm2617951d1_sctoi.htm",
       "offer_price": null,
+      "is_fund": true,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0001104659-26-074304:tm2614877d9_sctota.htm",
@@ -2960,8 +3176,10 @@
       "exec_date": "2026-06-15",
       "url": "https://www.sec.gov/Archives/edgar/data/1808665/000110465926074304/tm2614877d9_sctota.htm",
       "offer_price": 23.5,
+      "is_fund": true,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0001140361-26-025347:ny20076182x1_sc13e3a.htm",
@@ -2979,7 +3197,8 @@
       "url": "https://www.sec.gov/Archives/edgar/data/1408100/000114036126025347/ny20076182x1_sc13e3a.htm",
       "offer_price": 10.9,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0001354457-26-000582:primary_doc.xml",
@@ -2997,7 +3216,8 @@
       "url": "https://www.sec.gov/Archives/edgar/data/1005201/000135445726000582/primary_doc.xml",
       "offer_price": null,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0001354457-26-000580:primary_doc.xml",
@@ -3033,7 +3253,8 @@
       "url": "https://www.sec.gov/Archives/edgar/data/1845809/000114336226000214/primary_doc.xml",
       "offer_price": null,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0000876661-26-000537:primary_doc.xml",
@@ -3051,7 +3272,8 @@
       "url": "https://www.sec.gov/Archives/edgar/data/1408100/000087666126000537/primary_doc.xml",
       "offer_price": null,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0001354457-26-000573:primary_doc.xml",
@@ -3141,7 +3363,8 @@
       "url": "https://www.sec.gov/Archives/edgar/data/1649373/000087666126000527/primary_doc.xml",
       "offer_price": null,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0001104659-26-073283:tm2617022d1_sctoi.htm",
@@ -3158,8 +3381,10 @@
       "exec_date": "2026-07-14",
       "url": "https://www.sec.gov/Archives/edgar/data/2021966/000110465926073283/tm2617022d1_sctoi.htm",
       "offer_price": 23.55,
+      "is_fund": true,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0001354457-26-000572:primary_doc.xml",
@@ -3195,7 +3420,27 @@
       "url": "https://www.sec.gov/Archives/edgar/data/2032950/000135445726000570/primary_doc.xml",
       "offer_price": null,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
+    },
+    {
+      "id": "squeezeout:lotto24 ag",
+      "source": "DE-SqueezeOut",
+      "issuer": "Lotto24 AG",
+      "bidder": null,
+      "cik": null,
+      "ticker": null,
+      "isin": null,
+      "form": "Spruchverfahren",
+      "event_type": "Spruchverfahren",
+      "category": "squeeze_out",
+      "announce_date": "2026-06-12",
+      "exec_date": null,
+      "offer_price": null,
+      "url": "https://spruchverfahren.blogspot.com/2026/06/spruchverfahren-zum-squeeze-out-bei-der.html",
+      "current_price": null,
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0001140361-26-024887:ny20075903x1_sctota.htm",
@@ -3212,8 +3457,10 @@
       "exec_date": "2026-06-10",
       "url": "https://www.sec.gov/Archives/edgar/data/1348911/000114036126024887/ny20075903x1_sctota.htm",
       "offer_price": 27.0,
+      "is_fund": true,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0001354457-26-000567:primary_doc.xml",
@@ -3231,7 +3478,8 @@
       "url": "https://www.sec.gov/Archives/edgar/data/2029492/000135445726000567/primary_doc.xml",
       "offer_price": null,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0001354457-26-000565:primary_doc.xml",
@@ -3249,7 +3497,8 @@
       "url": "https://www.sec.gov/Archives/edgar/data/1348911/000135445726000565/primary_doc.xml",
       "offer_price": null,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0001193125-26-264813:d111441dsctoia.htm",
@@ -3321,7 +3570,8 @@
       "url": "https://www.sec.gov/Archives/edgar/data/2006815/000135445726000558/primary_doc.xml",
       "offer_price": null,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0001354457-26-000556:primary_doc.xml",
@@ -3339,7 +3589,8 @@
       "url": "https://www.sec.gov/Archives/edgar/data/937556/000135445726000556/primary_doc.xml",
       "offer_price": null,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0001143362-26-000203:primary_doc.xml",
@@ -3357,7 +3608,8 @@
       "url": "https://www.sec.gov/Archives/edgar/data/1479026/000114336226000203/primary_doc.xml",
       "offer_price": null,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0001143313-26-000030:primary_doc.xml",
@@ -3375,7 +3627,8 @@
       "url": "https://www.sec.gov/Archives/edgar/data/2002038/000114331326000030/primary_doc.xml",
       "offer_price": 11.5,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0000876661-26-000521:primary_doc.xml",
@@ -3410,8 +3663,10 @@
       "exec_date": "2026-05-29",
       "url": "https://www.sec.gov/Archives/edgar/data/2041841/000093041326001822/c116656_sctoia.htm",
       "offer_price": null,
+      "is_fund": true,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0001354457-26-000554:primary_doc.xml",
@@ -3429,7 +3684,8 @@
       "url": "https://www.sec.gov/Archives/edgar/data/2093524/000135445726000554/primary_doc.xml",
       "offer_price": null,
       "current_price": 9.930000305175781,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0001143362-26-000200:primary_doc.xml",
@@ -3447,7 +3703,8 @@
       "url": "https://www.sec.gov/Archives/edgar/data/1633061/000114336226000200/primary_doc.xml",
       "offer_price": null,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0001354457-26-000544:primary_doc.xml",
@@ -3537,7 +3794,8 @@
       "url": "https://www.sec.gov/Archives/edgar/data/847411/000087666126000514/primary_doc.xml",
       "offer_price": null,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0000876661-26-000512:primary_doc.xml",
@@ -3555,7 +3813,8 @@
       "url": "https://www.sec.gov/Archives/edgar/data/809844/000087666126000512/primary_doc.xml",
       "offer_price": null,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "0000876661-26-000510:primary_doc.xml",
@@ -3573,7 +3832,27 @@
       "url": "https://www.sec.gov/Archives/edgar/data/845606/000087666126000510/primary_doc.xml",
       "offer_price": null,
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
+    },
+    {
+      "id": "squeezeout:klöckner & co se",
+      "source": "DE-SqueezeOut",
+      "issuer": "Klöckner & Co SE",
+      "bidder": null,
+      "cik": null,
+      "ticker": null,
+      "isin": null,
+      "form": "Delisting (DE)",
+      "event_type": "Delisting (DE)",
+      "category": "delisting",
+      "announce_date": "2026-06-03",
+      "exec_date": null,
+      "offer_price": 11.0,
+      "url": "https://spruchverfahren.blogspot.com/2026/06/klockner-co-se-entscheidung-zur-abgabe.html",
+      "current_price": null,
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     },
     {
       "id": "buyback:HRPK.DE",
@@ -3627,7 +3906,8 @@
       "offer_price": 1.3,
       "url": "https://www.bafin.de/SharedDocs/Downloads/DE/Angebotsunterlage/readcrest_capital.pdf?__blob=publicationFile&v=1",
       "current_price": null,
-      "spread_pct": null
+      "spread_pct": null,
+      "first_seen": "2026-07-07"
     }
   ]
 }

@@ -39,6 +39,21 @@ open docs/index.html              # data.json is served alongside
   central registry, so they are sourced from Google News RSS filtered on the
   standard German terms; company name → Yahoo symbol for a live price. Lower
   precision (news-derived); the row links the source article.
+- **DE-SqueezeOut** — proper German squeeze-outs (§327a AktG), delistings and
+  Beherrschungs-/Gewinnabführungsverträge via the SpruchZ blog feed
+  (spruchverfahren.blogspot.com), the practical proxy for the Bundesanzeiger
+  (which has no API). Includes Spruchverfahren (post-deal appraisal) posts.
+
+## Flags & alerts
+
+- **ODD-LOT tag** — SEC tenders whose offer document contains an odd-lot
+  priority provision (holders of <100 shares skip proration).
+- **Fund filter** — closed-end fund / BDC repurchase tenders are flagged
+  (`is_fund`) and hidden by default in the dashboard.
+- **New-event alerts** — `docs/seen.json` tracks when each event was first
+  seen. Genuinely new, alert-worthy events (non-fund, identifiable) open a
+  GitHub issue on the repo, which triggers a normal GitHub email notification.
+  Rows first seen within the last 2 days carry a 🆕 badge.
 
 Each event carries **two dates**: `announce_date` (made public) and `exec_date`
 (tender expiration / Annahmefrist Ende — the arbitrage deadline).
@@ -69,7 +84,9 @@ Each event carries **two dates**: `announce_date` (made public) and `exec_date`
 
 - [x] BaFin collector (WpÜG offers, delisting-Erwerbsangebote)
 - [x] SEC tender expiration-date extraction
+- [x] LLM fallback extraction (Claude Haiku) for price/exec date
+- [x] Squeeze-outs via SpruchZ feed (Bundesanzeiger proxy)
+- [x] Odd-lot flag, fund filter, new-event alerts (GitHub issue)
 - [ ] DE-Buyback acceptance-period dates — only reliable via per-company IR
       offer-document parsing (news-scraping rejected as too fragile)
-- [ ] Bundesanzeiger collector (squeeze-outs, HV convocations)
-- [ ] Email/Telegram digest of new wide-spread events
+- [ ] Annualized-return column (spread / days-to-exec)

@@ -86,6 +86,10 @@ _EXP_RE2 = re.compile(
     re.IGNORECASE)
 _OTP_PRICE_RE = re.compile(
     r"\$\s*([0-9]{1,4}(?:\.[0-9]{2})?)\s*(?:net[^$]{0,40}?)?per\s+[Ss]hare", re.IGNORECASE)
+_ODD_LOT_RE = re.compile(r"odd\s?lots?\b", re.IGNORECASE)
+# SEC issuer tenders from closed-end funds / BDCs are routine NAV repurchases,
+# not equity arbitrage — flag them so the dashboard can hide them by default.
+_FUND_NAME_RE = re.compile(r"\b(fund|trust)\b", re.IGNORECASE)
 
 
 def _get_text(url: str) -> str | None:
@@ -230,6 +234,10 @@ def sec_offer_details(event: dict) -> tuple[float | None, str | None]:
         if not text:
             continue
         texts.append(text)
+        # Odd-lot priority provision (holders of <100 shares skip proration) —
+        # the classic small-size arb; worth a dedicated flag.
+        if _ODD_LOT_RE.search(text):
+            event["odd_lot"] = True
         price = price or _otp_price(text)
         # Only accept a regex date that passes the sanity window — an insane
         # one (stale original of an extended tender) must not short-circuit
@@ -321,6 +329,11 @@ def enrich(event: dict) -> dict:
             event["exec_date"] = _sane_exec(exec_date, event.get("announce_date"))
         else:  # delistings etc. — cover-page price only, no expiration
             event["offer_price"] = offer_price(event["url"])
+        # Closed-end fund / BDC repurchase noise: no listed ticker, or an
+        # explicit fund-ish name.
+        if event.get("category") == "tender" and (
+                not event.get("ticker") or _FUND_NAME_RE.search(event.get("issuer") or "")):
+            event["is_fund"] = True
 
     cp = None
     if not event.get("ticker") and event.get("isin"):

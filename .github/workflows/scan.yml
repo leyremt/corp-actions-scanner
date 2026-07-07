@@ -7,6 +7,7 @@ on:
 
 permissions:
   contents: write              # allow the job to commit docs/data.json
+  issues: write                # alert on new events via a GitHub issue
 
 concurrency:
   group: scan
@@ -35,7 +36,7 @@ jobs:
         run: |
           git config user.name "corp-actions-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add docs/data.json
+          git add docs/data.json docs/seen.json
           if git diff --staged --quiet; then
             echo "No changes."
           else
@@ -52,3 +53,13 @@ jobs:
               sleep 3
             done
           fi
+
+      - name: Alert on new events
+        if: ${{ hashFiles('new_events.md') != '' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh issue create \
+            --title "🆕 Nuevas situaciones — $(date -u +%F)" \
+            --body-file new_events.md \
+            --repo "$GITHUB_REPOSITORY"

@@ -36,6 +36,9 @@
   .src{display:inline-block;padding:1px 7px;border-radius:4px;font-size:11px;font-weight:600}
   .src.SEC{background:#1f6feb33;color:#79c0ff} .src.BaFin{background:#bb800933;color:#e3b341}
   .src.Buyback{background:#8957e533;color:#d2a8ff}
+  .src.Squeeze{background:#da363333;color:#ff9e9e}
+  .tag.oddlot{background:#3fb95022;color:#3fb950;border-color:#3fb95066;font-weight:600}
+  .new{font-size:11px}
   a{color:var(--accent);text-decoration:none} a:hover{text-decoration:underline}
   .empty{padding:40px 24px;color:var(--muted)}
 </style>
@@ -53,15 +56,18 @@
     <option value="SEC">SEC (US)</option>
     <option value="BaFin">BaFin (DE)</option>
     <option value="DE-Buyback">Recompras (DE)</option>
+    <option value="DE-SqueezeOut">Squeeze-outs (DE)</option>
   </select>
   <select id="cat">
     <option value="">Todas las categorías</option>
     <option value="tender">Tender / ofertas</option>
     <option value="going_private">Going-private</option>
     <option value="delisting">Delistings</option>
+    <option value="squeeze_out">Squeeze-outs</option>
   </select>
   <label class="dim" style="font-size:13px"><input type="checkbox" id="onlyspread"> solo con spread</label>
   <label class="dim" style="font-size:13px"><input type="checkbox" id="hideexpired" checked> ocultar vencidas</label>
+  <label class="dim" style="font-size:13px"><input type="checkbox" id="hidefunds" checked> ocultar fondos</label>
   <span class="pill" id="count"></span>
 </div>
 
@@ -89,9 +95,12 @@ let DATA = [], sortK = "spread_pct", sortDir = -1;
 const $ = s => document.querySelector(s);
 const fmt = (v, d=2) => v == null ? "—" : Number(v).toFixed(d);
 const cur = e => e.source === "SEC" ? "$" : "€";
-const srcClass = e => e.source === "SEC" ? "SEC" : (e.source === "BaFin" ? "BaFin" : "Buyback");
-const TAGS = {tender:"#3fb95033", going_private:"#d2992233", delisting:"#f8514933"};
+const srcClass = e => e.source === "SEC" ? "SEC" : (e.source === "BaFin" ? "BaFin" :
+  (e.source === "DE-SqueezeOut" ? "Squeeze" : "Buyback"));
+const TAGS = {tender:"#3fb95033", going_private:"#d2992233", delisting:"#f8514933", squeeze_out:"#f8514955"};
 const TODAY = new Date().toISOString().slice(0,10);
+// "New" = first seen by the scanner within the last 2 days.
+const isNew = e => e.first_seen && (new Date(TODAY) - new Date(e.first_seen)) <= 2*864e5;
 const BUYBACK_WINDOW = 28;  // days: typical German buyback acceptance window (estimate)
 function addDays(iso, n){ const d = new Date(iso+"T00:00:00Z"); d.setUTCDate(d.getUTCDate()+n); return d.toISOString().slice(0,10); }
 // When exec_date is known, use it. For buybacks (no reliable end date) estimate
@@ -111,11 +120,13 @@ function render(){
   const cat = $("#cat").value, src = $("#src").value;
   const onlyspread = $("#onlyspread").checked;
   const hideExpired = $("#hideexpired").checked;
+  const hideFunds = $("#hidefunds").checked;
   let rows = DATA.filter(e =>
     (!cat || e.category === cat) &&
     (!src || e.source === src) &&
     (!onlyspread || e.spread_pct != null) &&
     (!hideExpired || !isExpired(e)) &&
+    (!hideFunds || !e.is_fund) &&
     (!q || [e.issuer, e.ticker, e.isin, e.bidder].some(x => (x||"").toLowerCase().includes(q)))
   );
   rows.sort((a,b)=>{
@@ -140,8 +151,8 @@ function render(){
       <td><span class="src ${srcClass(e)}">${esc(e.source)}</span></td>
       <td class="num ${scls}">${sval}</td>
       <td>${idcell}</td>
-      <td class="issuer">${esc(e.issuer)}${bidder}</td>
-      <td><span class="tag" style="background:${TAGS[e.category]||''}">${esc(e.event_type)}</span></td>
+      <td class="issuer">${isNew(e)?'<span class="new">🆕</span> ':''}${esc(e.issuer)}${bidder}</td>
+      <td><span class="tag" style="background:${TAGS[e.category]||''}">${esc(e.event_type)}</span>${e.odd_lot?' <span class="tag oddlot">ODD-LOT</span>':''}</td>
       <td class="num">${e.offer_price==null?'<span class=dim>—</span>':cur(e)+fmt(e.offer_price)}</td>
       <td class="num">${e.current_price==null?'<span class=dim>—</span>':cur(e)+fmt(e.current_price)}</td>
       <td class="dim">${e.announce_date||"—"}</td>
@@ -155,7 +166,7 @@ function esc(s){return (s||"").replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':
 document.querySelectorAll("th[data-k]").forEach(th=>{
   th.onclick=()=>{const k=th.dataset.k; sortDir = (k===sortK)?-sortDir:-1; sortK=k; render();};
 });
-["q","cat","src","onlyspread","hideexpired"].forEach(id=>$("#"+id).addEventListener("input",render));
+["q","cat","src","onlyspread","hideexpired","hidefunds"].forEach(id=>$("#"+id).addEventListener("input",render));
 
 fetch("data.json?_="+Date.now()).then(r=>r.json()).then(d=>{
   DATA = d.events||[];

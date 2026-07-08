@@ -1,0 +1,9 @@
+{
+  "CEC.DE": {
+    "file": "CEC.DE.html",
+    "issuer": "CECONOMY AG, Düsseldorf",
+    "ticker": "CEC.DE",
+    "model": "claude-sonnet-5",
+    "generated_at": "2026-07-08 18:26 UTC"
+  }
+}

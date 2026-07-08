@@ -43,6 +43,7 @@
   .tag.oddlot{background:#3fb95022;color:#3fb950;border-color:#3fb95066;font-weight:600}
   .tag.splitoff{background:#d2992222;color:#e3b341;border-color:#d2992266;font-weight:600}
   .new{font-size:11px;cursor:help}
+  .memo{font-size:12px;white-space:nowrap;margin-left:2px}
   td.why{white-space:normal;max-width:250px;min-width:170px;color:#9aa4b2;font-size:12px;line-height:1.35}
   a{color:var(--accent);text-decoration:none} a:hover{text-decoration:underline}
   .empty{padding:40px 24px;color:var(--muted)}
@@ -99,8 +100,13 @@
 </div>
 
 <script>
-let DATA = [], sortK = "spread_pct", sortDir = -1;
+let DATA = [], MEMOS = {}, sortK = "spread_pct", sortDir = -1;
 const $ = s => document.querySelector(s);
+// Enlace al memo del agente, junto al nombre de la empresa (vacío si no hay).
+const memoLink = e => {
+  const m = MEMOS[e.ticker] || MEMOS[e.isin];
+  return m ? ` <a class="memo" href="memos/${encodeURIComponent(m.file)}" target="_blank" rel="noopener" title="Análisis del agente${m.generated_at?' · '+m.generated_at:''}">📄 análisis</a>` : '';
+};
 const fmt = (v, d=2) => v == null ? "—" : Number(v).toFixed(d);
 const cur = e => e.source === "SEC" ? "$" : "€";
 const srcClass = e => e.source === "SEC" ? "SEC" : (e.source === "BaFin" ? "BaFin" :
@@ -159,7 +165,7 @@ function render(){
       <td><span class="src ${srcClass(e)}">${esc(e.source)}</span></td>
       <td class="num ${scls}">${sval}</td>
       <td>${idcell}</td>
-      <td class="issuer">${isNew(e)?'<span class="new" title="Visto por primera vez por el escáner en los últimos 2 días">🆕</span> ':''}${esc(e.issuer)}${bidder}</td>
+      <td class="issuer">${isNew(e)?'<span class="new" title="Visto por primera vez por el escáner en los últimos 2 días">🆕</span> ':''}${esc(e.issuer)}${memoLink(e)}${bidder}</td>
       <td class="why">${esc(e.why||"")}</td>
       <td><span class="tag" style="background:${TAGS[e.category]||''}">${esc(e.event_type)}</span>${e.odd_lot?' <span class="tag oddlot">ODD-LOT</span>':''}${e.split_off?' <span class="tag splitoff">SPLIT-OFF</span>':''}</td>
       <td class="num">${e.offer_price==null?'<span class=dim>—</span>':cur(e)+fmt(e.offer_price)}</td>
@@ -186,6 +192,12 @@ fetch("data.json?_="+Date.now()).then(r=>r.json()).then(d=>{
     `${d.count} eventos · ${(d.sources||[]).join(" + ")} · ventana ${wtxt} · actualizado ${dt.toLocaleString("es-ES")}`;
   render();
 }).catch(e=>{$("#meta").textContent="No se pudo cargar data.json — "+e;});
+
+// Índice de memos del agente (opcional: si no existe, la columna queda con "—").
+fetch("memos/manifest.json?_="+Date.now())
+  .then(r=>r.ok?r.json():{})
+  .then(m=>{MEMOS=m||{}; if(DATA.length) render();})
+  .catch(()=>{});
 </script>
 </body>
 </html>

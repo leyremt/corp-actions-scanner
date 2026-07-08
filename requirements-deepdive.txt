@@ -1,0 +1,6 @@
+# Dependencias EXTRA solo para la versión LangGraph del deep-dive
+# (scanner/deepdive_graph.py). El escáner diario NO las necesita.
+# Instalar con:  pip install -r requirements-deepdive.txt
+langgraph>=1.2
+langchain-anthropic>=1.4
+langchain-core>=1.4

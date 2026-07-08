@@ -6,16 +6,47 @@ offers, going-private deals and delistings — computes the **arbitrage spread**
 
 Runs itself daily in the cloud via GitHub Actions; no server, no paid data feed.
 
-## How it works
+## Architecture
 
+```mermaid
+flowchart TB
+    USER(["👩 Investor"])
+
+    subgraph SCAN["⏰ Daily scanner — GitHub Actions cron (weekdays 06:00 UTC)"]
+        direction TB
+        S1["edgar.py<br/>SEC EDGAR"] --> B["build.py"]
+        S2["bafin.py<br/>BaFin WpÜG"] --> B
+        S3["buybacks.py<br/>DE buybacks"] --> B
+        S4["squeezeouts.py<br/>DE squeeze-outs"] --> B
+        B --> E["enrich.py<br/>price + spread<br/>(+ Claude Haiku fallback)"]
+        E --> D[("docs/data.json")]
+    end
+
+    subgraph SITE["🌐 Website — GitHub Pages (no server, free)"]
+        direction TB
+        DASH["docs/index.html<br/>sortable dashboard"]
+        MEMO[("docs/memos/*.html<br/>agent memos")]
+        MEMO -. "📄 link next to issuer" .-> DASH
+    end
+
+    subgraph DIVE["🔍 Deep-dive — on demand (NOT in the cron)"]
+        direction TB
+        G["deepdive_graph.py<br/>LangGraph: classify → analyst"]
+        G --> T["tools:<br/>read doc · news · quote"]
+        G --> C["Claude<br/>(Sonnet ≈ $0.30 / memo)"]
+        G --> MW["memo_web.py"]
+    end
+
+    D --> DASH
+    MW --> MEMO
+    USER -->|"'analyze DXLG'"| G
+    DASH -->|"share URL"| PUB(["🔗 anyone with the link"])
 ```
-GitHub Actions (cron)
-   └─ python -m scanner.build 30
-        ├─ scanner/edgar.py   pull SC TO-I / SC TO-T / SC 13E3 / 25-NSE filings
-        ├─ scanner/enrich.py  current price (yfinance) + offer price (heuristic)
-        └─ docs/data.json     written + committed
-   └─ GitHub Pages serves docs/index.html → the dashboard
-```
+
+**In plain terms:** a daily cron builds the table for free and publishes it as a
+static site; separately, on demand, an LLM agent writes a deep-dive memo for a
+single company and drops it next to that row as a shareable page. The site has
+no server — it only ever shows pre-built files.
 
 ## Local run
 

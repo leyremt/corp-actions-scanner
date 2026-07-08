@@ -5,5 +5,12 @@
     "ticker": "CEC.DE",
     "model": "claude-sonnet-5",
     "generated_at": "2026-07-08 18:26 UTC"
+  },
+  "DXLG": {
+    "file": "DXLG.html",
+    "issuer": "DESTINATION XL GROUP, INC.",
+    "ticker": "DXLG",
+    "model": "claude-sonnet-5",
+    "generated_at": "2026-07-08 18:57 UTC"
   }
 }

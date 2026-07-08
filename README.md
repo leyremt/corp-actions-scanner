@@ -58,6 +58,36 @@ open docs/index.html              # data.json is served alongside
 Each event carries **two dates**: `announce_date` (made public) and `exec_date`
 (tender expiration / Annahmefrist Ende — the arbitrage deadline).
 
+## Deep-dive analysis (on-demand)
+
+Beyond the table, any single event can get a full **arbitrage memo** written by
+an LLM agent that reads the offer document, checks the live quote and searches
+recent news, then judges the situation (terms, spread, proration / odd-lot,
+timeline, risks, verdict). This is the step that tells a real discount from a
+trap the raw spread can't see (e.g. a fat spread on a board-rejected hostile
+tender).
+
+Two implementations share the same three tools (fetch document, search news,
+get quote):
+
+- `scanner/deepdive.py` — native Anthropic SDK tool-use loop.
+- `scanner/deepdive_graph.py` — LangGraph version: classifies the event
+  (tender / squeeze-out / merger) and routes it to a situation-specific analyst.
+
+```bash
+pip install -r requirements-deepdive.txt          # extra deps (graph version)
+source scratchpad/anthropic.env                    # ANTHROPIC_API_KEY + SEC_CONTACT
+DEEPDIVE_MODEL=claude-sonnet-5 \
+  python -m scanner.deepdive_graph DXLG            # ticker or issuer name
+```
+
+`DEEPDIVE_MODEL` selects the model (default `claude-opus-4-8`; `claude-sonnet-5`
+≈ $0.30 / memo). Each run publishes the memo as a static page in
+`docs/memos/<ticker|isin>.html` and registers it in `docs/memos/manifest.json`;
+the dashboard then shows a **📄 análisis** link next to that issuer. It runs
+**on demand only** — deliberately **not** part of the daily cron, so it never
+spends unless you ask for a specific name.
+
 ## Known limits
 
 - **SEC offer-price extraction is heuristic.** Large spreads (>25%) are usually
@@ -87,6 +117,9 @@ Each event carries **two dates**: `announce_date` (made public) and `exec_date`
 - [x] LLM fallback extraction (Claude Haiku) for price/exec date
 - [x] Squeeze-outs via SpruchZ feed (Bundesanzeiger proxy)
 - [x] Odd-lot flag, fund filter, new-event alerts (GitHub issue)
+- [x] Deep-dive agent memos, published to the dashboard (on-demand)
 - [ ] DE-Buyback acceptance-period dates — only reliable via per-company IR
       offer-document parsing (news-scraping rejected as too fragile)
 - [ ] Annualized-return column (spread / days-to-exec)
+- [ ] Trigger a deep-dive from the web itself (needs a server — parked to keep
+      the site 0-server; today memos are generated locally / on-demand)

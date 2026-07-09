@@ -92,6 +92,62 @@ def _iso_date(value) -> str | None:
     return m.group(0) if m else None
 
 
+_CLASS_SCHEMA = {
+    "type": "object",
+    "properties": {
+        "security": {
+            "type": "string",
+            "enum": ["equity", "debt", "other"],
+            "description": "Class of security the offer is for: equity = common/"
+                           "ordinary shares or stock; debt = notes, bonds, debentures.",
+        },
+        "is_tender_offer": {
+            "type": "boolean",
+            "description": "True only if securities are being acquired FROM holders "
+                           "(tender / takeover / repurchase offer). False for rights "
+                           "offerings and business combinations without a tender.",
+        },
+    },
+    "required": ["security", "is_tender_offer"],
+    "additionalProperties": False,
+}
+
+_CLASS_PROMPT = (
+    "This is the cover text of an SEC Form CB — a foreign issuer notifying the SEC "
+    "of an offer made abroad. Classify what the offer is FOR.\n"
+    "Use 'debt' for notes/bonds/debentures, 'equity' for common or ordinary shares, "
+    "'other' otherwise. Set is_tender_offer=false for rights offerings.\n\n"
+    "TEXT:\n{text}"
+)
+
+
+def classify_offer(text: str) -> dict | None:
+    """Classify a Form CB cover: {'security': ..., 'is_tender_offer': ...} or None.
+
+    Only called when the free regex is ambiguous — same cost discipline as
+    `extract` (shares the per-run call cap and the no-key no-op)."""
+    global _calls, _client
+    if not available() or not text:
+        return None
+    _calls += 1
+    try:
+        if _client is None:
+            import anthropic
+            _client = anthropic.Anthropic()
+        resp = _client.messages.create(
+            model=MODEL,
+            max_tokens=100,
+            output_config={"format": {"type": "json_schema", "schema": _CLASS_SCHEMA}},
+            messages=[{"role": "user", "content": _CLASS_PROMPT.format(text=text[:8000])}],
+        )
+        if resp.stop_reason != "end_turn":
+            return None
+        return json.loads(resp.content[0].text)
+    except Exception as exc:  # never break the pipeline
+        print(f"llm classify_offer failed: {type(exc).__name__}: {exc}", file=sys.stderr)
+        return None
+
+
 def extract(text: str, hint: str = "tender offer document") -> dict | None:
     """Return {offer_price, currency, expiration_date} or None on any failure."""
     global _calls, _client

@@ -18,6 +18,7 @@ flowchart TB
         S2["bafin.py<br/>BaFin WpÜG"] --> B
         S3["buybacks.py<br/>DE buybacks"] --> B
         S4["squeezeouts.py<br/>DE squeeze-outs"] --> B
+        S5["cb.py<br/>Form CB<br/>(Japan, Canada, …)"] --> B
         B --> E["enrich.py<br/>price + spread<br/>(+ Claude Haiku fallback)"]
         E --> D[("docs/data.json")]
     end
@@ -70,6 +71,16 @@ open docs/index.html              # data.json is served alongside
   central registry, so they are sourced from Google News RSS filtered on the
   standard German terms; company name → Yahoo symbol for a live price. Lower
   precision (news-derived); the row links the source article.
+- **Foreign-CB** — foreign tender offers that surface on EDGAR. Issuers abroad
+  with US holders must notify the SEC on **Form CB** (~150/year, dominated by
+  Japanese tender offers, with Canadian issuers mixed in). This is how the
+  scanner reaches markets whose own registries are unreachable: SEDAR+ (Canada)
+  sits behind a commercial bot wall, CNMV (Spain) 403s scripted access. Noise
+  (debt tenders, exchange offers) is filtered by **event type, never by
+  country** — the observed debt filings came from Canada and Greece, while every
+  sampled Japanese filing was a genuine equity tender. Regex settles ~90%;
+  Claude Haiku is consulted only for the ambiguous remainder. Each row is tagged
+  with its country and is filterable in the dashboard.
 - **DE-SqueezeOut** — proper German squeeze-outs (§327a AktG), delistings and
   Beherrschungs-/Gewinnabführungsverträge via the SpruchZ blog feed
   (spruchverfahren.blogspot.com), the practical proxy for the Bundesanzeiger
@@ -127,6 +138,14 @@ spends unless you ask for a specific name.
   window. Freshly announced offers have no document yet → price/exec pending.
 - **Squeeze-outs proper** (aktien-/verschmelzungsrechtlich) are not in BaFin —
   they run through the Bundesanzeiger (Phase 3).
+- **Form CB rows carry no offer price** (the offer document is a foreign-language
+  exhibit) and most filers have no US ticker, so there is no spread yet. They
+  surface the *event*; the "solo con spread" filter hides them for anyone who
+  only wants actionable rows.
+- **Form CB's cover prints every offer category as a checkbox label** ("Rights
+  Offering", "Exchange Offer", …), so those strings appear in every filing. Never
+  keyword-match the offer *type* — only the free-text securities description
+  discriminates.
 
 ## Execution date
 
@@ -149,6 +168,11 @@ spends unless you ask for a specific name.
 - [x] Squeeze-outs via SpruchZ feed (Bundesanzeiger proxy)
 - [x] Odd-lot flag, fund filter, new-event alerts (GitHub issue)
 - [x] Deep-dive agent memos, published to the dashboard (on-demand)
+- [x] International coverage via Form CB (Japan, Canada, …) with country tags
+- [ ] Map Form CB issuers to local Yahoo symbols (`.T` Tokyo, `.TO` Toronto) to
+      get prices and spreads on foreign offers
+- [ ] UK Takeover Panel disclosure table — the best dedicated foreign registry
+      found (one authoritative page listing every live UK offer)
 - [ ] DE-Buyback acceptance-period dates — only reliable via per-company IR
       offer-document parsing (news-scraping rejected as too fragile)
 - [ ] Annualized-return column (spread / days-to-exec)

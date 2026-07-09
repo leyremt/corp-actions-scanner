@@ -40,6 +40,8 @@
   .src.SEC{background:#1f6feb33;color:#79c0ff} .src.BaFin{background:#bb800933;color:#e3b341}
   .src.Buyback{background:#8957e533;color:#d2a8ff}
   .src.Squeeze{background:#da363333;color:#ff9e9e}
+  .src.CB{background:#2ea04333;color:#7ee787}
+  .geo{color:var(--muted);font-size:12px}
   .tag.oddlot{background:#3fb95022;color:#3fb950;border-color:#3fb95066;font-weight:600}
   .tag.splitoff{background:#d2992222;color:#e3b341;border-color:#d2992266;font-weight:600}
   .new{font-size:11px;cursor:help}
@@ -63,6 +65,10 @@
     <option value="BaFin">BaFin (DE)</option>
     <option value="DE-Buyback">Recompras (DE)</option>
     <option value="DE-SqueezeOut">Squeeze-outs (DE)</option>
+    <option value="Foreign-CB">Ofertas extranjeras (Form CB)</option>
+  </select>
+  <select id="country" title="Solo eventos extranjeros (Form CB) llevan país">
+    <option value="">Todos los países</option>
   </select>
   <select id="cat">
     <option value="">Todas las categorías</option>
@@ -109,8 +115,11 @@ const memoLink = e => {
 };
 const fmt = (v, d=2) => v == null ? "—" : Number(v).toFixed(d);
 const cur = e => e.source === "SEC" ? "$" : "€";
-const srcClass = e => e.source === "SEC" ? "SEC" : (e.source === "BaFin" ? "BaFin" :
-  (e.source === "DE-SqueezeOut" ? "Squeeze" : "Buyback"));
+const SRC_CLASS = {"SEC":"SEC", "BaFin":"BaFin", "DE-SqueezeOut":"Squeeze",
+                   "DE-Buyback":"Buyback", "Foreign-CB":"CB"};
+const srcClass = e => SRC_CLASS[e.source] || "Buyback";
+// Etiqueta corta para la pastilla de fuente ("Foreign-CB" es demasiado largo).
+const srcLabel = e => e.source === "Foreign-CB" ? "CB" : e.source;
 const TAGS = {tender:"#3fb95033", going_private:"#d2992233", delisting:"#f8514933", squeeze_out:"#f8514955", merger:"#1f6feb33", split_off:"#d2992255"};
 const TODAY = new Date().toISOString().slice(0,10);
 // "New" = first seen by the scanner within the last 2 days.
@@ -131,17 +140,18 @@ const isExpired = e => expiry(e).expired;
 
 function render(){
   const q = $("#q").value.trim().toLowerCase();
-  const cat = $("#cat").value, src = $("#src").value;
+  const cat = $("#cat").value, src = $("#src").value, country = $("#country").value;
   const onlyspread = $("#onlyspread").checked;
   const hideExpired = $("#hideexpired").checked;
   const hideFunds = $("#hidefunds").checked;
   let rows = DATA.filter(e =>
     (!cat || e.category === cat) &&
     (!src || e.source === src) &&
+    (!country || e.country === country) &&
     (!onlyspread || e.spread_pct != null) &&
     (!hideExpired || !isExpired(e)) &&
     (!hideFunds || !e.is_fund) &&
-    (!q || [e.issuer, e.ticker, e.isin, e.bidder, e.why, e.event_type].some(x => (x||"").toLowerCase().includes(q)))
+    (!q || [e.issuer, e.ticker, e.isin, e.bidder, e.why, e.event_type, e.country].some(x => (x||"").toLowerCase().includes(q)))
   );
   rows.sort((a,b)=>{
     let x=a[sortK], y=b[sortK];
@@ -161,11 +171,12 @@ function render(){
       ? `<span class="tk">${esc(e.ticker)}</span>`
       : (e.isin ? `<span class="isin">${esc(e.isin)}</span>` : "<span class=dim>—</span>");
     const bidder = e.bidder ? `<div class="bidder">↳ ${esc(e.bidder)}</div>` : "";
+    const geo = e.country ? `<div class="geo">🌍 ${esc(e.country)}</div>` : "";
     return `<tr>
-      <td><span class="src ${srcClass(e)}">${esc(e.source)}</span></td>
+      <td><span class="src ${srcClass(e)}" title="${esc(e.source)}">${esc(srcLabel(e))}</span></td>
       <td class="num ${scls}">${sval}</td>
       <td>${idcell}</td>
-      <td class="issuer">${isNew(e)?'<span class="new" title="Visto por primera vez por el escáner en los últimos 2 días">🆕</span> ':''}${esc(e.issuer)}${memoLink(e)}${bidder}</td>
+      <td class="issuer">${isNew(e)?'<span class="new" title="Visto por primera vez por el escáner en los últimos 2 días">🆕</span> ':''}${esc(e.issuer)}${memoLink(e)}${bidder}${geo}</td>
       <td class="why">${esc(e.why||"")}</td>
       <td><span class="tag" style="background:${TAGS[e.category]||''}">${esc(e.event_type)}</span>${e.odd_lot?' <span class="tag oddlot">ODD-LOT</span>':''}${e.split_off?' <span class="tag splitoff">SPLIT-OFF</span>':''}</td>
       <td class="num">${e.offer_price==null?'<span class=dim>—</span>':cur(e)+fmt(e.offer_price)}</td>
@@ -181,10 +192,14 @@ function esc(s){return (s||"").replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':
 document.querySelectorAll("th[data-k]").forEach(th=>{
   th.onclick=()=>{const k=th.dataset.k; sortDir = (k===sortK)?-sortDir:-1; sortK=k; render();};
 });
-["q","cat","src","onlyspread","hideexpired","hidefunds"].forEach(id=>$("#"+id).addEventListener("input",render));
+["q","cat","src","country","onlyspread","hideexpired","hidefunds"].forEach(id=>$("#"+id).addEventListener("input",render));
 
 fetch("data.json?_="+Date.now()).then(r=>r.json()).then(d=>{
   DATA = d.events||[];
+  // Poblar el filtro de países con los que realmente hay en los datos.
+  const paises = [...new Set(DATA.map(e=>e.country).filter(Boolean))].sort();
+  $("#country").innerHTML = '<option value="">Todos los países</option>'
+    + paises.map(c=>`<option value="${esc(c)}">${esc(c)}</option>`).join("");
   const dt = new Date(d.generated_at);
   const w = d.window_days || {};
   const wtxt = typeof w === "object" ? `SEC ${w.SEC}d · BaFin ${w.BaFin}d` : `${w}d`;

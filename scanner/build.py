@@ -7,7 +7,7 @@ import json
 import pathlib
 import sys
 
-from scanner import bafin, buybacks, llm_extract, squeezeouts
+from scanner import bafin, buybacks, cb, llm_extract, squeezeouts
 from scanner.edgar import collect as collect_sec
 from scanner.enrich import enrich
 
@@ -69,6 +69,9 @@ def _why(e: dict) -> str:
 
     if e.get("is_fund"):
         base = "Recompra periódica de fondo a NAV — sin edge típico"
+    elif e["source"] == "Foreign-CB":
+        # Offer doc is a foreign-language exhibit; price not extracted yet.
+        base = "Oferta extranjera notificada a la SEC (Form CB): confirmar precio en el documento"
     elif e["source"] == "DE-Buyback":
         base = "Autocartera: la empresa recompra a prima sobre mercado"
     elif cat == "split_off":
@@ -94,6 +97,8 @@ def _why(e: dict) -> str:
     else:
         base = et
 
+    # NOTE: country is NOT added here — the dashboard already shows it under the
+    # issuer name; repeating it in "Interés" was visual noise.
     extras = []
     if e.get("odd_lot"):
         extras.append("🎯 prioridad odd-lot (<100 acc., sin prorrateo)")
@@ -102,12 +107,13 @@ def _why(e: dict) -> str:
     return base + ((" · " + " · ".join(extras)) if extras else "")
 
 
-def main(sec_days: int = 30, bafin_days: int = 365) -> None:
+def main(sec_days: int = 30, bafin_days: int = 365, cb_days: int = 90) -> None:
     events = collect_sec(days=sec_days)
     print(f"SEC: {len(events)} events", file=sys.stderr)
     for label, fn in (("BaFin", lambda: bafin.collect(days=bafin_days)),
                       ("DE-Buyback", buybacks.collect),
-                      ("DE-SqueezeOut", squeezeouts.collect)):
+                      ("DE-SqueezeOut", squeezeouts.collect),
+                      ("Foreign-CB", lambda: cb.collect(days=cb_days))):
         try:
             got = fn()
             print(f"{label}: {len(got)} events", file=sys.stderr)
@@ -137,9 +143,9 @@ def main(sec_days: int = 30, bafin_days: int = 365) -> None:
 
     payload = {
         "generated_at": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"),
-        "window_days": {"SEC": sec_days, "BaFin": bafin_days},
+        "window_days": {"SEC": sec_days, "BaFin": bafin_days, "CB": cb_days},
         "count": len(events),
-        "sources": ["SEC EDGAR", "BaFin", "DE-Buyback", "DE-SqueezeOut"],
+        "sources": ["SEC EDGAR", "BaFin", "DE-Buyback", "DE-SqueezeOut", "Foreign-CB"],
         "events": events,
     }
     OUT.parent.mkdir(parents=True, exist_ok=True)
@@ -151,4 +157,5 @@ def main(sec_days: int = 30, bafin_days: int = 365) -> None:
 if __name__ == "__main__":
     sec_days = int(sys.argv[1]) if len(sys.argv) > 1 else 30
     bafin_days = int(sys.argv[2]) if len(sys.argv) > 2 else 365
-    main(sec_days, bafin_days)
+    cb_days = int(sys.argv[3]) if len(sys.argv) > 3 else 90
+    main(sec_days, bafin_days, cb_days)

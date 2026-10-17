@@ -19,5 +19,12 @@
     "ticker": "BKHT.DE",
     "model": "claude-sonnet-5",
     "generated_at": "2026-10-17 20:27 UTC"
+  },
+  "JSPR": {
+    "file": "JSPR.html",
+    "issuer": "Jasper Therapeutics, Inc.",
+    "ticker": "JSPR",
+    "model": "claude-sonnet-5",
+    "generated_at": "2026-10-17 20:31 UTC"
   }
 }

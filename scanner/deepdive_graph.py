@@ -18,6 +18,7 @@ Uso:  python -m scanner.deepdive_graph AAG.DE
 """
 from __future__ import annotations
 
+import datetime as dt
 import json
 import os
 import sys
@@ -125,7 +126,8 @@ PROMPTS = {
 def make_analyst(situation: str):
     """Fábrica de nodos: crea un analista con su prompt especializado."""
     agent = create_agent(
-        ChatAnthropic(model=MODEL, max_tokens=4000),
+        # 4000 cut memos off before the Veredicto section.
+        ChatAnthropic(model=MODEL, max_tokens=8000),
         TOOLS,
         system_prompt=PROMPTS[situation],
     )
@@ -136,7 +138,11 @@ def make_analyst(situation: str):
             "source", "issuer", "bidder", "ticker", "isin", "event_type",
             "category", "announce_date", "exec_date", "offer_price",
             "current_price", "spread_pct", "odd_lot", "url", "why")}
-        msg = ("Analiza esta situación y escribe el memo de arbitraje.\n\n"
+        # Without today's date the model can't tell an open offer from one
+        # that already closed (BKHT: "actuar rápido" a week after expiry).
+        msg = (f"Hoy es {dt.date.today().isoformat()}. Si el plazo de la oferta "
+               "ya ha vencido, dilo al principio del memo.\n\n"
+               "Analiza esta situación y escribe el memo de arbitraje.\n\n"
                "Datos del escáner (verifícalos, pueden ser imperfectos):\n"
                + json.dumps(seed, ensure_ascii=False, indent=2)
                + f"\n\nEmpieza leyendo el documento: {ev.get('url')}")

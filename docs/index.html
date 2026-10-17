@@ -34,7 +34,9 @@
   .tk{font-weight:600}
   .isin{font-weight:400;color:var(--muted);font-size:12px}
   .num{text-align:right;font-variant-numeric:tabular-nums}
-  .pos{color:var(--green)} .neg{color:var(--red)} .dim{color:var(--muted)}
+  .pos{color:var(--green)} .neg{color:var(--red)} .dim{color:var(--muted)} .warn{color:#d29922}
+  .banner{margin:10px 24px 0;padding:8px 12px;border:1px solid #d2992266;background:#d2992222;
+          color:#e3b341;border-radius:6px;font-size:13px}
   .tag{display:inline-block;padding:2px 8px;border-radius:999px;font-size:11px;border:1px solid var(--border)}
   .src{display:inline-block;padding:1px 7px;border-radius:4px;font-size:11px;font-weight:600}
   .src.SEC{background:#1f6feb33;color:#79c0ff} .src.BaFin{background:#bb800933;color:#e3b341}
@@ -56,6 +58,7 @@
   <h1>📡 Corporate Actions Scanner</h1>
   <div class="meta" id="meta">cargando…</div>
 </header>
+<div class="banner" id="llmwarn" hidden>⚠ La API key de Anthropic fue rechazada en el último escaneo: faltan fechas de vencimiento y algunos precios que extrae el LLM. Hay que renovar el secret <code>ANTHROPIC_API_KEY</code>.</div>
 
 <div class="controls">
   <input id="q" placeholder="Buscar emisor, bidder o ticker…">
@@ -165,8 +168,11 @@ function render(){
   $("#rows").innerHTML = rows.map(e=>{
     const s = e.spread_pct;
     const x = expiry(e);
-    const scls = s==null?"dim":(s>=0?"pos":"neg");
-    const sval = s==null?"—":(s>0?"+":"")+fmt(s)+"%";
+    const scls = e.needs_review?"warn":(s==null?"dim":(s>=0?"pos":"neg"));
+    // Spread implausible (>±25%): almost always a parse error, never an edge.
+    const sval = e.needs_review
+      ? `<span title="Spread calculado ${(e.spread_suspect>0?"+":"")+fmt(e.spread_suspect)}% — probable error de extracción del precio de oferta">⚠ revisar</span>`
+      : (s==null?"—":(s>0?"+":"")+fmt(s)+"%");
     const idcell = e.ticker
       ? `<span class="tk">${esc(e.ticker)}</span>`
       : (e.isin ? `<span class="isin">${esc(e.isin)}</span>` : "<span class=dim>—</span>");
@@ -205,6 +211,7 @@ fetch("data.json?_="+Date.now()).then(r=>r.json()).then(d=>{
   const wtxt = typeof w === "object" ? `SEC ${w.SEC}d · BaFin ${w.BaFin}d` : `${w}d`;
   $("#meta").textContent =
     `${d.count} eventos · ${(d.sources||[]).join(" + ")} · ventana ${wtxt} · actualizado ${dt.toLocaleString("es-ES")}`;
+  $("#llmwarn").hidden = !(d.llm && d.llm.status === "auth_error");
   render();
 }).catch(e=>{$("#meta").textContent="No se pudo cargar data.json — "+e;});
 

@@ -24,6 +24,9 @@ MAX_CALLS = int(os.environ.get("LLM_MAX_CALLS", "40"))
 
 _calls = 0
 _client = None
+# Set on the first 401: the key is wrong for the whole run, so stop calling
+# (otherwise every miss burns a request and the run degrades silently).
+_auth_failed = False
 
 _SCHEMA = {
     "type": "object",
@@ -66,7 +69,25 @@ def calls_used() -> int:
 
 
 def available() -> bool:
-    return bool(os.environ.get("ANTHROPIC_API_KEY")) and _calls < MAX_CALLS
+    return bool(os.environ.get("ANTHROPIC_API_KEY")) and _calls < MAX_CALLS and not _auth_failed
+
+
+def status() -> str:
+    """'auth_error' (key rejected), 'no_key', or 'ok' — written to data.json."""
+    if _auth_failed:
+        return "auth_error"
+    return "ok" if os.environ.get("ANTHROPIC_API_KEY") else "no_key"
+
+
+def _note_failure(where: str, exc: Exception) -> None:
+    global _auth_failed
+    if type(exc).__name__ == "AuthenticationError":
+        if not _auth_failed:
+            print(f"llm {where}: ANTHROPIC_API_KEY rejected (401) — LLM fallback "
+                  "disabled for the rest of this run", file=sys.stderr)
+        _auth_failed = True
+    else:
+        print(f"llm {where} failed: {type(exc).__name__}: {exc}", file=sys.stderr)
 
 
 def _snippet(text: str, head: int = 4000, window: int = 700, max_windows: int = 8,
@@ -144,7 +165,7 @@ def classify_offer(text: str) -> dict | None:
             return None
         return json.loads(resp.content[0].text)
     except Exception as exc:  # never break the pipeline
-        print(f"llm classify_offer failed: {type(exc).__name__}: {exc}", file=sys.stderr)
+        _note_failure("classify_offer", exc)
         return None
 
 
@@ -171,7 +192,7 @@ def extract(text: str, hint: str = "tender offer document") -> dict | None:
             return None
         data = json.loads(resp.content[0].text)
     except Exception as exc:  # network, auth, parse — never break the pipeline
-        print(f"llm_extract failed: {type(exc).__name__}: {exc}", file=sys.stderr)
+        _note_failure("extract", exc)
         return None
 
     price = data.get("offer_price")

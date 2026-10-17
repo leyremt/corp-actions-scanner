@@ -23,11 +23,11 @@ import os
 import sys
 from typing import Literal, TypedDict
 
+from langchain.agents import create_agent
 from langchain_anthropic import ChatAnthropic
 from langchain_core.tools import tool
 from langgraph.checkpoint.memory import MemorySaver
 from langgraph.graph import END, START, StateGraph
-from langgraph.prebuilt import create_react_agent
 
 # Reutilizamos la lógica ya escrita y probada de deepdive.py — no la duplicamos.
 from .deepdive import _fetch_document, _find_event, _get_quote, _search_news
@@ -124,10 +124,10 @@ PROMPTS = {
 
 def make_analyst(situation: str):
     """Fábrica de nodos: crea un analista con su prompt especializado."""
-    agent = create_react_agent(
+    agent = create_agent(
         ChatAnthropic(model=MODEL, max_tokens=4000),
         TOOLS,
-        prompt=PROMPTS[situation],
+        system_prompt=PROMPTS[situation],
     )
 
     def node(state: DeepDiveState) -> dict:

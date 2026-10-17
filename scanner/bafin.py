@@ -149,15 +149,25 @@ def _pdf_url_from_landing(landing: str) -> str | None:
     return m if m.startswith("http") else "https://www.bafin.de" + m
 
 
-def _parse_offer_pdf(pdf_url: str) -> tuple[float | None, str | None]:
-    """Return (offer_price, acceptance-period-end ISO date) from the cover page."""
+def _pdf_cover_text(pdf_url: str) -> str | None:
+    """First pages of the offer PDF as one whitespace-flattened line."""
     try:
         data = _get(pdf_url).content
         reader = pypdf.PdfReader(io.BytesIO(data))
         txt = re.sub(r"[ \t]+", " ", "\n".join((p.extract_text() or "") for p in reader.pages[:6]))
     except Exception:
-        return None, None
-    flat = txt.replace("\n", " ")
+        return None
+    return txt.replace("\n", " ")
+
+
+def _parse_offer_pdf(pdf_url: str) -> tuple[float | None, str | None]:
+    """Return (offer_price, acceptance-period-end ISO date) from the cover page."""
+    flat = _pdf_cover_text(pdf_url)
+    return parse_cover(flat) if flat else (None, None)
+
+
+def parse_cover(flat: str) -> tuple[float | None, str | None]:
+    """(offer_price, acceptance-period-end) from an offer document's cover text."""
     price = None
     pm = re.search(r"(?:EUR|€)\s*([0-9.]+,\d{2})\s*(?:je|pro)\s*(?:Aktie|Stückaktie)", flat)
     if pm:

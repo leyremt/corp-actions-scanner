@@ -67,7 +67,10 @@ def _why(e: dict) -> str:
     s, exec_, op = e.get("spread_pct"), e.get("exec_date"), e.get("offer_price")
     et, cat = e.get("event_type", ""), e.get("category", "")
 
-    if e.get("is_fund"):
+    if e.get("needs_review"):
+        base = (f"⚠ Precio de oferta dudoso ({e['spread_suspect']:+.0f}% vs mercado): "
+                "probable error de extracción, revisar en el documento")
+    elif e.get("is_fund"):
         base = "Recompra periódica de fondo a NAV — sin edge típico"
     elif e["source"] == "Foreign-CB":
         # Offer doc is a foreign-language exhibit; price not extracted yet.
@@ -126,6 +129,11 @@ def main(sec_days: int = 30, bafin_days: int = 365, cb_days: int = 90) -> None:
         enrich(ev)
         if i % 25 == 0:
             print(f"  {i}/{len(events)}", file=sys.stderr)
+    dropped = [e for e in events if e.get("drop")]
+    events = [e for e in events if not e.get("drop")]
+    if dropped:
+        print(f"dropped {len(dropped)} false positives: "
+              + ", ".join(e.get("ticker") or e["issuer"][:20] for e in dropped), file=sys.stderr)
 
     for ev in events:
         ev["why"] = _why(ev)
@@ -146,11 +154,19 @@ def main(sec_days: int = 30, bafin_days: int = 365, cb_days: int = 90) -> None:
         "window_days": {"SEC": sec_days, "BaFin": bafin_days, "CB": cb_days},
         "count": len(events),
         "sources": ["SEC EDGAR", "BaFin", "DE-Buyback", "DE-SqueezeOut", "Foreign-CB"],
+        # The dashboard shows a banner when the key was rejected: without the
+        # LLM fallback, expiration dates and some prices are silently missing.
+        "llm": {"status": llm_extract.status(), "calls": llm_extract.calls_used()},
         "events": events,
     }
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(json.dumps(payload, indent=2, ensure_ascii=False))
-    print(f"LLM fallback calls: {llm_extract.calls_used()}/{llm_extract.MAX_CALLS}", file=sys.stderr)
+    print(f"LLM fallback calls: {llm_extract.calls_used()}/{llm_extract.MAX_CALLS} "
+          f"(status: {llm_extract.status()})", file=sys.stderr)
+    if llm_extract.status() == "auth_error":
+        # GitHub Actions annotation: shows as a yellow warning on the run page.
+        print("::warning::ANTHROPIC_API_KEY rechazada (401): datos generados sin "
+              "fallback LLM — renueva el secret ANTHROPIC_API_KEY")
     print(f"wrote {OUT} ({len(events)} events)", file=sys.stderr)
 
 

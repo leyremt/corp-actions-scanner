@@ -33,6 +33,7 @@ _PRICE_RE = re.compile(
     re.IGNORECASE,
 )
 _TAG_RE = re.compile(r"<[^>]+>")
+SUSPECT_SPREAD = 25.0  # |spread| % above which the offer price is flagged for review
 
 
 def offer_price(url: str) -> float | None:
@@ -88,6 +89,11 @@ _OTP_PRICE_RE = re.compile(
     r"\$\s*([0-9]{1,4}(?:\.[0-9]{2})?)\s*(?:net[^$]{0,40}?)?per\s+[Ss]hare", re.IGNORECASE)
 _ODD_LOT_RE = re.compile(r"odd\s?lots?\b", re.IGNORECASE)
 _SPLIT_OFF_RE = re.compile(r"split-?off", re.IGNORECASE)
+# Nearly every S-4 / equity plan carries the boilerplate list "stock split,
+# split-up, spin-off, split-off, combination…" — a mention next to those words
+# is legal filler, not an actual split-off (ENDRA, Pulmatrix, SPAC S-4s).
+_SPLIT_LIST_RE = re.compile(r"split-?up|spin-?off|stock split|recapitali[sz]ation", re.IGNORECASE)
+_EXCHANGE_OFFER_RE = re.compile(r"exchange\s+offer", re.IGNORECASE)
 # SEC issuer tenders from closed-end funds / BDCs are routine NAV repurchases,
 # not equity arbitrage — flag them so the dashboard can hide them by default.
 _FUND_NAME_RE = re.compile(r"\b(fund|trust)\b", re.IGNORECASE)
@@ -103,6 +109,16 @@ def _get_text(url: str) -> str | None:
         return re.sub(r"\s+", " ", t)
     except requests.RequestException:
         return None
+
+
+def is_real_split_off(text: str) -> bool:
+    """A split-off is an exchange offer (parent shares -> subsidiary shares), so
+    require at least one 'split-off' mention outside the boilerplate list AND a
+    document that actually talks about an exchange offer."""
+    if len(_EXCHANGE_OFFER_RE.findall(text)) < 3:
+        return False
+    return any(not _SPLIT_LIST_RE.search(text[max(0, m.start() - 60):m.end() + 60])
+               for m in _SPLIT_OFF_RE.finditer(text))
 
 
 def _iso_date(text: str) -> str | None:
@@ -239,7 +255,7 @@ def sec_offer_details(event: dict) -> tuple[float | None, str | None]:
         # the classic small-size arb; worth a dedicated flag.
         if _ODD_LOT_RE.search(text):
             event["odd_lot"] = True
-        if _SPLIT_OFF_RE.search(text):
+        if is_real_split_off(text):
             event["split_off"] = True
         price = price or _otp_price(text)
         # Only accept a regex date that passes the sanity window — an insane
@@ -326,6 +342,12 @@ def enrich(event: dict) -> dict:
     already parsed from the offer PDF by the collector.
     """
     if event.get("source") == "SEC":
+        # The split-off pass is a full-text search for the bare word, so most
+        # hits are boilerplate. Check the matched document before spending any
+        # downloads on it; build.py drops events flagged here.
+        if event.get("category") == "split_off" and not is_real_split_off(_get_text(event["url"]) or ""):
+            event["drop"] = True
+            return event
         if event.get("category") in ("tender", "going_private", "merger", "split_off"):
             op, exec_date = sec_offer_details(event)
             event["offer_price"] = op
@@ -351,15 +373,19 @@ def enrich(event: dict) -> dict:
     else:
         event["spread_pct"] = None
 
-    # Plausibility gate for the noisy-extraction categories: merger proxies
-    # (DEFM14A) quote dozens of per-share figures, SEC delisting notices have
-    # no real offer price at all, and an announced deal never trades ±35% off
-    # the consideration — a spread that wide is an extraction error, so drop
-    # the price rather than show a fake edge. (BaFin delistings keep theirs:
-    # those prices come from the standardized offer PDF.)
-    noisy = event.get("category") in ("merger", "split_off") or (
-        event.get("category") == "delisting" and event.get("source") == "SEC")
-    if noisy and event["spread_pct"] is not None and abs(event["spread_pct"]) > 35:
-        event["offer_price"] = None
+    # Plausibility gate: an announced offer practically never trades more than
+    # ±25% away from its price. Wider is almost always a parse error (a "$1.00"
+    # boilerplate figure, a private-placement price, a quote in another
+    # currency) — so don't present it as an edge. Keep the candidate price and
+    # the raw spread for manual review instead of silently discarding them.
+    # SEC delisting notices (25-NSE) carry no offer at all — any "price" there is
+    # noise, so drop it outright rather than asking for a review.
+    s = event["spread_pct"]
+    if s is not None and abs(s) > SUSPECT_SPREAD and (
+            event.get("category") == "delisting" and event.get("source") == "SEC"):
+        event["offer_price"] = event["spread_pct"] = None
+    elif s is not None and abs(s) > SUSPECT_SPREAD:
+        event["spread_suspect"] = s
         event["spread_pct"] = None
+        event["needs_review"] = True
     return event
